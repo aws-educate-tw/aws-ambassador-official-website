@@ -1,0 +1,188 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // AWS Official Brand Colors
+        primary: {
+          50: '#FFF7F0',
+          100: '#FFE8DC',
+          200: '#FFD1B8',
+          300: '#FFBA95',
+          400: '#FFA371',
+          500: '#FF9900', // Primary Orange
+          600: '#E68A00',
+          700: '#CC7A00',
+          800: '#B36B00',
+          900: '#995C00',
+        },
+        surface: {
+          50: '#F8FAFB',
+          100: '#F0F4F8',
+          200: '#D9E4F5',
+          300: '#BDD4EC',
+          400: '#A1C5E3',
+          500: '#86B5DA',
+          600: '#222F3E', // Deep Blue (Dark Sections)
+          700: '#1A2331',
+          800: '#121724',
+          900: '#0A0C17',
+        },
+        neutral: {
+          50: '#FFFFFF',
+          100: '#F8FAFB',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#364153',
+          800: '#1F2937',
+          900: '#111827',
+        },
+        // Status Colors
+        success: '#10B981',
+        warning: '#F59E0B',
+        error: '#EF4444',
+        info: '#3B82F6',
+      },
+      fontFamily: {
+        sans: ['Inter', 'var(--font-inter)', 'sans-serif'],
+        jp: ['Noto Sans JP', 'sans-serif'],
+        sc: ['Noto Sans SC', 'sans-serif'],
+      },
+      fontSize: {
+        xs: '12px',
+        sm: '14px',
+        base: '16px',
+        lg: '18px',
+        xl: '20px',
+        '2xl': '24px',
+        '3xl': '28px',
+        '4xl': '32px',
+        '5xl': '36px',
+        '6xl': '48px',
+        '7xl': '64px',
+      },
+      fontWeight: {
+        thin: '100',
+        extralight: '200',
+        light: '300',
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800',
+        black: '900',
+      },
+      spacing: {
+        xs: '4px',
+        sm: '8px',
+        md: '12px',
+        lg: '16px',
+        xl: '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        '4xl': '40px',
+        '5xl': '48px',
+        '6xl': '56px',
+        '7xl': '64px',
+      },
+      borderRadius: {
+        xs: '4px',
+        sm: '8px',
+        md: '12px',
+        lg: '16px',
+        xl: '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        full: '9999px',
+      },
+      boxShadow: {
+        xs: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        sm: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.3s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'slide-down': 'slideDown 0.3s ease-out',
+        'scale-in': 'scaleIn 0.2s ease-out',
+        'pulse-soft': 'pulseSoft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        slideUp: {
+          from: { transform: 'translateY(10px)', opacity: '0' },
+          to: { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideDown: {
+          from: { transform: 'translateY(-10px)', opacity: '0' },
+          to: { transform: 'translateY(0)', opacity: '1' },
+        },
+        scaleIn: {
+          from: { transform: 'scale(0.95)', opacity: '0' },
+          to: { transform: 'scale(1)', opacity: '1' },
+        },
+        pulseSoft: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.5' },
+        },
+      },
+      transitionDuration: {
+        150: '150ms',
+        200: '200ms',
+        250: '250ms',
+        300: '300ms',
+        350: '350ms',
+        400: '400ms',
+      },
+      transitionTimingFunction: {
+        'ease-out-cubic': 'cubic-bezier(0.33, 1, 0.68, 1)',
+        'ease-in-cubic': 'cubic-bezier(0.32, 0, 0.67, 0)',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      screens: {
+        xs: '320px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+      },
+    },
+  },
+  plugins: [
+    function ({ addBase }: any) {
+      addBase({
+        ':root': {
+          '--color-primary': '#FF9900',
+          '--color-surface': '#222F3E',
+          '--color-neutral': '#FFFFFF',
+          '--color-text-primary': '#364153',
+          '--color-text-secondary': '#6A7282',
+          '--color-text-tertiary': '#99A1AF',
+          '--color-border': '#E5E7EB',
+          '--duration-fast': '150ms',
+          '--duration-normal': '200ms',
+          '--duration-slow': '300ms',
+          '--easing-ease-out': 'cubic-bezier(0.33, 1, 0.68, 1)',
+        },
+      });
+    },
+  ],
+};

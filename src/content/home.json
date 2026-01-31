@@ -1,0 +1,149 @@
+{
+  "hero": {
+    "title": "成為 AWS 校園大使",
+    "subtitle": "引領下一代雲端領導者",
+    "description": "加入全球超過 5000 位校園大使的行列，透過技術分享、社群建立和職涯發展，打造您的雲端未來。",
+    "primaryCTA": {
+      "label": "立即申請",
+      "href": "/apply"
+    },
+    "secondaryCTA": {
+      "label": "了解更多",
+      "href": "#learn-more"
+    },
+    "backgroundImage": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1280&h=720&fit=crop"
+  },
+  "statistics": [
+    {
+      "number": "168",
+      "label": "位活躍大使",
+      "description": "遍佈台灣各大高校"
+    },
+    {
+      "number": "350+",
+      "label": "場技術活動",
+      "description": "每月舉辦精選講座"
+    },
+    {
+      "number": "450+",
+      "label": "項認證通過",
+      "description": "獲得 AWS 官方認證"
+    },
+    {
+      "number": "95%",
+      "label": "就業率",
+      "description": "大使畢業生職涯成功"
+    }
+  ],
+  "features": [
+    {
+      "id": "overview",
+      "title": "計畫介紹",
+      "description": "深入瞭解大使計畫的使命、願景與發展機會",
+      "icon": "star",
+      "cta": {
+        "label": "深入了解",
+        "href": "/program"
+      }
+    },
+    {
+      "id": "events",
+      "title": "活動中心",
+      "description": "參與專業培訓、技術工作坊與行業交流活動",
+      "icon": "calendar",
+      "cta": {
+        "label": "查看活動",
+        "href": "/events"
+      }
+    },
+    {
+      "id": "alumni",
+      "title": "校友專區",
+      "description": "聆聽成功大使的故事與經驗分享",
+      "icon": "award",
+      "cta": {
+        "label": "閱讀故事",
+        "href": "/alumni"
+      }
+    },
+    {
+      "id": "contact",
+      "title": "聯絡我們",
+      "description": "有任何問題？立即與我們的團隊聯繫",
+      "icon": "message",
+      "cta": {
+        "label": "發送訊息",
+        "href": "/contact"
+      }
+    }
+  ],
+  "pillars": [
+    {
+      "title": "Learn",
+      "description": "透過官方課程與認證，提升雲端技術知識",
+      "icon": "book"
+    },
+    {
+      "title": "Build",
+      "description": "實務操作專案，運用 AWS 服務解決真實問題",
+      "icon": "code"
+    },
+    {
+      "title": "Share",
+      "description": "舉辦講座與工作坊，將知識傳遞給同學",
+      "icon": "share"
+    },
+    {
+      "title": "Lead",
+      "description": "成為領導者，建立校園雲端技術社群",
+      "icon": "leader"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "李明德",
+      "role": "2023 年大使 | 國立台灣大學",
+      "company": "現任：Google Cloud 工程師",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+      "rating": 5,
+      "quote": "AWS 大使計畫改變了我的職涯。不只學到雲端技術，更建立了終身受用的職業網絡。"
+    },
+    {
+      "name": "王小芸",
+      "role": "2023 年大使 | 台科大",
+      "company": "現任：Amazon SDE",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+      "rating": 5,
+      "quote": "透過主持活動和技術分享，我找到了自己在領導與教學的熱情。"
+    },
+    {
+      "name": "陳冠宇",
+      "role": "2022 年大使 | 中山大學",
+      "company": "現任：Microsoft Azure 架構師",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
+      "rating": 5,
+      "quote": "大使的身份為我開啟了無限的可能性。我獲得了寶貴的實務經驗和人生導師。"
+    },
+    {
+      "name": "黃思穎",
+      "role": "2022 年大使 | 清華大學",
+      "company": "現任：Startup CTO",
+      "avatar": "https://images.unsplash.com/photo-1507876466326-583ecf51d88f?w=200&h=200&fit=crop",
+      "rating": 5,
+      "quote": "作為大使，我不僅學到了技術，更學到了如何成為一個有影響力的領導者。"
+    }
+  ],
+  "cta_section": {
+    "title": "準備好開始您的雲端之旅？",
+    "description": "加入我們的大使社群，與志同道合的學生一起成長，為您的未來做好準備。",
+    "primary_cta": {
+      "label": "立即申請",
+      "href": "/apply"
+    },
+    "secondary_cta": {
+      "label": "查看常見問題",
+      "href": "#faq"
+    },
+    "deadline": "申請截止：2024 年 12 月 31 日"
+  }
+}

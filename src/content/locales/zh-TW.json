@@ -1,0 +1,40 @@
+{
+  "common": {
+    "appName": "AWS Educate Campus Ambassador",
+    "loading": "加載中...",
+    "error": "發生錯誤",
+    "success": "成功",
+    "close": "關閉",
+    "cancel": "取消",
+    "submit": "提交",
+    "save": "保存",
+    "delete": "刪除",
+    "edit": "編輯",
+    "back": "返回"
+  },
+  "navigation": {
+    "home": "首頁",
+    "program": "計畫介紹",
+    "events": "活動中心",
+    "alumni": "校友專區",
+    "contact": "聯絡我們",
+    "apply": "立即申請"
+  },
+  "hero": {
+    "title": "成為 AWS 校園大使",
+    "subtitle": "引領下一代雲端領導者",
+    "cta": "立即申請"
+  },
+  "footer": {
+    "copyright": "© 2024 AWS Educate Taiwan. All rights reserved.",
+    "privacy": "隱私政策",
+    "terms": "服務條款"
+  },
+  "forms": {
+    "email": "電子郵件",
+    "name": "姓名",
+    "message": "訊息",
+    "submit": "提交",
+    "required": "此欄位為必填"
+  }
+}

@@ -1,3 +1,43 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Testing
+/coverage
+/.nyc_output
+/test-results/
+/playwright-report/
+
+# Next.js & Build
+/.next/
+/out/
+/build
+/dist
+dist-ssr
+
+# Production
+.env.production.local
+.env.production
+
+# Development
+.env.local
+.env.*.local
+*.local
+
+# Misc
+.DS_Store
+*.pem
+ehthumbs.db
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
 # Logs
 logs
 *.log
@@ -7,18 +47,42 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.swp
+*.swo
+*~
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+.fleet
+.vscode-test
+.yarn/cache
+.yarn/unplugged
+
+# Cache & Build
+.cache/
+.turbo/
+.eslintcache
+
+# Storybook
+/storybook-static
+
+# Vercel & Hosting
+.vercel
+.netlify
+
+# Environment
+.env
+.env.test.local
