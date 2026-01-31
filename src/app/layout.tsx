@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     'Empower the next generation of cloud leaders through AWS Educate Campus Ambassador Program',
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
+  icons: {
+    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="%23FF9900"/><text x="50%" y="50%" font-size="40" fill="white" text-anchor="middle" dy=".3em" font-weight="bold">A</text></svg>',
+  },
   openGraph: {
     title: 'AWS Educate Campus Ambassador',
     description: 'Join the global community of AWS Campus Ambassadors',
@@ -37,8 +40,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#FF9900" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className="bg-white text-neutral-900">
         <div className="flex min-h-screen flex-col">

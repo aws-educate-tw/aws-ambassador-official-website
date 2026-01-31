@@ -1,16 +1,17 @@
 'use client';
 
+import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
+import { CTASection } from '@/components/organisms/CTASection/CTASection';
+import { Footer } from '@/components/organisms/Footer/Footer';
+import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
+import { Navigation } from '@/components/organisms/Navigation/Navigation';
+import { TestimonialsCarousel } from '@/components/organisms/TestimonialsCarousel/TestimonialsCarousel';
 import homeData from '@/content/home.json';
-import { cn } from '@/lib/cn';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useState } from 'react';
-
-/**
- * Figma 生成的首頁組件
- * 自 AWS Educate TW Campus Ambassador 設計轉換
- * 完整的設計忠實度與動畫整合
- */
+import { ArrowRight, Calendar, GraduationCap, Trophy, Users } from 'lucide-react';
+import Image from 'next/image';
+import React from 'react';
+import styles from './HomePage.module.css';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -28,279 +29,200 @@ const container = {
   },
 };
 
+/**
+ * 首頁 - 完全重構版本
+ * - 所有重複區塊已抽象為可重用元件
+ * - 完全移除 inline styles，使用 CSS Modules
+ * - 動態內容從 JSON 驅動，易於維護與串接後端
+ * - Navigation 和 Footer 使用硬編碼（不經常變動）
+ */
+
+// 硬編碼 Header - 基本不會變動
+const navigationData = {
+  logo: { text: 'AWS', subtitle: 'Educate Ambassador' },
+  items: [
+    { label: '首頁', href: '#' },
+    { label: '大使計畫總覽', href: '#program' },
+    { label: '活動中心', href: '#events' },
+    { label: '校友專區', href: '#alumni' },
+    { label: '聯絡我們', href: '#contact' },
+  ],
+  ctaLabel: '立即申請',
+  ctaHref: '/apply',
+};
+
+// 硬編碼 Footer - 基本不會變動
+const footerData = {
+  copyright: 'AWS Educate Taiwan Campus Ambassador Program',
+  links: [
+    { label: '隱私政策', href: '/privacy' },
+    { label: '使用條款', href: '/terms' },
+    { label: '聯絡我們', href: '/contact' },
+  ],
+};
+
 export default function HomePage() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation Bar */}
-      <nav className="sticky top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur-md">
-        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="text-2xl font-bold text-primary-500">AWS</div>
-              <span className="hidden text-sm font-semibold text-neutral-700 sm:inline">
-                Educate Ambassador
-              </span>
-            </div>
+    <div className={styles.page}>
+      {/* 導航欄 */}
+      <Navigation {...navigationData} />
 
-            {/* Desktop Menu */}
-            <div className="hidden gap-8 md:flex">
-              {homeData.features.map((feature) => (
-                <Link
-                  key={feature.id}
-                  href={feature.cta.href}
-                  className="text-sm font-medium text-neutral-600 transition hover:text-primary-500"
-                >
-                  {feature.title}
-                </Link>
-              ))}
-            </div>
+      {/* 英雄區 */}
+      <HeroSection {...homeData.hero} />
 
-            {/* CTA Button */}
-            <Link
-              href="/apply"
-              className="rounded-lg bg-primary-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-600"
-            >
-              立即申請
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-surface-600 to-surface-700 py-20 text-white">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-primary-500 blur-3xl" />
-          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-primary-400 blur-3xl" />
-        </div>
-
+      {/* 功能區 - 探索大使計畫 */}
+      <section className={styles.programExploreSection}>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8"
-        >
-          <h1 className="text-5xl font-bold leading-tight sm:text-6xl lg:text-7xl">
-            {homeData.hero.title}
-          </h1>
-          <p className="mt-6 text-xl text-white/80 sm:text-2xl">{homeData.hero.subtitle}</p>
-          <p className="mt-4 max-w-2xl text-base text-white/70 sm:mx-auto">
-            {homeData.hero.description}
-          </p>
-
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Link
-              href={homeData.hero.primaryCTA.href}
-              className="rounded-lg bg-primary-500 px-8 py-3 font-semibold text-white transition hover:bg-primary-600"
-            >
-              {homeData.hero.primaryCTA.label}
-            </Link>
-            <a
-              href={homeData.hero.secondaryCTA.href}
-              className="rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition hover:bg-white/10"
-            >
-              {homeData.hero.secondaryCTA.label}
-            </a>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Statistics Section */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            {homeData.statistics.map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="rounded-lg border border-neutral-200 bg-gradient-to-br from-neutral-50 to-white p-8 text-center"
-              >
-                <div className="text-4xl font-bold text-primary-500">{stat.number}</div>
-                <div className="mt-2 font-semibold text-neutral-900">{stat.label}</div>
-                <div className="mt-1 text-sm text-neutral-600">{stat.description}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="bg-neutral-50 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mb-12 text-center"
-          >
-            <h2 className="text-4xl font-bold text-neutral-900">主要資訊</h2>
-            <p className="mt-4 text-lg text-neutral-600">探索大使計畫的各個方面</p>
-          </motion.div>
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            {homeData.features.map((feature) => (
-              <motion.div
-                key={feature.id}
-                variants={fadeInUp}
-                className="group overflow-hidden rounded-lg border border-neutral-200 bg-white p-6 transition hover:shadow-lg"
-              >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 text-2xl">
-                  {/* 圖標佔位符 */}
-                  📌
-                </div>
-                <h3 className="font-bold text-neutral-900">{feature.title}</h3>
-                <p className="mt-2 text-sm text-neutral-600">{feature.description}</p>
-                <Link
-                  href={feature.cta.href}
-                  className="mt-4 inline-block text-sm font-semibold text-primary-500 transition group-hover:text-primary-600"
-                >
-                  {feature.cta.label} →
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Pillars Section */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mb-12 text-center"
-          >
-            <h2 className="text-4xl font-bold text-neutral-900">四大支柱</h2>
-            <p className="mt-4 text-lg text-neutral-600">成為大使的核心價值</p>
-          </motion.div>
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            {homeData.pillars.map((pillar, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 p-8"
-              >
-                <div className="mb-4 text-4xl">
-                  {pillar.title === 'Learn' && '📚'}
-                  {pillar.title === 'Build' && '🔨'}
-                  {pillar.title === 'Share' && '🤝'}
-                  {pillar.title === 'Lead' && '👑'}
-                </div>
-                <h3 className="font-bold text-neutral-900">{pillar.title}</h3>
-                <p className="mt-2 text-sm text-neutral-700">{pillar.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="bg-neutral-50 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mb-12 text-center"
-          >
-            <h2 className="text-4xl font-bold text-neutral-900">成功故事</h2>
-            <p className="mt-4 text-lg text-neutral-600">聆聽我們的大使怎麼說</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mx-auto max-w-3xl"
-          >
-            <div className="rounded-lg bg-white p-8 shadow-md">
-              <div className="flex items-center gap-4">
-                <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full bg-neutral-200" />
-                <div>
-                  <div className="font-bold text-neutral-900">
-                    {homeData.testimonials[activeTestimonial]?.name}
-                  </div>
-                  <div className="text-sm text-neutral-600">
-                    {homeData.testimonials[activeTestimonial]?.role}
-                  </div>
-                </div>
-              </div>
-
-              <p className="mt-6 text-lg italic text-neutral-700">
-                "{homeData.testimonials[activeTestimonial]?.quote}"
-              </p>
-
-              <div className="mt-6 flex justify-center gap-2">
-                {homeData.testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveTestimonial(index)}
-                    className={cn(
-                      'h-2 w-2 rounded-full transition',
-                      index === activeTestimonial ? 'bg-primary-500' : 'bg-neutral-300',
-                    )}
-                    aria-label={`Testimonial ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-primary-500 to-primary-600 py-20 text-white">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8"
+          className={styles.sectionHeader}
         >
-          <h2 className="text-4xl font-bold">{homeData.cta_section.title}</h2>
-          <p className="mt-4 text-lg text-white/90">{homeData.cta_section.description}</p>
+          <h2 className={styles.sectionTitle}>探索大使計畫</h2>
+          <p className={styles.sectionSubtitle}>從學習到就業，一站式雲端職涯培育平台</p>
+        </motion.div>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Link
-              href={homeData.cta_section.primary_cta.href}
-              className="rounded-lg bg-white px-8 py-3 font-semibold text-primary-600 transition hover:bg-neutral-100"
-            >
-              {homeData.cta_section.primary_cta.label}
-            </Link>
-          </div>
-
-          <p className="mt-6 text-sm text-white/70">{homeData.cta_section.deadline}</p>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className={styles.programGrid}
+        >
+          {[
+            {
+              icon: <Trophy />,
+              title: '大使計畫總覽',
+              desc: '探索完整的大使成長旅程，從申請到認證，全方位培育雲端人才',
+              tag: '7屆累積 168+ 位大使',
+              btn: '了解計畫詳情',
+            },
+            {
+              icon: <Calendar />,
+              title: '活動中心',
+              desc: '參與技術工作坊、黑客松、職涯講座，與業界專家面對面交流',
+              tag: '年度 50+ 場活動',
+              btn: '查看活動日曆',
+            },
+            {
+              icon: <GraduationCap />,
+              title: '校友專區',
+              desc: '見證大使們從校園走向職場的成功故事，加入優秀的校友網絡',
+              tag: '快加入我們',
+              btn: '探索校友故事',
+            },
+            {
+              icon: <Users />,
+              title: '聯絡我們',
+              desc: '有任何問題？加入我們的社群，或直接聯繫大使團隊',
+              tag: '加入我們社群',
+              btn: '立即聯繫',
+            },
+          ].map((card, i) => (
+            <motion.div key={i} variants={fadeInUp}>
+              <div className={styles.programCard}>
+                <div className={styles.programIconWrapper}>
+                  {React.cloneElement(card.icon, { size: 28 })}
+                </div>
+                <h3 className={styles.programCardTitle}>{card.title}</h3>
+                <p className={styles.programCardDesc}>{card.desc}</p>
+                <div className={styles.programCardFooter}>
+                  <span className={styles.programTag}>{card.tag}</span>
+                  <button className={styles.programButton}>
+                    {card.btn} <ArrowRight className={styles.buttonIcon} size={16} />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-neutral-900 py-12 text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-sm text-neutral-400">
-            © 2024 AWS Educate Taiwan. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      {/* 四大支柱 */}
+      <section className={styles.pillarsSection} aria-labelledby="pillars-heading">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className={styles.sectionHeader}
+        >
+          <h2 id="pillars-heading" className={styles.sectionTitle}>
+            四大核心理念
+          </h2>
+          <p className={styles.sectionSubtitle}>Learn · Build · Share · Lead</p>
+        </motion.div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className={styles.pillarsGrid}
+        >
+          {homeData.pillars.map((pillar, index) => (
+            <motion.div key={index} variants={fadeInUp}>
+              <PillarCard {...pillar} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* 六大優勢 */}
+      {homeData.benefits && (
+        <section className={styles.benefitsSection} aria-labelledby="benefits-heading">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className={styles.sectionHeader}
+          >
+            <h2 id="benefits-heading" className={styles.sectionTitle}>
+              成為大使的六大優勢
+            </h2>
+            <p className={styles.sectionSubtitle}>全方位支持你的雲端職涯發展</p>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className={styles.benefitsGrid}
+          >
+            {homeData.benefits.map((benefit, index) => (
+              <motion.div key={index} variants={fadeInUp}>
+                <div
+                  className={`${styles.benefitCard} ${benefit.highlight ? styles.highlight : ''}`}
+                >
+                  <div className={styles.benefitIcon}>
+                    <Image src={benefit.icon} alt={benefit.text} width={24} height={24} />
+                  </div>
+                  <span className={styles.benefitText}>{benefit.text}</span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </section>
+      )}
+
+      {/* 推薦輪播 */}
+      <TestimonialsCarousel
+        title="成功故事"
+        subtitle="聆聽我們的大使怎麼說"
+        testimonials={homeData.testimonials}
+      />
+
+      {/* CTA 區 */}
+      <CTASection
+        title={homeData.cta_section.title}
+        description={homeData.cta_section.description}
+        primaryCTA={homeData.cta_section.primary_cta}
+        secondaryCTA={homeData.cta_section.secondary_cta}
+        deadline={homeData.cta_section.deadline}
+      />
+
+      {/* 頁尾 */}
+      <Footer {...footerData} />
     </div>
   );
 }

@@ -1,56 +1,68 @@
 .section {
-  padding: var(--space-20) var(--space-4);
-  background: linear-gradient(to right, var(--color-primary-500), var(--color-primary-600));
-  color: var(--color-text-inverse);
+  padding: 80px 32px;
+  background-color: #ffffff;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .section {
-    padding: var(--space-20) var(--space-6);
-  }
-}
-
-@media (min-width: 1024px) {
-  .section {
-    padding: var(--space-20) var(--space-8);
+    padding: 80px;
   }
 }
 
 .content {
-  max-width: 1024px;
+  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+  background-color: #232f3e;
+  border-radius: 50px;
+  padding: 96px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 .title {
-  margin: 0;
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
+  margin: 0 0 32px 0;
+  font-size: 48px;
+  font-weight: 900;
+  color: white;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 64px;
+  }
 }
 
 .description {
-  margin: var(--space-4) 0 0;
-  font-size: var(--font-size-lg);
-  color: rgba(255, 255, 255, 0.9);
-  line-height: var(--line-height-relaxed);
+  margin: 0 0 48px 0;
+  font-size: 20px;
+  color: #9ca3af;
+  line-height: 1.6;
+  max-width: 672px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .actions {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  margin-top: var(--space-8);
-}
-
-@media (min-width: 640px) {
-  .actions {
-    flex-direction: row;
-    justify-content: center;
-  }
+  gap: 16px;
+  margin-top: 48px;
+  align-items: center;
+  justify-content: center;
 }
 
 .deadline {
-  margin: var(--space-6) 0 0;
-  font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.7);
+  margin-top: 32px;
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
 }

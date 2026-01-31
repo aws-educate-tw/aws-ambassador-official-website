@@ -1,53 +1,175 @@
 .footer {
-  padding: var(--space-12) var(--space-4);
-  background-color: var(--color-neutral-900);
-  color: var(--color-neutral-400);
-}
-
-@media (min-width: 640px) {
-  .footer {
-    padding: var(--space-12) var(--space-6);
-  }
-}
-
-@media (min-width: 1024px) {
-  .footer {
-    padding: var(--space-12) var(--space-8);
-  }
+  background-color: #232f3e;
+  color: #9ca3af;
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  text-align: center;
+  padding: 80px 32px;
 }
 
-.links {
+@media (min-width: 768px) {
+  .container {
+    padding: 80px;
+  }
+}
+
+/* ===== 主網格區 ===== */
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+  margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== 品牌區 ===== */
+.brandTitle {
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.025em;
+}
+
+.brandSubtext {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0 0 4px 0;
+  line-height: 1.5;
+}
+
+.brandDesc {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===== 區段標題 ===== */
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  margin: 0 0 24px 0;
+}
+
+/* ===== 連結列表 ===== */
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-6);
-  margin-bottom: var(--space-6);
+  flex-direction: column;
+  gap: 16px;
 }
 
-.link {
-  font-size: var(--font-size-sm);
-  color: var(--color-neutral-400);
+.footerLink {
+  font-size: 14px;
+  color: #9ca3af;
   text-decoration: none;
-  transition: color var(--duration-fast) var(--easing-ease-out);
+  transition: color 300ms ease;
+  cursor: pointer;
 }
 
-.link:hover {
-  color: var(--color-neutral-50);
+.footerLink:hover {
+  color: white;
 }
 
-.link:focus-visible {
-  outline: 2px solid var(--color-primary-500);
-  outline-offset: 2px;
-  border-radius: var(--radius-xs);
+/* ===== 聯絡我們 ===== */
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  transition: color 300ms ease;
+  cursor: pointer;
+}
+
+.contactInfo:hover {
+  color: white;
+}
+
+.contactInfo:hover .contactIcon {
+  color: white;
+}
+
+.contactIcon {
+  color: #9ca3af;
+  transition: color 300ms ease;
+  flex-shrink: 0;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.socialLink {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 300ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialLink:hover {
+  color: #ff9900;
+}
+
+/* ===== 底部法律區 ===== */
+.bottomSection {
+  padding-top: 40px;
+  border-top: 1px solid rgba(107, 114, 128, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .bottomSection {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .copyright {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
   margin: 0;
-  font-size: var(--font-size-sm);
+}
+
+.legalLinks {
+  display: flex;
+  gap: 40px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.legalLink {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 300ms ease;
+  font-weight: 500;
+}
+
+.legalLink:hover {
+  color: white;
 }

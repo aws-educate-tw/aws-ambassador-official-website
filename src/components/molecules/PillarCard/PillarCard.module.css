@@ -13,6 +13,20 @@
   margin-bottom: var(--space-4);
   font-size: var(--font-size-4xl);
   line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pillarImage {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  transition: transform var(--duration-normal) var(--easing-ease-out);
+}
+
+.card:hover .pillarImage {
+  transform: scale(1.05);
 }
 
 .title {
