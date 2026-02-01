@@ -1,6 +1,10 @@
 .page {
   min-height: 100vh;
   background-color: var(--color-bg-primary);
+  background-image: url('/images/backgrounds/HomePageBG.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Utility: Screen Reader Only */
@@ -19,7 +23,6 @@
 /* ===== Stats Section ===== */
 .statsSection {
   padding: var(--space-20) var(--space-4);
-  background-color: var(--color-bg-primary);
 }
 
 @media (min-width: 640px) {
@@ -57,7 +60,6 @@
 /* ===== Program Explore Section (探索大使計畫) ===== */
 .programExploreSection {
   padding: 6rem 2rem;
-  background-color: rgba(249, 250, 251, 0.5);
 }
 
 @media (min-width: 768px) {
@@ -171,7 +173,6 @@
 /* ===== Features Section ===== */
 .featuresSection {
   padding: var(--space-20) var(--space-4);
-  background-color: var(--color-neutral-50);
 }
 
 @media (min-width: 640px) {
@@ -209,7 +210,6 @@
 /* ===== Pillars Section ===== */
 .pillarsSection {
   padding: var(--space-20) var(--space-4);
-  background-color: var(--color-bg-primary);
 }
 
 @media (min-width: 640px) {
@@ -247,7 +247,6 @@
 /* ===== Benefits Section ===== */
 .benefitsSection {
   padding: var(--space-20) var(--space-4);
-  background-color: var(--color-neutral-50);
 }
 
 @media (min-width: 640px) {

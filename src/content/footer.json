@@ -38,10 +38,8 @@
     "phone": "+886 2 XXXX-XXXX"
   },
   "socialLinks": [
-    { "platform": "facebook", "url": "https://facebook.com/awseducate" },
-    { "platform": "instagram", "url": "https://instagram.com/awseducate" },
-    { "platform": "linkedin", "url": "https://linkedin.com/company/aws-educate" },
-    { "platform": "twitter", "url": "https://twitter.com/awseducate" }
+    { "platform": "facebook", "url": "https://www.facebook.com/awseducatestudentambassadortaiwan" },
+    { "platform": "instagram", "url": "https://www.instagram.com/awseducatestdambtw/" }
   ],
   "copyright": "© 2024 AWS Educate Taiwan. All rights reserved."
 }

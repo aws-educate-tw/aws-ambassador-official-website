@@ -130,6 +130,17 @@
   color: #ff9900;
 }
 
+.socialIcon {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.socialLink:hover .socialIcon {
+  filter: brightness(0) saturate(100%) invert(64%) sepia(73%) saturate(1887%) hue-rotate(358deg)
+    brightness(101%) contrast(104%);
+}
+
 /* ===== 底部法律區 ===== */
 .bottomSection {
   padding-top: 40px;

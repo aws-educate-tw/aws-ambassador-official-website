@@ -1,6 +1,6 @@
 'use client';
 
-import { Facebook, Instagram, Linkedin, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export interface FooterProps {
@@ -83,19 +83,36 @@ export function Footer({ copyright, links }: FooterProps) {
             <h4 className={styles.sectionTitle}>聯絡我們</h4>
             <div className={styles.contactInfo}>
               <Mail size={18} className={styles.contactIcon} />
-              <a href="mailto:awseducatetw@gmail.com" className={styles.footerLink}>
-                awseducatetw@gmail.com
+              <a href="mailto:awseducate.cloudambassador@gmail.com" className={styles.footerLink}>
+                awseducate.cloudambassador@gmail.com
               </a>
             </div>
             <div className={styles.socialLinks}>
-              <a href="#" className={styles.socialLink} aria-label="Facebook">
-                <Facebook size={22} />
+              <a
+                href="https://www.facebook.com/awseducatestudentambassadortaiwan"
+                className={styles.socialLink}
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/images/icons/Facebook.svg"
+                  alt="Facebook"
+                  className={styles.socialIcon}
+                />
               </a>
-              <a href="#" className={styles.socialLink} aria-label="Instagram">
-                <Instagram size={22} />
-              </a>
-              <a href="#" className={styles.socialLink} aria-label="LinkedIn">
-                <Linkedin size={22} />
+              <a
+                href="https://www.instagram.com/awseducatestdambtw/"
+                className={styles.socialLink}
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/images/icons/Instagram.svg"
+                  alt="Instagram"
+                  className={styles.socialIcon}
+                />
               </a>
             </div>
           </div>

@@ -89,7 +89,7 @@ export interface CTASection {
     label: string;
     href: string;
   };
-  secondary_cta: {
+  secondary_cta?: {
     label: string;
     href: string;
   };

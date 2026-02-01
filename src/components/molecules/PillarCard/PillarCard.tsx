@@ -7,7 +7,6 @@ export interface PillarCardProps {
   icon?: string;
 }
 
-// 四大核心理念圖片映射
 const PILLAR_IMAGES: Record<string, string> = {
   學習: '/images/Learning.png',
   Learn: '/images/Learning.png',
@@ -19,25 +18,35 @@ const PILLAR_IMAGES: Record<string, string> = {
   Lead: '/images/Lead.png',
 };
 
+function getWrapperVariant(title: string) {
+  if (title === '學習' || title === 'Learn') return styles.learn;
+  if (title === '實作' || title === 'Build') return styles.build;
+  if (title === '分享' || title === 'Share') return styles.share;
+  if (title === '領導' || title === 'Lead') return styles.lead;
+  return styles.defaultVariant;
+}
+
 export function PillarCard({ title, description, icon }: PillarCardProps) {
   const imageSrc = PILLAR_IMAGES[title];
+  const variantClass = getWrapperVariant(title);
 
   return (
     <article className={styles.card}>
-      <div className={styles.icon} aria-hidden="true">
+      <div className={`${styles.iconWrapper} ${variantClass}`} aria-hidden="true">
         {imageSrc ? (
           <Image
             src={imageSrc}
-            alt={title}
+            alt=""
             width={160}
             height={160}
             className={styles.pillarImage}
             priority
           />
         ) : (
-          icon || '✨'
+          <span className={styles.fallbackIcon}>{icon ?? '✨'}</span>
         )}
       </div>
+
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
     </article>

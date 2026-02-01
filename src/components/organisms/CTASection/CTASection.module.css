@@ -1,6 +1,6 @@
 .section {
   padding: 80px 32px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 @media (min-width: 768px) {

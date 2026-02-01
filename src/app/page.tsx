@@ -37,7 +37,7 @@ const container = {
  * - Navigation 和 Footer 使用硬編碼（不經常變動）
  */
 
-// 硬編碼 Header - 基本不會變動
+// Header
 const navigationData = {
   logo: { text: 'AWS', subtitle: 'Educate Ambassador' },
   items: [
@@ -51,7 +51,7 @@ const navigationData = {
   ctaHref: '/apply',
 };
 
-// 硬編碼 Footer - 基本不會變動
+// Footer
 const footerData = {
   copyright: 'AWS Educate Taiwan Campus Ambassador Program',
   links: [
@@ -64,10 +64,10 @@ const footerData = {
 export default function HomePage() {
   return (
     <div className={styles.page}>
-      {/* 導航欄 */}
+      {/* Navigation */}
       <Navigation {...navigationData} />
 
-      {/* 英雄區 */}
+      {/* HeroSection */}
       <HeroSection {...homeData.hero} />
 
       {/* 功能區 - 探索大使計畫 */}
@@ -91,6 +91,7 @@ export default function HomePage() {
         >
           {[
             {
+              id: 'program-overview',
               icon: <Trophy />,
               title: '大使計畫總覽',
               desc: '探索完整的大使成長旅程，從申請到認證，全方位培育雲端人才',
@@ -98,6 +99,7 @@ export default function HomePage() {
               btn: '了解計畫詳情',
             },
             {
+              id: 'events-center',
               icon: <Calendar />,
               title: '活動中心',
               desc: '參與技術工作坊、黑客松、職涯講座，與業界專家面對面交流',
@@ -105,6 +107,7 @@ export default function HomePage() {
               btn: '查看活動日曆',
             },
             {
+              id: 'alumni-hub',
               icon: <GraduationCap />,
               title: '校友專區',
               desc: '見證大使們從校園走向職場的成功故事，加入優秀的校友網絡',
@@ -112,14 +115,15 @@ export default function HomePage() {
               btn: '探索校友故事',
             },
             {
+              id: 'contact-us',
               icon: <Users />,
               title: '聯絡我們',
               desc: '有任何問題？加入我們的社群，或直接聯繫大使團隊',
               tag: '加入我們社群',
               btn: '立即聯繫',
             },
-          ].map((card, i) => (
-            <motion.div key={i} variants={fadeInUp}>
+          ].map((card) => (
+            <motion.div key={card.id} variants={fadeInUp}>
               <div className={styles.programCard}>
                 <div className={styles.programIconWrapper}>
                   {React.cloneElement(card.icon, { size: 28 })}
@@ -160,7 +164,7 @@ export default function HomePage() {
           className={styles.pillarsGrid}
         >
           {homeData.pillars.map((pillar, index) => (
-            <motion.div key={index} variants={fadeInUp}>
+            <motion.div key={`pillar-${pillar.title}`} variants={fadeInUp}>
               <PillarCard {...pillar} />
             </motion.div>
           ))}
@@ -190,7 +194,7 @@ export default function HomePage() {
             className={styles.benefitsGrid}
           >
             {homeData.benefits.map((benefit, index) => (
-              <motion.div key={index} variants={fadeInUp}>
+              <motion.div key={`benefit-${index}-${benefit.text}`} variants={fadeInUp}>
                 <div
                   className={`${styles.benefitCard} ${benefit.highlight ? styles.highlight : ''}`}
                 >
@@ -217,7 +221,6 @@ export default function HomePage() {
         title={homeData.cta_section.title}
         description={homeData.cta_section.description}
         primaryCTA={homeData.cta_section.primary_cta}
-        secondaryCTA={homeData.cta_section.secondary_cta}
         deadline={homeData.cta_section.deadline}
       />
 
