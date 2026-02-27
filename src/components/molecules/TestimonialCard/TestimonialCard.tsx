@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './TestimonialCard.module.css';
 
 export interface TestimonialCardProps {
@@ -22,7 +23,7 @@ export function TestimonialCard({
       <div className={styles.header}>
         <div className={styles.avatar} aria-label={`${name} 的頭像`}>
           {avatar ? (
-            <img src={avatar} alt="" className={styles.avatarImage} />
+            <Image src={avatar} alt="" fill sizes="64px" className={styles.avatarImage} />
           ) : (
             <div className={styles.avatarPlaceholder} />
           )}

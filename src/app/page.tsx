@@ -29,13 +29,7 @@ const container = {
   },
 };
 
-/**
- * 首頁 - 完全重構版本
- * - 所有重複區塊已抽象為可重用元件
- * - 完全移除 inline styles，使用 CSS Modules
- * - 動態內容從 JSON 驅動，易於維護與串接後端
- * - Navigation 和 Footer 使用硬編碼（不經常變動）
- */
+/* 首頁 */
 
 // Header
 const navigationData = {

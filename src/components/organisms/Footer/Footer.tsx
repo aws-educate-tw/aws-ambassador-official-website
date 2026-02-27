@@ -1,6 +1,7 @@
 'use client';
 
 import { Mail } from 'lucide-react';
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 export interface FooterProps {
@@ -95,12 +96,15 @@ export function Footer({ copyright, links }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <Image
                   src="/images/icons/Facebook.svg"
                   alt="Facebook"
+                  width={24}
+                  height={24}
                   className={styles.socialIcon}
                 />
               </a>
+
               <a
                 href="https://www.instagram.com/awseducatestdambtw/"
                 className={styles.socialLink}
@@ -108,9 +112,11 @@ export function Footer({ copyright, links }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <Image
                   src="/images/icons/Instagram.svg"
                   alt="Instagram"
+                  width={24}
+                  height={24}
                   className={styles.socialIcon}
                 />
               </a>
