@@ -1,0 +1,40 @@
+{
+  "common": {
+    "appName": "AWS Educate Campus Ambassador",
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "success": "Success",
+    "close": "Close",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back"
+  },
+  "navigation": {
+    "home": "Home",
+    "program": "Program",
+    "events": "Events",
+    "alumni": "Alumni",
+    "contact": "Contact",
+    "apply": "Apply Now"
+  },
+  "hero": {
+    "title": "Become an AWS Campus Ambassador",
+    "subtitle": "Lead the Next Generation of Cloud Leaders",
+    "cta": "Apply Now"
+  },
+  "footer": {
+    "copyright": "© 2024 AWS Educate Taiwan. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "forms": {
+    "email": "Email",
+    "name": "Name",
+    "message": "Message",
+    "submit": "Submit",
+    "required": "This field is required"
+  }
+}

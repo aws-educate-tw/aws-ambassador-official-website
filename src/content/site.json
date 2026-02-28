@@ -1,0 +1,13 @@
+{
+  "siteName": "AWS Educate TW Campus Ambassador Program",
+  "siteDescription": "Empower the next generation of cloud leaders through AWS Educate Campus Ambassador Program",
+  "siteUrl": "https://aws-ambassador-tw.example.com",
+  "locale": "zh-TW",
+  "favicon": "/favicon.ico",
+  "ogImage": "/og-image.png",
+  "author": "AWS Educate Taiwan",
+  "social": {
+    "facebook": "https://www.facebook.com/awseducate",
+    "instagram": "https://www.instagram.com/awseducate"
+  }
+}
