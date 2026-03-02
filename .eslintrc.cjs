@@ -5,14 +5,17 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     '@next/next/no-html-link-for-pages': 'off',
     'prefer-const': 'warn',
+
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {
         argsIgnorePattern: '^_',
+        varsIgnorePattern: '^[A-Z_]',
       },
     ],
   },
+
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
