@@ -47,7 +47,7 @@ const navigationData = {
 
 // Footer
 const footerData = {
-  copyright: 'AWS Educate Taiwan Campus Ambassador Program',
+  copyright: '© 2026 AWS Educate TW Cloud Ambassador. All rights reserved.',
   links: [
     { label: '隱私政策', href: '/privacy' },
     { label: '使用條款', href: '/terms' },
