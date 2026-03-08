@@ -11,7 +11,7 @@ export interface FooterProps {
   }>;
 }
 
-export function Footer({ copyright, links }: FooterProps) {
+export function Footer({ copyright }: FooterProps) {
   // 取得當前年份
   const currentYear = new Date().getFullYear();
 
@@ -29,7 +29,7 @@ export function Footer({ copyright, links }: FooterProps) {
             <h3 className={styles.brandTitle}>AWS Educate TW</h3>
             <p className={styles.brandSubtext}>賦能創新 · 連結未來</p>
             <p className={styles.brandSubtext}>AWS Educate</p>
-            <p className={styles.brandDesc}>TW Cloud Ambassadorm</p>
+            <p className={styles.brandDesc}>TW Cloud Ambassador</p>
           </div>
 
           {/* 快速連結 */}
