@@ -279,14 +279,14 @@
 }
 
 .mobileCtaButton:hover {
-  transform: none !important;
-  box-shadow: none !important;
-  background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%) !important;
+  transform: none;
+  box-shadow: none;
+  background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
 }
 
 .mobileCtaButton:active {
-  transform: none !important;
-  background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%) !important;
+  transform: none;
+  background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
 }
 
 @media (max-width: 1023px) {
