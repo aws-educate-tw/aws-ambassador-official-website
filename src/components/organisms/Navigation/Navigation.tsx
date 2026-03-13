@@ -1,8 +1,10 @@
 'use client';
 
 import { Button } from '@/components/atoms/Button/Button';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import styles from './Navigation.module.css';
 
 export interface NavItem {
@@ -28,12 +30,23 @@ export function Navigation({
   ctaHref,
   activeItemHref,
 }: Readonly<NavigationProps>) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const highlightedHref = activeItemHref ?? items[1]?.href;
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <nav className={styles.nav} role="navigation" aria-label="主要導航">
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
+        <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
           <Image
             src="/images/Nav_mascot.svg"
             alt="AWS Educate TW mascot"
@@ -61,6 +74,65 @@ export function Navigation({
         </div>
 
         <Button href={ctaHref} size="md" className={styles.ctaButton}>
+          {ctaLabel}
+        </Button>
+
+        <button
+          type="button"
+          className={styles.mobileMenuToggle}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation-menu"
+          aria-label={isMobileMenuOpen ? '關閉選單' : '開啟選單'}
+          onClick={() => setIsMobileMenuOpen((open) => !open)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      <button
+        type="button"
+        className={`${styles.mobileMenuOverlay} ${isMobileMenuOpen ? styles.mobileMenuOverlayOpen : ''}`}
+        onClick={closeMobileMenu}
+        aria-hidden={!isMobileMenuOpen}
+        aria-label="關閉選單遮罩"
+        tabIndex={isMobileMenuOpen ? 0 : -1}
+      />
+
+      <div
+        id="mobile-navigation-menu"
+        className={`${styles.mobileMenuPanel} ${isMobileMenuOpen ? styles.mobileMenuPanelOpen : ''}`}
+        aria-hidden={!isMobileMenuOpen}
+      >
+        <div className={styles.mobileMenuHeader}>
+          <span className={styles.mobileMenuTitle}>導覽選單</span>
+          <button
+            type="button"
+            className={styles.mobileMenuClose}
+            aria-label="關閉選單"
+            onClick={closeMobileMenu}
+          >
+            <X size={22} />
+          </button>
+        </div>
+
+        <div className={styles.mobileMenuList}>
+          {items.map((item) => (
+            <Link
+              key={`mobile-${item.href}`}
+              href={item.href}
+              className={`${styles.mobileMenuItem} ${item.href === highlightedHref ? styles.mobileMenuItemActive : ''}`}
+              aria-current={item.href === highlightedHref ? 'page' : undefined}
+              onClick={closeMobileMenu}
+            >
+              <span>{item.label}</span>
+              {item.href === highlightedHref ? (
+                <span className={styles.mobileMenuBadge}>目前</span>
+              ) : null}
+            </Link>
+          ))}
+        </div>
+
+        <Button href={ctaHref} size="md" className={styles.mobileCtaButton}>
           {ctaLabel}
         </Button>
       </div>
