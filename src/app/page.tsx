@@ -157,7 +157,7 @@ export default function HomePage() {
           viewport={{ once: true }}
           className={styles.pillarsGrid}
         >
-          {homeData.pillars.map((pillar, index) => (
+          {homeData.pillars.map((pillar) => (
             <motion.div key={`pillar-${pillar.title}`} variants={fadeInUp}>
               <PillarCard {...pillar} />
             </motion.div>

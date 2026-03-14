@@ -23,7 +23,13 @@ export function TestimonialCard({
       <div className={styles.header}>
         <div className={styles.avatar} aria-label={`${name} 的頭像`}>
           {avatar ? (
-            <Image src={avatar} alt="" fill sizes="64px" className={styles.avatarImage} />
+            <Image
+              src={avatar}
+              alt={`${name} profile picture`}
+              fill
+              sizes="64px"
+              className={styles.avatarImage}
+            />
           ) : (
             <div className={styles.avatarPlaceholder} />
           )}
@@ -37,7 +43,7 @@ export function TestimonialCard({
         </div>
       </div>
 
-      {rating && (
+      {rating !== undefined && (
         <div className={styles.rating} aria-label={`評分: ${rating} 顆星`}>
           {Array.from({ length: 5 }, (_, i) => (
             <span key={i} className={i < rating ? styles.starFilled : styles.starEmpty}>
@@ -48,7 +54,7 @@ export function TestimonialCard({
       )}
 
       <blockquote className={styles.quote}>
-        <p>"{quote}"</p>
+        <p>&quot;{quote}&quot;</p>
       </blockquote>
     </article>
   );

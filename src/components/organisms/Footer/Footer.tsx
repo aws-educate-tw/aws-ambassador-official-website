@@ -13,6 +13,9 @@ export interface FooterProps {
 }
 
 export function Footer({ copyright, links }: FooterProps) {
+  // 取得當前年份
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.container}>
@@ -127,7 +130,7 @@ export function Footer({ copyright, links }: FooterProps) {
         {/* 底部法律區 */}
         <div className={styles.bottomSection}>
           <p className={styles.copyright}>
-            © 2026 AWS Educate TW Campus Ambassador. All rights reserved.
+            {copyright || `© ${currentYear} AWS Educate TW Campus Ambassador. All rights reserved.`}
           </p>
           <nav className={styles.legalLinks} aria-label="法律政策">
             {links && links.length > 0 ? (
