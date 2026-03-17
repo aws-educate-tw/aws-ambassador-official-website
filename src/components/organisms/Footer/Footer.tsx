@@ -5,10 +5,11 @@ import styles from './Footer.module.css';
 
 export interface FooterProps {
   copyright?: string;
+  brandTitle?: string;
+  brandSubtext?: string;
 }
 
-export function Footer({ copyright }: Readonly<FooterProps>) {
-  // 取得當前年份
+export function Footer({ copyright, brandTitle, brandSubtext }: Readonly<FooterProps>) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -22,10 +23,8 @@ export function Footer({ copyright }: Readonly<FooterProps>) {
         <div className={styles.gridContainer}>
           {/* 品牌區 */}
           <div>
-            <h3 className={styles.brandTitle}>AWS Educate TW</h3>
-            <p className={styles.brandSubtext}>賦能創新 · 連結未來</p>
-            <p className={styles.brandSubtext}>AWS Educate</p>
-            <p className={styles.brandDesc}>TW Cloud Ambassador</p>
+            <h3 className={styles.brandTitle}>{brandTitle || 'AWS Educate TW'}</h3>
+            <p className={styles.brandSubtext}>{brandSubtext || '賦能創新 · 連結未來'}</p>
           </div>
 
           {/* 快速連結 */}
@@ -95,7 +94,7 @@ export function Footer({ copyright }: Readonly<FooterProps>) {
         {/* 底部法律區 */}
         <div className={styles.bottomSection}>
           <p className={styles.copyright}>
-            {copyright || `© ${currentYear} AWS Educate TW Campus Ambassador. All rights reserved.`}
+            © {currentYear} {copyright || 'AWS Educate TW Campus Ambassador. All rights reserved.'}
           </p>
         </div>
       </div>

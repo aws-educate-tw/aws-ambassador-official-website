@@ -1,3 +1,5 @@
+import { Footer } from '@/components/organisms/Footer/Footer';
+import layoutData from '@/content/layout.json';
 import '@/styles/animations.css';
 import '@/styles/globals.css';
 import type { Metadata, Viewport } from 'next';
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="zh-TW" suppressHydrationWarning>
       <head>
@@ -49,6 +51,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-white text-neutral-900">
         <div className="flex min-h-screen flex-col">
           <main className="flex-1">{children}</main>
+          <Footer {...layoutData.footer} />
         </div>
       </body>
     </html>

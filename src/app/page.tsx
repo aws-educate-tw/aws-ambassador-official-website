@@ -2,7 +2,6 @@
 
 import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
-import { Footer } from '@/components/organisms/Footer/Footer';
 import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
 import { Navigation } from '@/components/organisms/Navigation/Navigation';
 import { TestimonialsCarousel } from '@/components/organisms/TestimonialsCarousel/TestimonialsCarousel';
@@ -29,13 +28,10 @@ const container = {
   },
 };
 
-/* 首頁 */
-
-// Header
 const navigationData = {
   logo: { text: 'AWS', subtitle: 'Educate Ambassador' },
   items: [
-    { label: '首頁', href: '#' },
+    { label: '首頁', href: '/' },
     { label: '大使計畫總覽', href: '#program' },
     { label: '活動中心', href: '#events' },
     { label: '校友專區', href: '#alumni' },
@@ -43,16 +39,6 @@ const navigationData = {
   ],
   ctaLabel: '立即申請',
   ctaHref: '/apply',
-};
-
-// Footer
-const footerData = {
-  copyright: '© 2026 AWS Educate TW Cloud Ambassador. All rights reserved.',
-  links: [
-    { label: '隱私政策', href: '/privacy' },
-    { label: '使用條款', href: '/terms' },
-    { label: '聯絡我們', href: '/contact' },
-  ],
 };
 
 export default function HomePage() {
@@ -217,9 +203,6 @@ export default function HomePage() {
         primaryCTA={homeData.cta_section.primary_cta}
         deadline={homeData.cta_section.deadline}
       />
-
-      {/* 頁尾 */}
-      <Footer {...footerData} />
     </div>
   );
 }
