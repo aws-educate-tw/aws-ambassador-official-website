@@ -9,6 +9,10 @@ export interface HeroSectionProps {
   title: string;
   subtitle: string;
   description: string;
+  statistics: Array<{
+    number: string;
+    label: string;
+  }>;
   primaryCTA: {
     label: string;
     href: string;
@@ -20,12 +24,7 @@ export interface HeroSectionProps {
   backgroundImage?: string;
 }
 
-/**
- * 數字跳動動畫組件
- * @param {number} end - 目標數字
- * @param {number} duration - 動畫持續時間 (ms)
- */
-const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
+const CountUp = ({ end, duration = 1800 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
   const countRef = useRef<HTMLSpanElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +55,6 @@ const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) =
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
 
-      // 使用 easeOutQuad 效果讓數字增加更自然
       const easeOutQuad = (t: number) => t * (2 - t);
       const currentCount = Math.floor(easeOutQuad(percentage) * end);
 
@@ -77,35 +75,33 @@ export function HeroSection({
   title,
   subtitle,
   description,
+  statistics,
   primaryCTA,
   secondaryCTA,
 }: HeroSectionProps) {
+  const stats = statistics.slice(0, 3).map((stat) => ({
+    value: Number.parseInt(stat.number, 10) || 0,
+    label: stat.label,
+  }));
+
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
-        {/* 左側內容區 */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className={styles.contentLeft}
         >
-          {/* 招募中徽章 */}
           <div className={styles.badge}>
             <span>🪄</span>
             <span>第八屆大使招募中</span>
           </div>
 
-          {/* 主標題 */}
           <h1 className={styles.title}>{title}</h1>
-
-          {/* 副標題 */}
           <h2 className={styles.tagline}>{subtitle}</h2>
-
-          {/* 描述 */}
           <p className={styles.description}>{description}</p>
 
-          {/* 按鈕組 */}
           <div className={styles.actions}>
             <button className={styles.primaryBtn}>
               {primaryCTA.label}
@@ -115,7 +111,6 @@ export function HeroSection({
           </div>
         </motion.div>
 
-        {/* 右側視覺區 */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -129,7 +124,6 @@ export function HeroSection({
         </motion.div>
       </div>
 
-      {/* 統計區 - 帶數字跳動 */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -138,30 +132,14 @@ export function HeroSection({
         className={styles.statsSection}
       >
         <div className={styles.statsGrid}>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={168} />
+          {stats.map((stat) => (
+            <div key={stat.label} className={styles.statCard}>
+              <div className={styles.statNumber} aria-label={`統計數字: ${stat.value}+`}>
+                <CountUp end={stat.value} />+
+              </div>
+              <div className={styles.statLabel}>{stat.label}</div>
             </div>
-            <div className={styles.statLabel}>累積大使</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={350} />
-            </div>
-            <div className={styles.statLabel}>年度活動</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={450} />
-            </div>
-            <div className={styles.statLabel}>AWS 認證</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={95} />%
-            </div>
-            <div className={styles.statLabel}>就業率</div>
-          </div>
+          ))}
         </div>
       </motion.div>
     </section>

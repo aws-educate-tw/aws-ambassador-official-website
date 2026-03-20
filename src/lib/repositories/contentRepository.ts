@@ -12,7 +12,6 @@ export interface HomePageData {
   statistics: Array<{
     number: string;
     label: string;
-    description: string;
   }>;
   features: Array<{
     id: string;

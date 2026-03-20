@@ -62,7 +62,7 @@ export default function HomePage() {
       <Navigation {...navigationData} />
 
       {/* HeroSection */}
-      <HeroSection {...homeData.hero} />
+      <HeroSection {...homeData.hero} statistics={homeData.statistics} />
 
       {/* 功能區 - 探索大使計畫 */}
       <section className={styles.programExploreSection}>
