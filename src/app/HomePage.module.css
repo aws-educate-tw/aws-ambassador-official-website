@@ -224,52 +224,55 @@
   }
 }
 
-.pillarsGrid {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
-  gap: var(--principle-card-gap);
+@keyframes principleMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - (var(--principle-card-gap) / 2)));
+  }
+}
+
+.pillarsMarquee {
   max-width: 1280px;
   margin: 0 auto;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: var(--space-4) var(--space-6) var(--space-6);
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
+  overflow: hidden;
   mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 
-.pillarsGrid > * {
-  scroll-snap-align: start;
+.pillarsTrack {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  gap: var(--principle-card-gap);
+  animation: principleMarquee 80s linear infinite;
+  will-change: transform;
 }
 
-.pillarsGrid:hover {
-  scrollbar-color: var(--color-primary-500) transparent;
+.pillarsMarquee:hover .pillarsTrack {
+  animation-play-state: paused;
 }
 
-.pillarsGrid::-webkit-scrollbar {
-  height: 8px;
-}
-
-.pillarsGrid::-webkit-scrollbar-thumb {
-  background: var(--principle-scrollbar-thumb);
-  border-radius: 999px;
-}
-
-@media (min-width: 1024px) {
-  .pillarsGrid {
-    padding-left: var(--space-2);
-    padding-right: var(--space-2);
-  }
+.pillarsItem {
+  flex-shrink: 0;
 }
 
 @media (max-width: 640px) {
-  .pillarsGrid {
-    gap: var(--space-4);
+  .pillarsMarquee {
     padding: var(--space-3) var(--space-3) var(--space-5);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .pillarsTrack {
+    gap: var(--space-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillarsTrack {
+    animation: none;
   }
 }
 

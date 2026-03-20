@@ -155,6 +155,8 @@ const footerData = {
 };
 
 export default function HomePage() {
+  const marqueePrinciples = [...leadershipPrinciples, ...leadershipPrinciples];
+
   return (
     <div className={styles.page}>
       {/* Navigation */}
@@ -247,28 +249,24 @@ export default function HomePage() {
           <h2 id="pillars-heading" className={styles.principlesTitle}>
             Amazon Leadership Principles
           </h2>
-          <p className={styles.principlesSubtitle}>
-            以亞馬遜領導力準則為核心，培養未來雲端領導者
-          </p>
+          <p className={styles.principlesSubtitle}>以亞馬遜領導力準則為核心，培養未來雲端領導者</p>
         </motion.div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className={styles.pillarsGrid}
-        >
-          {leadershipPrinciples.map((principle, index) => (
-            <motion.div key={`pillar-${principle.title}`} variants={fadeInUp}>
-              <PillarCard
-                title={principle.title}
-                subtitle={principle.subtitle}
-                description={principle.description}
-                imageIndex={index}
-              />
-            </motion.div>
-          ))}
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+          <div className={styles.pillarsMarquee}>
+            <div className={styles.pillarsTrack}>
+              {marqueePrinciples.map((principle, index) => (
+                <div key={`pillar-${principle.title}-${index}`} className={styles.pillarsItem}>
+                  <PillarCard
+                    title={principle.title}
+                    subtitle={principle.subtitle}
+                    description={principle.description}
+                    imageIndex={index}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </section>
 
