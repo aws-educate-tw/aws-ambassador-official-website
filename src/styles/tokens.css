@@ -142,6 +142,19 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
+
+  /* ===== Principles Section ===== */
+  --principle-card-width: 20rem; /* 320px */
+  --principle-card-min-height: 19.5rem; /* 312px */
+  --principle-card-gap: 1.5rem; /* 24px */
+  --principle-card-hover-bg: #fffaf0;
+  --principle-icon-shell-size: 8rem; /* 128px */
+  --principle-icon-size: 4rem; /* 64px */
+  --principle-icon-bg-blue: #dbeafe;
+  --principle-icon-bg-sand: #fef3c7;
+  --principle-icon-bg-rose: #ffe4e6;
+  --principle-icon-bg-mint: #d1fae5;
+  --principle-scrollbar-thumb: rgba(255, 153, 0, 0.45);
 }
 
 /* Reduced Motion Support */

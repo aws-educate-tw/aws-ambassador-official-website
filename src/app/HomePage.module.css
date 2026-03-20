@@ -209,39 +209,97 @@
 
 /* ===== Pillars Section ===== */
 .pillarsSection {
-  padding: var(--space-20) var(--space-4);
+  padding: var(--space-10) var(--space-10);
 }
 
 @media (min-width: 640px) {
   .pillarsSection {
-    padding: var(--space-20) var(--space-6);
+    padding: var(--space-10) var(--space-10);
   }
 }
 
 @media (min-width: 1024px) {
   .pillarsSection {
-    padding: var(--space-20) var(--space-8);
+    padding: var(--space-10) var(--space-10);
   }
 }
 
 .pillarsGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-8);
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: var(--principle-card-gap);
   max-width: 1280px;
   margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: var(--space-4) var(--space-6) var(--space-6);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 
-@media (min-width: 640px) {
-  .pillarsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.pillarsGrid > * {
+  scroll-snap-align: start;
+}
+
+.pillarsGrid:hover {
+  scrollbar-color: var(--color-primary-500) transparent;
+}
+
+.pillarsGrid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.pillarsGrid::-webkit-scrollbar-thumb {
+  background: var(--principle-scrollbar-thumb);
+  border-radius: 999px;
 }
 
 @media (min-width: 1024px) {
   .pillarsGrid {
-    grid-template-columns: repeat(4, 1fr);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
   }
+}
+
+@media (max-width: 640px) {
+  .pillarsGrid {
+    gap: var(--space-4);
+    padding: var(--space-3) var(--space-3) var(--space-5);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+}
+
+.principlesHeader {
+  max-width: 1280px;
+  margin: 0 auto var(--space-5);
+  text-align: center;
+}
+
+.principlesEyebrow {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-500);
+  line-height: 1;
+}
+
+.principlesTitle {
+  margin: var(--space-3) 0 0;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-surface-600);
+  line-height: 1;
+}
+
+.principlesSubtitle {
+  margin: var(--space-3) 0 0;
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-600);
+  line-height: 1.25;
 }
 
 /* ===== Benefits Section ===== */
