@@ -32,6 +32,7 @@ export function Navigation({
 }: Readonly<NavigationProps>) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const highlightedHref = activeItemHref ?? items[1]?.href;
+  const isExternalCta = /^https?:\/\//.test(ctaHref);
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
@@ -73,7 +74,13 @@ export function Navigation({
           ))}
         </div>
 
-        <Button href={ctaHref} size="md" className={styles.ctaButton}>
+        <Button
+          href={ctaHref}
+          size="md"
+          className={styles.ctaButton}
+          target={isExternalCta ? '_blank' : undefined}
+          rel={isExternalCta ? 'noopener noreferrer' : undefined}
+        >
           {ctaLabel}
         </Button>
 
@@ -132,7 +139,13 @@ export function Navigation({
           ))}
         </div>
 
-        <Button href={ctaHref} size="md" className={styles.mobileCtaButton}>
+        <Button
+          href={ctaHref}
+          size="md"
+          className={styles.mobileCtaButton}
+          target={isExternalCta ? '_blank' : undefined}
+          rel={isExternalCta ? 'noopener noreferrer' : undefined}
+        >
           {ctaLabel}
         </Button>
       </div>
