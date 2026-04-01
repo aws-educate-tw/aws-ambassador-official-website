@@ -35,14 +35,14 @@ const container = {
 const navigationData = {
   logo: { text: 'AWS Educate TW' },
   items: [
-    { label: '首頁', href: '#' },
-    { label: '大使計畫總覽', href: '#program' },
-    { label: '活動中心', href: '#events' },
-    { label: '校友專區', href: '#alumni' },
+    { label: '首頁', href: '/' },
+    { label: '大使計畫總覽', href: '/program' },
+    { label: '活動中心', href: '/events' },
+    { label: '校友專區', href: '/alumni' },
   ],
   ctaLabel: '追蹤粉專',
   ctaHref: 'https://www.instagram.com/awseducatestdambtw/',
-  activeItemHref: '#program',
+  activeItemHref: '/',
 };
 
 // Footer
