@@ -37,38 +37,18 @@
   margin: 0;
 }
 
-/* 3-column + 2-column bottom row */
 .grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
-}
-
-@media (min-width: 640px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* Last 2 items: center them in 2 columns */
-  .card:nth-child(4) {
-    grid-column: 1 / 2;
-  }
-
-  .card:nth-child(5) {
-    grid-column: 2 / 3;
-  }
 }
 
 .card {
   background-color: #f9fafb;
   border-radius: 16px;
   padding: 16px;
+  flex: 1 1 calc(33.333% - 11px);
+  min-width: 200px;
 }
 
 .iconBox {

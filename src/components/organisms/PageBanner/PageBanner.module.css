@@ -104,32 +104,30 @@
   opacity: 0.9;
 }
 
-/* ===== 右側圖片 ===== */
-.contentRight {
-  display: none;
+/* ===== 下方三張照片列 ===== */
+.photoRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 32px 60px;
+  flex-wrap: wrap;
 }
 
-@media (min-width: 1024px) {
-  .contentRight {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    align-items: flex-start;
-    padding-top: 80px;
-    flex-shrink: 0;
+@media (min-width: 768px) {
+  .photoRow {
+    padding: 0 80px 80px;
   }
 }
 
-.imageCard {
-  position: relative;
+.photoCard {
   width: 318px;
   height: 178px;
   border-radius: 24px;
-  overflow: hidden;
-  background-color: #ebe1d5;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.image {
-  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background-color: #EBE1D5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
