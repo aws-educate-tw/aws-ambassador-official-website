@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle } from 'lucide-react';
-import Image from 'next/image';
+import { CheckCircle, Rocket, ChevronsLeftRight, Users } from 'lucide-react';
 import styles from './SideProjectSection.module.css';
 
 const tpetSkills = ['參與敏捷開發專案', '實作 AWS 雲端原生網頁', '業界大使校友指導和內訓'];
@@ -37,13 +36,7 @@ export function SideProjectSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <div className={styles.cardIconBox}>
-            <Image
-              src="/images/icons/Operator.svg"
-              alt="Dev Team"
-              width={20}
-              height={20}
-              className={styles.cardIcon}
-            />
+            <ChevronsLeftRight size={20} className={styles.cardIcon} />
           </div>
           <div>
             <h3 className={styles.devTeamTitle}>Dev Team</h3>
@@ -104,13 +97,7 @@ export function SideProjectSection() {
         >
           <div className={styles.darkCard}>
             <div className={styles.cardIconBox}>
-              <Image
-                src="/images/icons/Rocket.svg"
-                alt="DGR Program"
-                width={20}
-                height={20}
-                className={styles.cardIcon}
-              />
+              <Rocket size={20} className={styles.cardIcon} />
             </div>
             <div>
               <h3 className={styles.darkCardTitle}>DGR Program</h3>
@@ -122,13 +109,7 @@ export function SideProjectSection() {
 
           <div className={styles.darkCard}>
             <div className={styles.cardIconBox}>
-              <Image
-                src="/images/icons/Person.svg"
-                alt="Alumni Stories Hub"
-                width={20}
-                height={20}
-                className={styles.cardIcon}
-              />
+              <Users size={20} className={styles.cardIcon} />
             </div>
             <div>
               <h3 className={styles.darkCardTitle}>Alumni Stories Hub</h3>

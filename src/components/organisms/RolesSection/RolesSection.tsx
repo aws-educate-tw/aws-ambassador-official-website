@@ -1,13 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { Calendar, Lightbulb, ChevronsLeftRight } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import styles from './RolesSection.module.css';
 
-const roles = [
+const roles: { title: string; Icon: LucideIcon; description: string; bonusPoints: string[] }[] = [
   {
     title: 'Event Planning',
-    icon: '/images/icons/Date.svg',
+    Icon: Calendar,
     description:
       '統籌規劃各類型活動，從工作坊、黑客松到職涯講座，負責活動企劃、場地協調、流程設計，讓每場活動都能順利舉辦並帶給參與者最佳體驗。',
     bonusPoints: [
@@ -18,7 +19,7 @@ const roles = [
   },
   {
     title: 'Technical Support',
-    icon: '/images/icons/Operator.svg',
+    Icon: ChevronsLeftRight,
     description:
       '舉辦技術工作坊，分享 AWS 雲端服務實作經驗，協助同學解決技術問題，帶領大家從零開始學習雲端技術，建立扎實的技術基礎。',
     bonusPoints: [
@@ -30,7 +31,7 @@ const roles = [
   },
   {
     title: 'Marketing',
-    icon: '/images/icons/Lightbulb.svg',
+    Icon: Lightbulb,
     description:
       '負責行銷宣傳各類活動，經營社群媒體，製作吸睛的宣傳素材，讓更多人認識 AWS 與大使計畫，擴大雲端技術在校園的影響力。',
     bonusPoints: [
@@ -76,7 +77,7 @@ export function RolesSection() {
           {roles.map((role) => (
             <motion.div key={role.title} className={styles.card} variants={cardVariant}>
               <div className={styles.iconBox}>
-                <Image src={role.icon} alt={role.title} width={24} height={24} className={styles.icon} />
+                <role.Icon size={24} className={styles.icon} />
               </div>
               <h3 className={styles.roleTitle}>{role.title}</h3>
               <p className={styles.roleDesc}>{role.description}</p>

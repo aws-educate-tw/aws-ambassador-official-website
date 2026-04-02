@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { Rocket } from 'lucide-react';
 import styles from './QualificationsSection.module.css';
 
 const allQualifications = [
@@ -54,7 +54,7 @@ export function QualificationsSection() {
         >
           {allQualifications.slice(1).map((q, index) => (
             <div key={index} className={styles.card}>
-              <Image src="/images/icons/Rocket.svg" alt="" width={18} height={18} className={styles.icon} />
+              <Rocket size={18} className={styles.icon} />
               <span>{q.text}</span>
             </div>
           ))}

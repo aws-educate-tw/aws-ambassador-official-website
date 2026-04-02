@@ -59,7 +59,7 @@
 }
 
 .cardIcon {
-  filter: brightness(0) invert(1);
+  color: #ffffff;
 }
 
 .devTeamTitle {

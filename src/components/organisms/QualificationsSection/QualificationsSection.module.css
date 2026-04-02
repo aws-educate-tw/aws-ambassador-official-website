@@ -69,5 +69,5 @@
 /* icon 使用 --color-primary (#ff9900) */
 .icon {
   flex-shrink: 0;
-  filter: invert(63%) sepia(94%) saturate(1000%) hue-rotate(1deg) brightness(103%) contrast(101%);
+  color: var(--color-primary, #ff9900);
 }
