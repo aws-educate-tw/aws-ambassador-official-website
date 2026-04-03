@@ -7,8 +7,18 @@ import { Navigation } from '@/components/organisms/Navigation/Navigation';
 import { TestimonialsCarousel } from '@/components/organisms/TestimonialsCarousel/TestimonialsCarousel';
 import homeData from '@/content/home.json';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, GraduationCap, Trophy, Users } from 'lucide-react';
-import Image from 'next/image';
+import {
+  ArrowRight,
+  Briefcase,
+  Calendar,
+  GraduationCap,
+  Heart,
+  Rocket,
+  Sparkles,
+  TrendingUp,
+  Trophy,
+  Users,
+} from 'lucide-react';
 import React from 'react';
 import styles from './HomePage.module.css';
 
@@ -28,6 +38,18 @@ const container = {
   },
 };
 
+const benefitIconMap = {
+  rocket: Rocket,
+  users: Users,
+  briefcase: Briefcase,
+  sparkles: Sparkles,
+  trendingUp: TrendingUp,
+  heart: Heart,
+} as const;
+
+/* 首頁 */
+
+// Header
 const navigationData = {
   logo: { text: 'AWS', subtitle: 'Educate Ambassador' },
   items: [
@@ -163,7 +185,6 @@ export default function HomePage() {
             <h2 id="benefits-heading" className={styles.sectionTitle}>
               成為大使的六大優勢
             </h2>
-            <p className={styles.sectionSubtitle}>全方位支持你的雲端職涯發展</p>
           </motion.div>
 
           <motion.div
@@ -173,18 +194,23 @@ export default function HomePage() {
             viewport={{ once: true }}
             className={styles.benefitsGrid}
           >
-            {homeData.benefits.map((benefit, index) => (
-              <motion.div key={`benefit-${index}-${benefit.text}`} variants={fadeInUp}>
-                <div
-                  className={`${styles.benefitCard} ${benefit.highlight ? styles.highlight : ''}`}
-                >
-                  <div className={styles.benefitIcon}>
-                    <Image src={benefit.icon} alt={benefit.text} width={24} height={24} />
+            {homeData.benefits.map((benefit, index) => {
+              const BenefitIcon =
+                benefitIconMap[benefit.icon as keyof typeof benefitIconMap] ?? Rocket;
+
+              return (
+                <motion.div key={`benefit-${index}-${benefit.text}`} variants={fadeInUp}>
+                  <div
+                    className={`${styles.benefitCard} ${benefit.highlight ? styles.highlight : ''}`}
+                  >
+                    <div className={styles.benefitIcon}>
+                      <BenefitIcon size={24} strokeWidth={2.25} aria-hidden="true" />
+                    </div>
+                    <span className={styles.benefitText}>{benefit.text}</span>
                   </div>
-                  <span className={styles.benefitText}>{benefit.text}</span>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </section>
       )}
