@@ -7,7 +7,6 @@ export interface HomePageData {
     description: string;
     primaryCTA: { label: string; href: string };
     secondaryCTA: { label: string; href: string };
-    backgroundImage?: string;
   };
   statistics: Array<{
     number: string;

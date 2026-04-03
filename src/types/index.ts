@@ -109,7 +109,6 @@ export interface HomePage {
       label: string;
       href: string;
     };
-    backgroundImage: string;
   };
   statistics: Statistic[];
   features: FeatureCard[];
