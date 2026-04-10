@@ -1,17 +1,18 @@
+/* ===== Footer ===== */
 .footer {
-  background-color: #232f3e;
-  color: #9ca3af;
+  color: #232f3e;
+  border-top: 1px solid #e5e7eb;
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 60px 32px;
 }
 
 @media (min-width: 768px) {
   .container {
-    padding: 80px;
+    padding: 60px;
   }
 }
 
@@ -19,8 +20,8 @@
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 64px;
-  margin-bottom: 80px;
+  gap: 48px;
+  margin-bottom: 60px;
 }
 
 @media (min-width: 768px) {
@@ -30,39 +31,50 @@
 }
 
 @media (min-width: 1024px) {
+  /* 三欄佈局 */
   .gridContainer {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1.2fr 1fr 1.5fr;
   }
 }
 
 /* ===== 品牌區 ===== */
-.brandTitle {
-  font-size: 24px;
-  font-weight: 900;
-  color: white;
-  margin: 0 0 24px 0;
+/* "Contact US" 大標題 */
+.mainTitle {
+  font-size: 64px;
+  font-weight: bolder;
+  color: #232f3e;
+  margin: 0 0 48px 0;
   letter-spacing: -0.025em;
 }
 
+.brandTitle {
+  font-size: 24px;
+  font-weight: bolder;
+  color: #232f3e;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+}
+
 .brandSubtext {
-  font-size: 12px;
-  color: #9ca3af;
-  margin: 0 0 4px 0;
-  line-height: 1.5;
+  font-size: 14px;
+  color: #232f3e;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  font-weight: 500;
 }
 
 .brandDesc {
-  font-size: 12px;
-  color: #9ca3af;
+  font-size: 14px;
+  color: #4b5563;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* ===== 區段標題 ===== */
 .sectionTitle {
-  font-size: 16px;
-  font-weight: 500;
-  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  color: #232f3e;
   margin: 0 0 24px 0;
 }
 
@@ -73,114 +85,67 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .footerLink {
-  font-size: 14px;
-  color: #9ca3af;
+  font-size: 15px;
+  color: #232f3e;
   text-decoration: none;
   transition: color 300ms ease;
   cursor: pointer;
 }
 
 .footerLink:hover {
-  color: white;
-}
-
-/* ===== 聯絡我們 ===== */
-.contactInfo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 32px;
-  transition: color 300ms ease;
-  cursor: pointer;
-}
-
-.contactInfo:hover {
-  color: white;
-}
-
-.contactInfo:hover .contactIcon {
-  color: white;
-}
-
-.contactIcon {
-  color: #9ca3af;
-  transition: color 300ms ease;
-  flex-shrink: 0;
-}
-
-.socialLinks {
-  display: flex;
-  gap: 24px;
-}
-
-.socialLink {
-  color: #9ca3af;
-  text-decoration: none;
-  transition: color 300ms ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.socialLink:hover {
   color: #ff9900;
 }
 
-.socialIcon {
-  width: 22px;
-  height: 22px;
-  display: block;
+/* ===== 聯絡我們 ===== */
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin-bottom: 16px;
+  text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-.socialLink:hover .socialIcon {
-  filter: brightness(0) saturate(100%) invert(64%) sepia(73%) saturate(1887%) hue-rotate(358deg)
-    brightness(101%) contrast(104%);
+.contactLabel {
+  color: #232f3e;
+  transition: color 300ms ease;
 }
 
-/* ===== 底部法律區 ===== */
-.bottomSection {
-  padding-top: 40px;
-  border-top: 1px solid rgba(107, 114, 128, 0.3);
+.contactLink:hover .contactLabel {
+  color: var(--color-primary-hover);
+}
+
+.contactIcon {
+  color: #232f3e;
+  flex-shrink: 0;
+}
+
+/* 社交連結區域 */
+.socialLinks {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
 }
 
-@media (min-width: 768px) {
-  .bottomSection {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+/* ===== 底部版權區 ===== */
+.bottomSection {
+  padding-top: 12px;
+  border-top: 2px solid #232f3e;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .copyright {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #9ca3af;
-  margin: 0;
-}
-
-.legalLinks {
-  display: flex;
-  gap: 40px;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.legalLink {
-  color: #6b7280;
-  text-decoration: none;
-  transition: color 300ms ease;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #232f3e;
   font-weight: 500;
-}
-
-.legalLink:hover {
-  color: white;
+  margin: 0;
 }

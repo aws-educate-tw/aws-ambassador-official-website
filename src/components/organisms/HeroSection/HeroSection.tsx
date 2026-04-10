@@ -1,13 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import styles from './HeroSection.module.css';
 
 export interface HeroSectionProps {
   title: string;
   subtitle: string;
+  tagline?: string;
   description: string;
   statistics: Array<{
     number: string;
@@ -21,10 +23,13 @@ export interface HeroSectionProps {
     label: string;
     href: string;
   };
-  backgroundImage?: string;
+  tertiaryCTA?: {
+    label: string;
+    href: string;
+  };
 }
 
-const CountUp = ({ end, duration = 1800 }: { end: number; duration?: number }) => {
+const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
   const countRef = useRef<HTMLSpanElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -47,14 +52,19 @@ const CountUp = ({ end, duration = 1800 }: { end: number; duration?: number }) =
   }, []);
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible) {
+      return;
+    }
 
     let startTime: number | null = null;
+
     const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
+      if (!startTime) {
+        startTime = timestamp;
+      }
+
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
-
       const easeOutQuad = (t: number) => t * (2 - t);
       const currentCount = Math.floor(easeOutQuad(percentage) * end);
 
@@ -71,57 +81,53 @@ const CountUp = ({ end, duration = 1800 }: { end: number; duration?: number }) =
   return <span ref={countRef}>{count}</span>;
 };
 
-export function HeroSection({
-  title,
-  subtitle,
-  description,
-  statistics,
-  primaryCTA,
-  secondaryCTA,
-}: HeroSectionProps) {
+export function HeroSection(props: Readonly<HeroSectionProps>) {
+  const {
+    title,
+    subtitle,
+    tagline,
+    description,
+    statistics,
+    primaryCTA,
+    secondaryCTA,
+    tertiaryCTA,
+  } = props;
+
   const stats = statistics.slice(0, 3).map((stat) => ({
     value: Number.parseInt(stat.number, 10) || 0,
     label: stat.label,
   }));
 
+  const ctas = [
+    { ...primaryCTA, variant: 'primary' as const },
+    { ...secondaryCTA, variant: 'dark' as const },
+    ...(tertiaryCTA ? [{ ...tertiaryCTA, variant: 'primary' as const }] : []),
+  ];
+
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className={styles.contentLeft}
-        >
-          <div className={styles.badge}>
-            <span>🪄</span>
-            <span>第八屆大使招募中</span>
-          </div>
-
+        <div className={styles.content}>
           <h1 className={styles.title}>{title}</h1>
-          <h2 className={styles.tagline}>{subtitle}</h2>
+
+          <h2 className={styles.subtitle}>{subtitle}</h2>
+
+          <p className={styles.tagline}>{tagline ?? '賦能 · 創新 · 連結'}</p>
           <p className={styles.description}>{description}</p>
 
           <div className={styles.actions}>
-            <button className={styles.primaryBtn}>
-              {primaryCTA.label}
-              <ArrowRight size={20} />
-            </button>
-            <button className={styles.secondaryBtn}>{secondaryCTA.label}</button>
+            {ctas.map((cta) => (
+              <Link
+                key={`${cta.label}-${cta.href}`}
+                href={cta.href}
+                className={`${styles.ctaButton} ${cta.variant === 'dark' ? styles.ctaDark : styles.ctaPrimary}`}
+              >
+                <span>{cta.label}</span>
+                {cta.variant === 'primary' && <ArrowRight size={12} aria-hidden="true" />}
+              </Link>
+            ))}
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className={styles.contentRight}
-        >
-          <div className={styles.heroImage}>
-            <div className={styles.imageGradient} />
-            <Users size={120} className={styles.imageIcon} />
-          </div>
-        </motion.div>
+        </div>
       </div>
 
       <motion.div

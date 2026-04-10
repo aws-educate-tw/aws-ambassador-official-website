@@ -1,17 +1,21 @@
 {
   "hero": {
-    "title": "AWS Educate TW Campus Ambassador",
-    "subtitle": "賦能 · 創新 · 連結",
+    "title": "AWS Educate TW",
+    "subtitle": "Student Cloud Ambassador",
+    "tagline": "賦能 · 創新 · 連結",
     "description": "加入台灣最活躍的雲端學生社群，與 168+ 位優秀大使一起學習 AWS 技術、舉辦創新活動、連結產業資源，開啟你的科技職涯之路！",
     "primaryCTA": {
-      "label": "立即申請大使",
-      "href": "/apply"
+      "label": "查看大使計畫詳情",
+      "href": "#program"
     },
     "secondaryCTA": {
       "label": "探索活動",
-      "href": "#learn-more"
+      "href": "#events"
     },
-    "backgroundImage": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1280&h=720&fit=crop"
+    "tertiaryCTA": {
+      "label": "立即申請大使",
+      "href": "/apply"
+    }
   },
   "statistics": [
     {
@@ -98,32 +102,32 @@
   "benefits": [
     {
       "text": "免費 AWS 學習資源與認證補助",
-      "icon": "/images/icons/Rocket.svg",
+      "icon": "rocket",
       "highlight": true
     },
     {
       "text": "連結全台頂尖大學的雲端人才",
-      "icon": "/images/icons/Person.svg",
+      "icon": "users",
       "highlight": false
     },
     {
-      "text": "優先獲得 AWS 實習與工作機會",
-      "icon": "/images/icons/Luggage.svg",
+      "text": "獲得 AWS 正職 1:1 交流機會",
+      "icon": "briefcase",
       "highlight": true
     },
     {
-      "text": "參與國際級技術活動與競賽",
-      "icon": "/images/icons/Star.svg",
+      "text": "參與 AWS 證照/技術培訓課程",
+      "icon": "sparkles",
       "highlight": false
     },
     {
       "text": "累積實戰經驗，提升職場競爭力",
-      "icon": "/images/icons/Rise.svg",
+      "icon": "trendingUp",
       "highlight": true
     },
     {
       "text": "加入溫暖的大使家族社群",
-      "icon": "/images/icons/Heart.svg",
+      "icon": "heart",
       "highlight": false
     }
   ],
