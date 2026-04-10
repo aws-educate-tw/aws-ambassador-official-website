@@ -311,18 +311,18 @@
 
 /* ===== Benefits Section ===== */
 .benefitsSection {
-  padding: var(--space-20) var(--space-4);
+  padding: var(--space-10) var(--space-10);
 }
 
 @media (min-width: 640px) {
   .benefitsSection {
-    padding: var(--space-20) var(--space-6);
+    padding: var(--space-10) var(--space-10);
   }
 }
 
 @media (min-width: 1024px) {
   .benefitsSection {
-    padding: var(--space-20) var(--space-8);
+    padding: var(--space-10) var(--space-10);
   }
 }
 
@@ -337,24 +337,25 @@
 @media (min-width: 640px) {
   .benefitsGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
   }
 }
 
 @media (min-width: 1024px) {
   .benefitsGrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .benefitCard {
-  padding: var(--space-8);
+  padding: var(--space-3);
   border-radius: var(--radius-xl);
-  border: 2px solid var(--color-neutral-200);
+  border: 2px solid var(--benefit-border-neutral);
   display: flex;
   align-items: center;
   gap: var(--space-6);
-  background-color: var(--color-bg-primary);
-  transition: all 300ms ease;
+  background-color: var(--benefit-bg-neutral);
+  transition: box-shadow var(--duration-slow) var(--easing-ease-out);
 }
 
 .benefitCard:hover {
@@ -362,8 +363,8 @@
 }
 
 .benefitCard.highlight {
-  border-color: var(--color-primary-400);
-  background-color: var(--color-primary-50);
+  border-color: var(--benefit-border-highlight);
+  background-color: var(--benefit-bg-highlight);
 }
 
 .benefitIcon {
@@ -374,23 +375,26 @@
   justify-content: center;
   border-radius: var(--radius-lg);
   flex-shrink: 0;
-  font-size: var(--font-size-2xl);
 }
 
 .benefitCard.highlight .benefitIcon {
-  background-color: var(--color-primary);
-  color: var(--color-bg-primary);
+  background: linear-gradient(
+    180deg,
+    var(--benefit-icon-highlight-gradient-start) 0%,
+    var(--benefit-icon-highlight-gradient-end) 100%
+  );
+  color: var(--color-text-inverse);
 }
 
 .benefitCard:not(.highlight) .benefitIcon {
-  background-color: var(--color-neutral-100);
-  color: var(--color-text-secondary);
+  background-color: var(--benefit-icon-neutral-bg);
+  color: var(--color-text-inverse);
 }
 
 .benefitText {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
-  color: var(--color-neutral-900);
+  color: var(--benefit-text-color);
   line-height: 1.4;
 }
 

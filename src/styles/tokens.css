@@ -60,6 +60,16 @@
   --color-bg-tertiary: #f0f4f8;
   --color-bg-elevated: #ffffff;
 
+  /* Benefit Section */
+  --benefit-bg-highlight: #fff7ed;
+  --benefit-bg-neutral: #f9fafb;
+  --benefit-border-highlight: rgba(255, 153, 0, 0.3);
+  --benefit-border-neutral: rgba(96, 165, 250, 0.5);
+  --benefit-icon-highlight-gradient-start: #ff9900;
+  --benefit-icon-highlight-gradient-end: #ffb84d;
+  --benefit-icon-neutral-bg: #222f3e;
+  --benefit-text-color: #364153;
+
   /* ===== Spacing ===== */
   --space-0: 0;
   --space-1: 0.25rem; /* 4px */
