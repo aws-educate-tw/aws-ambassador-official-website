@@ -5,14 +5,11 @@ import styles from './Footer.module.css';
 
 export interface FooterProps {
   copyright?: string;
-  links?: Array<{
-    label: string;
-    href: string;
-  }>;
+  brandTitle?: string;
+  brandSubtext?: string;
 }
 
-export function Footer({ copyright }: FooterProps) {
-  // 取得當前年份
+export function Footer({ copyright, brandTitle, brandSubtext }: Readonly<FooterProps>) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -64,35 +61,33 @@ export function Footer({ copyright }: FooterProps) {
             <h4 className={styles.sectionTitle}>聯絡我們</h4>
 
             {/* Email */}
-            <div className={styles.contactInfo}>
+            <a href="mailto:awseducate.cloudambassador@gmail.com" className={styles.contactLink}>
               <Mail size={20} className={styles.contactIcon} />
-              <a href="mailto:awseducate.cloudambassador@gmail.com" className={styles.footerLink}>
-                awseducate.cloudambassador@gmail.com
-              </a>
-            </div>
+              <span className={styles.contactLabel}>awseducate.cloudambassador@gmail.com</span>
+            </a>
 
             {/* 社群媒體列表 */}
             <div className={styles.socialLinks}>
               {/* Instagram */}
               <a
                 href="https://www.instagram.com/awseducatestdambtw/"
-                className={styles.socialLink}
+                className={styles.contactLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Instagram size={20} className={styles.contactIcon} />
-                <span className={styles.footerLink}>@ awseducatestdambtw</span>
+                <span className={styles.contactLabel}>@ awseducatestdambtw</span>
               </a>
 
               {/* Facebook */}
               <a
                 href="https://www.facebook.com/awseducatestudentambassadortaiwan"
-                className={styles.socialLink}
+                className={styles.contactLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Facebook size={20} className={styles.contactIcon} />
-                <span className={styles.footerLink}>@ awseducatestdambtw</span>
+                <span className={styles.contactLabel}>@ awseducatestdambtw</span>
               </a>
             </div>
           </div>
@@ -101,7 +96,7 @@ export function Footer({ copyright }: FooterProps) {
         {/* 底部法律區 */}
         <div className={styles.bottomSection}>
           <p className={styles.copyright}>
-            {copyright || `© ${currentYear} AWS Educate TW Campus Ambassador. All rights reserved.`}
+            © {currentYear} {copyright || 'AWS Educate TW Campus Ambassador. All rights reserved.'}
           </p>
         </div>
       </div>
