@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowUp, Facebook, Instagram, Mail } from 'lucide-react';
+import { Facebook, Instagram, Mail } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export interface FooterProps {
@@ -11,10 +11,6 @@ export interface FooterProps {
 
 export function Footer({ copyright, brandTitle, brandSubtext }: Readonly<FooterProps>) {
   const currentYear = new Date().getFullYear();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <footer className={styles.footer} role="contentinfo">
@@ -100,13 +96,6 @@ export function Footer({ copyright, brandTitle, brandSubtext }: Readonly<FooterP
           <p className={styles.copyright}>
             © {currentYear} {copyright || 'AWS Educate TW Campus Ambassador. All rights reserved.'}
           </p>
-        </div>
-
-        <div className={styles.backToTopWrapper}>
-          <button type="button" className={styles.backToTopButton} onClick={scrollToTop}>
-            <span className={styles.backToTopLabel}>Back To Top</span>
-            <ArrowUp size={20} className={styles.backToTopIcon} aria-hidden="true" />
-          </button>
         </div>
       </div>
     </footer>
