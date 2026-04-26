@@ -4,6 +4,7 @@ import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
 import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
 import { Navigation } from '@/components/organisms/Navigation/Navigation';
+import { ProgramExploreSection } from '@/components/organisms/ProgramSection/ProgramSection';
 import homeData from '@/content/home.json';
 import { motion } from 'framer-motion';
 import { Briefcase, Heart, Rocket, Sparkles, TrendingUp, Users } from 'lucide-react';
@@ -161,44 +162,7 @@ export default function HomePage() {
         <HeroSection {...homeData.hero} />
 
         {/* 功能區 - 探索大使計畫 */}
-        <section className={styles.programExploreSection}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className={styles.sectionHeader}
-          >
-            <h2 id="benefits-heading" className={styles.sectionTitle}>
-              成為大使的六大優勢
-            </h2>
-          </motion.div>
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className={styles.programGrid}
-          >
-            {homeData.benefits.map((benefit, index) => {
-              const BenefitIcon =
-                benefitIconMap[benefit.icon as keyof typeof benefitIconMap] ?? Rocket;
-
-              return (
-                <motion.div key={`benefit-${index}-${benefit.text}`} variants={fadeInUp}>
-                  <div
-                    className={`${styles.benefitCard} ${benefit.highlight ? styles.highlight : ''}`}
-                  >
-                    <div className={styles.benefitIcon}>
-                      <BenefitIcon size={24} strokeWidth={2.25} aria-hidden="true" />
-                    </div>
-                    <span className={styles.benefitText}>{benefit.text}</span>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </section>
+        <ProgramExploreSection />
 
         {/* 四大支柱 */}
         <section className={styles.pillarsSection} aria-labelledby="pillars-heading">
