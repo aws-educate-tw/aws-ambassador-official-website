@@ -1,6 +1,9 @@
 .page {
   min-height: 100vh;
   background-color: var(--color-bg-primary);
+}
+
+.pageContent {
   background-image: url('/images/backgrounds/HomePageBG.png');
   background-size: cover;
   background-position: center;
@@ -209,39 +212,101 @@
 
 /* ===== Pillars Section ===== */
 .pillarsSection {
-  padding: var(--space-20) var(--space-4);
+  padding: var(--space-10) var(--space-10);
 }
 
 @media (min-width: 640px) {
   .pillarsSection {
-    padding: var(--space-20) var(--space-6);
+    padding: var(--space-10) var(--space-10);
   }
 }
 
 @media (min-width: 1024px) {
   .pillarsSection {
-    padding: var(--space-20) var(--space-8);
+    padding: var(--space-10) var(--space-10);
   }
 }
 
-.pillarsGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-8);
+@keyframes principleMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - (var(--principle-card-gap) / 2)));
+  }
+}
+
+.pillarsMarquee {
   max-width: 1280px;
   margin: 0 auto;
+  padding: var(--space-3) 0 var(--space-5);
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 
-@media (min-width: 640px) {
-  .pillarsGrid {
-    grid-template-columns: repeat(2, 1fr);
+.pillarsTrack {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  gap: var(--principle-card-gap);
+  animation: principleMarquee 80s linear infinite;
+  will-change: transform;
+}
+
+.pillarsMarquee:hover .pillarsTrack {
+  animation-play-state: paused;
+}
+
+.pillarsItem {
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .pillarsMarquee {
+    padding: var(--space-3) var(--space-3) var(--space-5);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .pillarsTrack {
+    gap: var(--space-4);
   }
 }
 
-@media (min-width: 1024px) {
-  .pillarsGrid {
-    grid-template-columns: repeat(4, 1fr);
+@media (prefers-reduced-motion: reduce) {
+  .pillarsTrack {
+    animation: none;
   }
+}
+
+.principlesHeader {
+  max-width: 1280px;
+  margin: 0 auto var(--space-5);
+  text-align: center;
+}
+
+.principlesEyebrow {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-500);
+  line-height: 1;
+}
+
+.principlesTitle {
+  margin: var(--space-3) 0 0;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-surface-600);
+  line-height: 1;
+}
+
+.principlesSubtitle {
+  margin: var(--space-3) 0 0;
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-600);
+  line-height: 1.25;
 }
 
 /* ===== Benefits Section ===== */

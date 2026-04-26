@@ -149,3 +149,49 @@
   font-weight: 500;
   margin: 0;
 }
+
+.backToTopWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-5);
+}
+
+.backToTopButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-4) var(--space-4);
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-600);
+  color: var(--color-text-inverse);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-slow) var(--easing-ease-in-out),
+    transform var(--duration-fast) var(--easing-ease-out);
+}
+
+.backToTopButton:hover {
+  background: var(--color-surface-700);
+}
+
+.backToTopButton:active {
+  transform: translateY(1px);
+}
+
+.backToTopButton:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+.backToTopLabel {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25rem;
+  color: var(--color-text-inverse);
+}
+
+.backToTopIcon {
+  color: var(--color-text-inverse);
+  flex-shrink: 0;
+}
