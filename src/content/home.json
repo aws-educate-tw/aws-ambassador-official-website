@@ -45,7 +45,7 @@
       "title": "大使計畫總覽",
       "description": "探索完整的大使成長旅程，從申請到認證，全方位培育雲端人才",
       "icon": "trophy",
-      "tag": "7屆累積 168+ 位大使",
+      "tag": "累積 180+ 位大使",
       "cta": {
         "label": "了解計畫詳情",
         "href": "/program"
@@ -56,9 +56,9 @@
       "title": "活動中心",
       "description": "參與技術工作坊、黑客松、職涯講座，與業界專家面對面交流",
       "icon": "calendar",
-      "tag": "年度 50+ 場活動",
+      "tag": "累積 150+ 場活動",
       "cta": {
-        "label": "查看活動日曆",
+        "label": "查看活動詳情",
         "href": "/events"
       }
     },
@@ -67,7 +67,7 @@
       "title": "校友專區",
       "description": "見證大使們從校園走向職場的成功故事，加入優秀的校友網絡",
       "icon": "graduation-cap",
-      "tag": "快加入我們",
+      "tag": "180+ 位優秀校友",
       "cta": {
         "label": "探索校友故事",
         "href": "/alumni"

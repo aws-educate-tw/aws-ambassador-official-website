@@ -7,24 +7,7 @@ import { Navigation } from '@/components/organisms/Navigation/Navigation';
 import { ProgramExploreSection } from '@/components/organisms/ProgramSection/ProgramSection';
 import homeData from '@/content/home.json';
 import { motion } from 'framer-motion';
-import { Briefcase, Heart, Rocket, Sparkles, TrendingUp, Users } from 'lucide-react';
 import styles from './HomePage.module.css';
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
 
 const leadershipPrinciples = [
   {
@@ -124,15 +107,6 @@ const leadershipPrinciples = [
     icon: 'broad-responsibility',
   },
 ] as const;
-const benefitIconMap = {
-  rocket: Rocket,
-  users: Users,
-  briefcase: Briefcase,
-  sparkles: Sparkles,
-  trendingUp: TrendingUp,
-  heart: Heart,
-} as const;
-
 /* 首頁 */
 
 // Header
