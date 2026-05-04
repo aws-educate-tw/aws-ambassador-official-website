@@ -1,5 +1,6 @@
 'use client';
 
+import BenefitList from '@/components/molecules/BenefitList/BenefitList';
 import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
 import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
@@ -169,6 +170,8 @@ export default function HomePage() {
 
       {/* 功能區 - 探索大使計畫 */}
       <ProgramExploreSection features={homeData.features} />
+
+      <BenefitList benefits={homeData.benefits} />
 
       {/* CTA 區 */}
       <CTASection
