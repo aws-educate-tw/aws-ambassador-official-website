@@ -1,7 +1,7 @@
 'use client';
 
 import { FeatureCard } from '@/components/molecules/FeatureCard/FeatureCard';
-import homeData from '@/content/home.json';
+import type { FeatureCard as FeatureItem } from '@/types';
 import { motion } from 'framer-motion';
 import styles from './ProgramSection.module.css';
 
@@ -21,8 +21,22 @@ const container = {
   },
 };
 
-export function ProgramExploreSection() {
-  const sectionFeatures = homeData.features.slice(0, 3);
+export interface ProgramExploreSectionProps {
+  features: FeatureItem[];
+  title?: string;
+  subtitle?: string;
+}
+
+const PROGRAM_FEATURE_IDS = ['overview', 'events', 'alumni'] as const;
+
+export function ProgramExploreSection({
+  features,
+  title = '探索大使計畫',
+  subtitle = '從學習到就業，一站式雲端職涯培育平台',
+}: ProgramExploreSectionProps) {
+  const sectionFeatures = PROGRAM_FEATURE_IDS.map((featureId) =>
+    features.find((feature) => feature.id === featureId),
+  ).filter((feature): feature is FeatureItem => Boolean(feature));
 
   return (
     <section className={styles.section} id="program">
@@ -32,8 +46,8 @@ export function ProgramExploreSection() {
         viewport={{ once: true }}
         className={styles.header}
       >
-        <h2 className={styles.title}>探索大使計畫</h2>
-        <p className={styles.subtitle}>從學習到就業，一站式雲端職涯培育平台</p>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.subtitle}>{subtitle}</p>
       </motion.div>
 
       <motion.div

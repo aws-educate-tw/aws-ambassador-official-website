@@ -136,7 +136,7 @@ export default function HomePage() {
         <HeroSection {...homeData.hero} />
 
         {/* 功能區 - 探索大使計畫 */}
-        <ProgramExploreSection />
+        <ProgramExploreSection features={homeData.features} />
 
         {/* 四大支柱 */}
         <section className={styles.pillarsSection} aria-labelledby="pillars-heading">
