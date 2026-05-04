@@ -156,97 +156,89 @@ export default function HomePage() {
       {/* Navigation */}
       <Navigation {...navigationData} />
 
-      <div className={styles.pageContent}>
-        {/* HeroSection */}
-        <HeroSection {...homeData.hero} />
+      {/* HeroSection */}
+      <HeroSection {...homeData.hero} statistics={homeData.statistics} />
 
-        {/* 功能區 - 探索大使計畫 */}
-        <section className={styles.programExploreSection}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className={styles.sectionHeader}
-          >
-            <h2 id="benefits-heading" className={styles.sectionTitle}>
-              成為大使的六大優勢
-            </h2>
-          </motion.div>
+      {/* 功能區 - 探索大使計畫 */}
+      <section className={styles.programExploreSection}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className={styles.sectionHeader}
+        >
+          <h2 id="benefits-heading" className={styles.sectionTitle}>
+            成為大使的六大優勢
+          </h2>
+        </motion.div>
 
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className={styles.programGrid}
-          >
-            {homeData.benefits.map((benefit, index) => {
-              const BenefitIcon =
-                benefitIconMap[benefit.icon as keyof typeof benefitIconMap] ?? Rocket;
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className={styles.programGrid}
+        >
+          {homeData.benefits.map((benefit, index) => {
+            const BenefitIcon =
+              benefitIconMap[benefit.icon as keyof typeof benefitIconMap] ?? Rocket;
 
-              return (
-                <motion.div key={`benefit-${index}-${benefit.text}`} variants={fadeInUp}>
-                  <div
-                    className={`${styles.benefitCard} ${benefit.highlight ? styles.highlight : ''}`}
-                  >
-                    <div className={styles.benefitIcon}>
-                      <BenefitIcon size={24} strokeWidth={2.25} aria-hidden="true" />
-                    </div>
-                    <span className={styles.benefitText}>{benefit.text}</span>
+            return (
+              <motion.div key={`benefit-${index}-${benefit.text}`} variants={fadeInUp}>
+                <div
+                  className={`${styles.benefitCard} ${benefit.highlight ? styles.highlight : ''}`}
+                >
+                  <div className={styles.benefitIcon}>
+                    <BenefitIcon size={24} strokeWidth={2.25} aria-hidden="true" />
                   </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </section>
+                  <span className={styles.benefitText}>{benefit.text}</span>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </section>
 
-        {/* 四大支柱 */}
-        <section className={styles.pillarsSection} aria-labelledby="pillars-heading">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className={styles.principlesHeader}
-          >
-            <p className={styles.principlesEyebrow}>At Amazon, it is still Day 1</p>
-            <h2 id="pillars-heading" className={styles.principlesTitle}>
-              Amazon Leadership Principles
-            </h2>
-            <p className={styles.principlesSubtitle}>
-              以亞馬遜領導力準則為核心，培養未來雲端領導者
-            </p>
-          </motion.div>
+      {/* 四大支柱 */}
+      <section className={styles.pillarsSection} aria-labelledby="pillars-heading">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className={styles.principlesHeader}
+        >
+          <p className={styles.principlesEyebrow}>At Amazon, it is still Day 1</p>
+          <h2 id="pillars-heading" className={styles.principlesTitle}>
+            Amazon Leadership Principles
+          </h2>
+          <p className={styles.principlesSubtitle}>以亞馬遜領導力準則為核心，培養未來雲端領導者</p>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <div className={styles.pillarsMarquee}>
-              <div className={styles.pillarsTrack}>
-                {marqueePrinciples.map((principle, index) => (
-                  <div key={`pillar-${principle.title}-${index}`} className={styles.pillarsItem}>
-                    <PillarCard
-                      title={principle.title}
-                      subtitle={principle.subtitle}
-                      description={principle.description}
-                      imageIndex={index}
-                    />
-                  </div>
-                ))}
-              </div>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+          <div className={styles.pillarsMarquee}>
+            <div className={styles.pillarsTrack}>
+              {marqueePrinciples.map((principle, index) => (
+                <div key={`pillar-${principle.title}-${index}`} className={styles.pillarsItem}>
+                  <PillarCard
+                    title={principle.title}
+                    subtitle={principle.subtitle}
+                    description={principle.description}
+                    imageIndex={index}
+                  />
+                </div>
+              ))}
             </div>
-          </motion.div>
-        </section>
+          </div>
+        </motion.div>
+      </section>
 
-        {/* CTA 區 */}
-        <CTASection
-          title={homeData.cta_section.title}
-          description={homeData.cta_section.description}
-          primaryCTA={homeData.cta_section.primary_cta}
-          deadline={homeData.cta_section.deadline}
-        />
-      </div>
+      {/* CTA 區 */}
+      <CTASection
+        title={homeData.cta_section.title}
+        description={homeData.cta_section.description}
+        primaryCTA={homeData.cta_section.primary_cta}
+        deadline={homeData.cta_section.deadline}
+      />
     </div>
   );
 }
