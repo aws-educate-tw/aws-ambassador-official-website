@@ -21,11 +21,11 @@ const iconMap = {
   'graduation-cap': GraduationCap,
 } as const;
 
-export function FeatureCard({ title, description, icon = '📌', tag, cta }: FeatureCardProps) {
+export function FeatureCard({ id, title, description, icon = '📌', tag, cta }: FeatureCardProps) {
   const IconComponent = iconMap[icon as keyof typeof iconMap];
 
   return (
-    <article className={styles.card}>
+    <article id={id} className={styles.card}>
       <div className={styles.iconWrapper} aria-hidden="true">
         {IconComponent ? <IconComponent size={16} strokeWidth={2} /> : icon}
       </div>
