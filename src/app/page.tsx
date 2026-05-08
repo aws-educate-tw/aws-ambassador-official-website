@@ -139,7 +139,7 @@ const navigationData = {
   logo: { text: 'AWS', subtitle: 'Educate Ambassador' },
   items: [
     { label: '首頁', href: '/' },
-    { label: '大使計畫總覽', href: '#program' },
+    { label: '大使計畫總覽', href: '/program' },
     { label: '活動中心', href: '#events' },
     { label: '校友專區', href: '#alumni' },
     { label: '聯絡我們', href: '#contact' },

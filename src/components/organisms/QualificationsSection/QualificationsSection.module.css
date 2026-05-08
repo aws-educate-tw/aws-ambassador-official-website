@@ -1,0 +1,73 @@
+.section {
+  padding: 80px 32px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 80px 80px;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1a202c;
+  text-align: center;
+  margin: 0 0 8px 0;
+}
+
+/* 置中的基本資格卡，最大寬度與 grid 一致 */
+.topRow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.topRow .card {
+  max-width: 640px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* 2x2 grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 共用卡片樣式 */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* icon 使用 --color-primary (#ff9900) */
+.icon {
+  flex-shrink: 0;
+  color: var(--color-primary, #ff9900);
+}

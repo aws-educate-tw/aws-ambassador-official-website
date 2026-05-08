@@ -1,0 +1,175 @@
+.section {
+  padding: 80px 32px;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1a202c;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.subheading {
+  color: #4A5565;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 0;
+}
+
+/* ===== Dev Team Card ===== */
+.devTeamCard {
+  background-color: #1e2d40;
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  color: #ffffff;
+}
+
+/* ===== Dark Card Icon ===== */
+.cardIconBox {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardIcon {
+  color: #ffffff;
+}
+
+.devTeamTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.devTeamDesc {
+  font-size: 14px;
+  color: #d1d5db;
+  margin: 0;
+  line-height: 1.75;
+}
+
+/* ===== Sub-projects Grid (white, 2-col) ===== */
+.subProjectGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px 24px;
+}
+
+@media (min-width: 768px) {
+  .subProjectGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.subProject {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.subTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+}
+
+.subDesc {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.75;
+  flex: 1;
+}
+
+/* Skills list */
+.skillList {
+  list-style: none;
+  margin: 8px 0 0 0;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background-color: #f9fafb;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.checkIcon {
+  color: #ff9900;
+  flex-shrink: 0;
+}
+
+/* ===== Bottom Grid (2 dark cards) ===== */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .bottomGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.darkCard {
+  background-color: #1e2d40;
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  color: #ffffff;
+}
+
+.darkCardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.darkCardDesc {
+  font-size: 14px;
+  color: #d1d5db;
+  margin: 0;
+  line-height: 1.75;
+}
