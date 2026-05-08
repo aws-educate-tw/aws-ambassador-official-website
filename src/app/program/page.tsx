@@ -3,9 +3,7 @@
 import { BenefitsSection } from '@/components/organisms/BenefitsSection/BenefitsSection';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
 import { FAQSection } from '@/components/organisms/FAQSection/FAQSection';
-import { Footer } from '@/components/organisms/Footer/Footer';
 import { MissionSection } from '@/components/organisms/MissionSection/MissionSection';
-import { Navigation } from '@/components/organisms/Navigation/Navigation';
 import { PageBanner } from '@/components/organisms/PageBanner/PageBanner';
 import { QualificationsSection } from '@/components/organisms/QualificationsSection/QualificationsSection';
 import { RolesSection } from '@/components/organisms/RolesSection/RolesSection';
@@ -16,32 +14,9 @@ import { TimelineSection } from '@/components/organisms/TimelineSection/Timeline
 import homeData from '@/content/home.json';
 import styles from './program.module.css';
 
-const navigationData = {
-  logo: { text: 'AWS', subtitle: 'Educate Ambassador' },
-  items: [
-    { label: '首頁', href: '/' },
-    { label: '大使計畫總覽', href: '/program' },
-    { label: '活動中心', href: '/#events' },
-    { label: '校友專區', href: '/#alumni' },
-  ],
-  ctaLabel: '追蹤粉專',
-  ctaHref: 'https://www.facebook.com/AWSeducateTW',
-};
-
-const footerData = {
-  copyright: 'AWS Educate Taiwan Campus Ambassador Program',
-  links: [
-    { label: '隱私政策', href: '/privacy' },
-    { label: '使用條款', href: '/terms' },
-    { label: '聯絡我們', href: '/contact' },
-  ],
-};
-
 export default function ProgramPage() {
   return (
     <div className={styles.page}>
-      <Navigation {...navigationData} />
-
       <PageBanner
         title="關於 AWS Educate 雲端校園大使"
         descriptions={[
@@ -67,8 +42,6 @@ export default function ProgramPage() {
         primaryCTA={{ label: '立即申請成為大使', href: '/apply' }}
         deadline="申請截止日：2025 年 10 月 3 日"
       />
-
-      <Footer {...footerData} />
     </div>
   );
 }

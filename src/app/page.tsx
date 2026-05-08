@@ -3,7 +3,6 @@
 import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
 import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
-import { Navigation } from '@/components/organisms/Navigation/Navigation';
 import homeData from '@/content/home.json';
 import { motion } from 'framer-motion';
 import { Briefcase, Heart, Rocket, Sparkles, TrendingUp, Users } from 'lucide-react';
@@ -134,28 +133,11 @@ const benefitIconMap = {
 
 /* 首頁 */
 
-// Header
-const navigationData = {
-  logo: { text: 'AWS Educate TW' },
-  items: [
-    { label: '首頁', href: '/' },
-    { label: '大使計畫總覽', href: '/program' },
-    { label: '活動中心', href: '/events' },
-    { label: '校友專區', href: '/alumni' },
-  ],
-  ctaLabel: '追蹤粉專',
-  ctaHref: 'https://www.instagram.com/awseducatestdambtw/',
-  activeItemHref: '/',
-};
-
 export default function HomePage() {
   const marqueePrinciples = [...leadershipPrinciples, ...leadershipPrinciples];
 
   return (
     <div className={styles.page}>
-      {/* Navigation */}
-      <Navigation {...navigationData} />
-
       {/* HeroSection */}
       <HeroSection {...homeData.hero} statistics={homeData.statistics} />
 

@@ -4,6 +4,7 @@ import { Button } from '@/components/atoms/Button/Button';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './Navigation.module.css';
 
@@ -31,14 +32,16 @@ export function Navigation({
   activeItemHref,
 }: Readonly<NavigationProps>) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const highlightedHref = activeItemHref ?? items[1]?.href;
+  const pathname = usePathname();
+  const highlightedHref = activeItemHref ?? pathname;
   const isExternalCta = /^https?:\/\//.test(ctaHref);
 
   useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : originalOverflow;
 
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = originalOverflow;
     };
   }, [isMobileMenuOpen]);
 
