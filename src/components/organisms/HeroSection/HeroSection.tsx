@@ -11,6 +11,10 @@ export interface HeroSectionProps {
   subtitle: string;
   tagline?: string;
   description: string;
+  statistics: Array<{
+    number: string;
+    label: string;
+  }>;
   primaryCTA: {
     label: string;
     href: string;
@@ -78,7 +82,21 @@ const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) =
 };
 
 export function HeroSection(props: Readonly<HeroSectionProps>) {
-  const { title, subtitle, tagline, description, primaryCTA, secondaryCTA, tertiaryCTA } = props;
+  const {
+    title,
+    subtitle,
+    tagline,
+    description,
+    statistics,
+    primaryCTA,
+    secondaryCTA,
+    tertiaryCTA,
+  } = props;
+
+  const stats = statistics.slice(0, 3).map((stat) => ({
+    value: Number.parseInt(stat.number, 10) || 0,
+    label: stat.label,
+  }));
 
   const ctas = [
     { ...primaryCTA, variant: 'primary' as const },
@@ -95,7 +113,6 @@ export function HeroSection(props: Readonly<HeroSectionProps>) {
           <h2 className={styles.subtitle}>{subtitle}</h2>
 
           <p className={styles.tagline}>{tagline ?? '賦能 · 創新 · 連結'}</p>
-
           <p className={styles.description}>{description}</p>
 
           <div className={styles.actions}>
@@ -121,30 +138,14 @@ export function HeroSection(props: Readonly<HeroSectionProps>) {
         className={styles.statsSection}
       >
         <div className={styles.statsGrid}>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={168} />
+          {stats.map((stat) => (
+            <div key={stat.label} className={styles.statCard}>
+              <div className={styles.statNumber} aria-label={`統計數字: ${stat.value}+`}>
+                <CountUp end={stat.value} />+
+              </div>
+              <div className={styles.statLabel}>{stat.label}</div>
             </div>
-            <div className={styles.statLabel}>累積大使</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={350} />
-            </div>
-            <div className={styles.statLabel}>年度活動</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={450} />
-            </div>
-            <div className={styles.statLabel}>AWS 認證</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={95} />%
-            </div>
-            <div className={styles.statLabel}>就業率</div>
-          </div>
+          ))}
         </div>
       </motion.div>
     </section>

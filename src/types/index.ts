@@ -53,7 +53,7 @@ export interface FooterData {
 export interface Statistic {
   number: string;
   label: string;
-  description: string;
+
 }
 
 export interface FeatureCard {

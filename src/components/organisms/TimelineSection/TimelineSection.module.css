@@ -1,0 +1,146 @@
+.section {
+  padding: 80px 32px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 80px 80px;
+  }
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1a202c;
+  margin: 0;
+}
+
+/* ===== Timeline ===== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+}
+
+/* 貫穿所有點的連線：從第一點中心到最後一點中心 */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 13px; /* dotWrapper(28px) 中心 14px - 線寬一半 1px */
+  top: 70px;  /* 卡片高 140px 的一半 */
+  bottom: 70px;
+  width: 2px;
+  background-color: #222F3E;
+  z-index: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* dot 與卡片垂直置中對齊 */
+  gap: 28px;
+}
+
+/* ===== Dot & Line ===== */
+.dotWrapper {
+  position: relative;
+  width: 28px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 4px solid #222F3E;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.dotInner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #222F3E;
+}
+
+
+/* ===== 深藍色卡片（照使用者規格） ===== */
+.card {
+  /* display: flex;
+  width: 800px;
+  height: 140px;
+  padding: 32px 32px 0 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #1e2d40;
+  border-radius: 20px;
+  flex-shrink: 0;
+  overflow: hidden; */
+
+  display: flex;
+  width: 800px;
+  height: 140px;
+  padding: 32px 32px 0 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  border-radius: 16px;
+  background:  #222F3E;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.10), 0 8px 10px -6px rgba(0, 0, 0, 0.10);
+}
+
+.cardWithNote {
+  height: 164px;
+}
+
+@media (max-width: 960px) {
+  .card,
+  .cardWithNote {
+    width: 100%;
+    height: auto;
+    padding-bottom: 24px;
+  }
+}
+
+.date {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff9900;
+  margin: 0;
+  line-height: 28px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 28px;
+}
+
+.note {
+  font-size: 16px;
+  color: #ffffff;
+  margin: 0;
+  line-height: 24px;
+}
