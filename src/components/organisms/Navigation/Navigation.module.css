@@ -161,6 +161,10 @@
   background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
 }
 
+.ctaButtonHidden {
+  display: none;
+}
+
 .mobileMenuOverlay {
   position: fixed;
   inset: 0;
@@ -301,6 +305,10 @@
 }
 
 @media (max-width: 820px) {
+  .container .ctaButton {
+    display: none;
+  }
+
   .container {
     min-height: 72px;
     gap: var(--space-2);

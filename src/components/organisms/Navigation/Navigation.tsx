@@ -99,14 +99,14 @@ export function Navigation({
         </button>
       </div>
 
-      <button
-        type="button"
-        className={`${styles.mobileMenuOverlay} ${isMobileMenuOpen ? styles.mobileMenuOverlayOpen : ''}`}
-        onClick={closeMobileMenu}
-        aria-hidden={!isMobileMenuOpen}
-        aria-label="關閉選單遮罩"
-        tabIndex={isMobileMenuOpen ? 0 : -1}
-      />
+      {isMobileMenuOpen ? (
+        <button
+          type="button"
+          className={`${styles.mobileMenuOverlay} ${styles.mobileMenuOverlayOpen}`}
+          onClick={closeMobileMenu}
+          aria-label="關閉選單遮罩"
+        />
+      ) : null}
 
       <div
         id="mobile-navigation-menu"
