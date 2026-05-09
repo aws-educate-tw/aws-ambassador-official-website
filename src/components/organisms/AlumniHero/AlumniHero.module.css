@@ -1,0 +1,64 @@
+.hero {
+  position: relative;
+  padding: 60px 32px 80px;
+  max-width: 1280px;
+  margin: 80px;
+  overflow: hidden;
+}
+
+.glowRight {
+  position: absolute;
+  top: 160px;
+  right: 0;
+  width: 256px;
+  height: 256px;
+  background: rgba(219, 234, 254, 0.4);
+  border-radius: 9999px;
+  filter: blur(48px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glowLeft {
+  position: absolute;
+  top: 240px;
+  left: 40px;
+  width: 192px;
+  height: 192px;
+  background: rgba(252, 231, 243, 0.4);
+  border-radius: 9999px;
+  filter: blur(48px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.title {
+  position: relative;
+  font-size: 48px;
+  font-weight: 900;
+  color: #222f3e;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.02em;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 60px;
+  }
+}
+
+.descriptionCard {
+  position: relative;
+  background-color: var(--color-bg-primary);
+  padding: 32px;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-border-subtle);
+  max-width: 672px;
+  line-height: var(--line-height-relaxed);
+  color: #222f3e;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  z-index: 1;
+}

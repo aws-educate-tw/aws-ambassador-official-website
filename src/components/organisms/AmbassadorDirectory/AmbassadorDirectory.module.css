@@ -1,0 +1,303 @@
+.section {
+  background-color: var(--color-bg-secondary);
+  padding: 96px 32px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 96px 80px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #222f3e;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+}
+
+/* 篩選列 */
+.filters {
+  background-color: var(--color-bg-primary);
+  padding: 20px;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-subtle);
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .filters {
+    flex-direction: row;
+  }
+}
+
+.selectWrapper {
+  flex: 1;
+}
+
+.select {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  border: none;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  outline: none;
+  cursor: pointer;
+  appearance: auto;
+  transition: box-shadow var(--duration-normal) var(--easing-ease-out);
+}
+
+.select:focus {
+  box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.2);
+}
+
+/* 名錄網格 */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 個人卡片 — 嚴格對齊 Figma spec */
+.card {
+  width: 100%;
+  background-color: white;
+  border-radius: 16px;
+  outline: 2px solid #e5e7eb;
+  padding: 24px 16px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* 上半部：頭像 + 資訊 */
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.avatar {
+  width: 84px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* 姓名 + 學校 + 角色 + Side Project */
+.cardInfo {
+  width: 259px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nameRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.personName {
+  width: 255px;
+  text-align: center;
+  color: #222f3e;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 28px;
+  word-wrap: break-word;
+}
+
+/* 每一列：圖示 + 文字 */
+.detailRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.rowIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.detailTexts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.detailMain {
+  color: #364153;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 20px;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.detailSub {
+  color: #6a7282;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 16px;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+/* 操作按鈕 — 兩個都是橘色漸層 */
+.actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn {
+  flex: 1;
+  padding: 8px 12px;
+  background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
+  border-radius: 20px;
+  color: white;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition:
+    filter var(--duration-normal) var(--easing-ease-out),
+    transform var(--duration-fast) var(--easing-ease-out);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* 分頁 */
+.pagination {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.pageBtn {
+  width: 155px;
+  padding: 8px 20px;
+  background: #222f3e;
+  border: none;
+  border-radius: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: opacity var(--duration-normal) var(--easing-ease-out);
+}
+
+.pageBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pageBtn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.pageBtnLabel {
+  width: 48px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.pageBtnArrow {
+  width: 26px;
+  height: 21px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.rowIcon {
+  color: #ff9900; /* 設定 GraduationCap 和 Luggage 的顏色 */
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pageBtn {
+  width: 155px;
+  padding: 8px 20px;
+  background: #222f3e;
+  border: none;
+  border-radius: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: opacity var(--duration-normal) var(--easing-ease-out);
+}
+
+.pageInfo {
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  min-width: 60px;
+  text-align: center;
+}

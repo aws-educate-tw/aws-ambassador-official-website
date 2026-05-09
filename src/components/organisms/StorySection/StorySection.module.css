@@ -1,0 +1,328 @@
+.section {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto 96px;
+  padding: 0 32px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 0 80px;
+  }
+}
+
+/* 標題 */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 900;
+  color: #222f3e;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* 主卡片 */
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  border: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+  min-height: 500px;
+  transition: all var(--duration-slow) var(--easing-ease-out);
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    min-height: 600px;
+  }
+}
+
+/* 左側深色區 */
+.cardLeft {
+  flex: 1;
+  background-color: #22303f;
+  padding: 32px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .cardLeft {
+    padding: 48px;
+  }
+}
+
+.profileRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.avatar {
+  width: 128px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .avatar {
+    width: 144px;
+    height: 192px;
+  }
+}
+
+.name {
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.02em;
+  padding-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .name {
+    font-size: 36px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ambassadorTitle {
+  color: #ffb84d;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 4px 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.highlightItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.highlightText {
+  color: #d1d5db;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .highlightText {
+    font-size: var(--font-size-base);
+  }
+}
+
+.cardLeftFooter {
+  margin-top: auto;
+  padding-top: 40px;
+}
+
+.interviewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
+  color: white;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-lg);
+  transition:
+    filter var(--duration-normal) var(--easing-ease-out),
+    transform var(--duration-fast) var(--easing-ease-out);
+  cursor: pointer;
+  border: none;
+}
+
+.interviewBtn:hover {
+  filter: brightness(1.1);
+}
+
+.interviewBtn:active {
+  transform: scale(0.95);
+}
+
+/* 右側淺色區 */
+.cardRight {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .cardRight {
+    padding: 48px;
+  }
+}
+
+.quoteDecor {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.quoteLine {
+  width: 14px;
+  height: 36px;
+  border: 4px solid #ff9900;
+}
+
+.quote {
+  color: #364153;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 29.25px;
+  word-wrap: break-word;
+  margin: 0 0 24px;
+  padding: 0 16px;
+}
+
+.careerTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222f3e;
+  line-height: 28px;
+  margin: 0 0 24px;
+  padding: 0 16px;
+}
+
+.careerPath {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.careerStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.stepBadge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.stepText {
+  color: #364153;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+  margin: 0;
+  align-self: center;
+}
+
+.interviewer {
+  margin-top: 24px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #364153;
+  line-height: 24px;
+}
+
+/* 切換按鈕 */
+.switcher {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.switchBtn {
+  padding: 8px 32px;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  transition: all var(--duration-slow) var(--easing-ease-out);
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  border: none;
+}
+
+.switchBtn:hover {
+  background-color: var(--color-neutral-300);
+}
+
+.switchBtnActive {
+  background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
+  color: white;
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.05);
+}
