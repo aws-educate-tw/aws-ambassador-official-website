@@ -1,8 +1,7 @@
 .hero {
   position: relative;
-  padding: 60px 32px 80px;
   max-width: 1280px;
-  margin: 80px;
+  margin: 48px 40px;
   overflow: hidden;
 }
 

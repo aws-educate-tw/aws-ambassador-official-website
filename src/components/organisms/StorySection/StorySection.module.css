@@ -1,13 +1,11 @@
 .section {
   width: 100%;
-  max-width: 1152px;
-  margin: 0 auto 96px;
   padding: 0 32px;
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 0 80px;
+    padding: 40px;
   }
 }
 

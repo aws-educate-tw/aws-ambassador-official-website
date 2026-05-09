@@ -1,11 +1,10 @@
 .section {
-  background-color: var(--color-bg-secondary);
   padding: 96px 32px;
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 96px 80px;
+    padding: 40px;
   }
 }
 
@@ -54,24 +53,49 @@
 
 .selectWrapper {
   flex: 1;
+  position: relative;
+}
+
+.selectWrapper::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
 }
 
 .select {
   width: 100%;
-  padding: 12px 16px;
-  background-color: var(--color-bg-secondary);
-  border-radius: var(--radius-lg);
-  border: none;
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-primary);
+  padding: 12px 40px 12px 16px;
+  background-color: #ffffff;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--color-border-subtle, #e5e7eb);
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-text-primary, #111827);
   outline: none;
   cursor: pointer;
-  appearance: auto;
-  transition: box-shadow var(--duration-normal) var(--easing-ease-out);
+  appearance: none;
+  -webkit-appearance: none;
+  transition: all 0.2s ease;
+}
+
+.select:hover {
+  border-color: #d1d5db;
+  background-color: #f9fafb;
 }
 
 .select:focus {
-  box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.2);
+  border-color: #ff9900;
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
 }
 
 /* 名錄網格 */
@@ -169,12 +193,19 @@
   flex-direction: column;
 }
 
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
 .detailMain {
   color: #364153;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  line-height: 20px;
+  font-weight: 700;
+  line-height: 1.4;
   word-wrap: break-word;
   margin: 0;
 }
@@ -199,21 +230,31 @@
 
 .btn {
   flex: 1;
-  padding: 8px 12px;
+  padding: 10px 12px;
   background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
-  border-radius: 20px;
+  border-radius: 24px;
   color: white;
   font-size: 16px;
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  line-height: 24px;
+  font-weight: 700;
   text-align: center;
+  text-decoration: none;
   border: none;
   cursor: pointer;
-  transition:
-    filter var(--duration-normal) var(--easing-ease-out),
-    transform var(--duration-fast) var(--easing-ease-out);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   white-space: nowrap;
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease;
+}
+
+.btn:disabled {
+  background: #e5e7eb;
+  color: #94a3b8;
+  cursor: not-allowed;
+  filter: none;
 }
 
 .btn:hover {
@@ -276,7 +317,7 @@
 }
 
 .rowIcon {
-  color: #ff9900; /* 設定 GraduationCap 和 Luggage 的顏色 */
+  color: #ff9900;
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -300,4 +341,179 @@
   color: var(--color-text-secondary);
   min-width: 60px;
   text-align: center;
+}
+
+.certContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.certBadge {
+  background: #fff7ed;
+  border-radius: 12px;
+  padding: 4px 12px;
+  color: #ff9900;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.projectItem {
+  color: #6a7282;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
+
+/* Custom Select */
+.customSelectContainer {
+  position: relative;
+  width: 100%;
+}
+
+.customSelectButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--color-border-subtle, #e5e7eb);
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-text-primary, #111827);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.customSelectButton:hover {
+  border-color: #d1d5db;
+  background-color: #f9fafb;
+}
+
+.customSelectButton:focus {
+  border-color: #ff9900;
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
+}
+
+.customSelectPlaceholder {
+  color: #111827;
+}
+
+.customSelectValue {
+  color: #111827;
+}
+
+.customSelectIcon {
+  color: #4b5563;
+  transition: transform 0.2s ease;
+}
+
+.customSelectIconOpen {
+  transform: rotate(180deg);
+}
+
+.customSelectDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  overflow: hidden;
+  animation: slideDown 0.2s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.customSelectList {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar for Dropdown */
+.customSelectList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.customSelectList::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px 0;
+}
+
+.customSelectList::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.customSelectList::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.customSelectOption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 15px;
+  color: #374151;
+}
+
+.customSelectOption:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.customSelectOptionSelected {
+  background-color: #fff7ed;
+  color: #ff9900;
+  font-weight: 600;
+}
+
+.customSelectOptionSelected:hover {
+  background-color: #ffedd5;
+}
+
+.customSelectOptionText {
+  flex: 1;
+}
+
+.customSelectCheck {
+  color: #ff9900;
+  flex-shrink: 0;
 }

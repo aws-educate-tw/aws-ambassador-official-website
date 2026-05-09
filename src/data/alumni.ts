@@ -36,7 +36,7 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           '國際移動力的實踐者，具備強大決心與國際化思維',
         ],
         quote:
-          '很多答案都是做了之後才慢慢長出來的，很多事情沒有標準答案，妳不能等準備好才上場，而是必須在場上邊做邊學。',
+          '很多答案都是做了之後才慢慢長出來的，很多事情沒有標準答案，妳不能等準備好才上場，而是必須在場上邊做邊學。與其停在原地想，不如先往一個方向走，然後在過程中調整。',
         careerPath: [
           { id: '01', text: '曾任 AWS 台北辦公室 CS 團隊' },
           { id: '02', text: '零法文背景突圍法國 AI 軟體公司' },
@@ -46,13 +46,13 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       },
       Chloe: {
         name: 'Chloe Chang',
-        title: '第一屆 AWS Educate 校園大使',
+        title: 'AWS Educate Taiwan 校園大使校友',
         tags: ['數據決策', '國際化'],
         image: '/images/Stories/Chloe.png',
         highlights: [
           '現任知名公司擔任資深產品分析師',
           '具備橫跨工業工程與資訊管理的跨領域專業背景',
-          '第一屆 AWS Educate 校園大使，擅長以數據驅動影響力',
+          '第一屆 AWS Educate 校園大使',
         ],
         quote:
           '大使計畫不僅是累積經歷，更是學習如何拆解問題、並將數據轉化為影響力的起點；不要害怕面試被問倒，每一次失敗都是在優化你下一次的求職勝率。',
@@ -67,7 +67,7 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           },
           {
             id: '03',
-            text: '精準掌握營運效率與數據說故事的差異，成為技術與商業團隊間的關鍵翻譯官。',
+            text: '精準掌握營運效率、數據說故事與使用者體驗之間的差異，成為技術與商業團隊間的關鍵翻譯官。',
           },
         ],
         interviewer: 'Selina, Jessie Huang',
@@ -86,16 +86,25 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         highlights: [
           '深耕 Networking 與 Linux Kernel 等底層技術的外商雲端工程師',
           '擅長把艱澀的架構轉譯為小白也能吸收的知識',
-          '穩扎穩打的「農兵派」實踐者，主張扎根基礎技術並善用 AI 工具',
+          '穩扎穩打的「農兵派」實踐者，主張扎根基礎技術並善用 AI 工具極大化學習效率',
         ],
         quote:
-          '大使計畫是我技術職涯的加速器，它讓我學會將艱澀的雲端技術轉譯為影響力，了解不必等準備好才出發。',
+          '大使計畫是我技術職涯的加速器，它讓我學會將艱澀的雲端技術轉譯為影響力，了解不必等準備好才出發，唯有在實戰與社群的市場溫度中，才能真正煉成帶不走的技術實力。',
         careerPath: [
-          { id: '23', text: '憑藉一週內考取 SAA 證照，開啟連續四屆大使影響力' },
-          { id: '24', text: '外商實戰應對高併發倒站壓力，轉型架構專家' },
-          { id: '25', text: '獲邀至 K8s Summit 大型技術年會分享' },
+          {
+            id: '01',
+            text: '憑藉一週內考取 SAA 證照的衝勁，開啟連續四屆 AWS 校園大使的社群影響力',
+          },
+          {
+            id: '02',
+            text: '外商實戰應對高併發倒站壓力，由 API 後端開發轉型基礎設施架構專家',
+          },
+          {
+            id: '03',
+            text: '長期經營 Notion 技術輸出與個人品牌，獲邀至 K8s Summit 大型技術年會分享',
+          },
         ],
-        interviewer: 'Selina, Jessie Huang',
+        interviewer: 'Allison, Elma',
       },
       Aaron: {
         name: 'Aaron Huang',
@@ -103,15 +112,15 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         tags: ['數據決策', '國際化'],
         image: '/images/Stories/Aaron.png',
         highlights: [
-          '現任 AWS 專業服務團隊 ProServe 顧問，專注於 AI/ML 專案落地',
-          '精準定位自我於「商業與技術的完美平衡」，具備強大跨領域溝通力',
-          '擅長管理客戶期待與解決複雜的專案需求，具備高情商實戰經驗',
+          '精準定位自我於「商業與技術的完美平衡」 ',
+          '具備高情商與強大的跨領域溝通力，擅長管理客戶期待與解決複雜的專案需求',
+          '現任 AWS 專業服務團隊 ProServe 顧問，專注於 AI/ML 領域的專案落地建置',
         ],
         quote:
-          'AWS 校園大使計畫是我邁進頂尖外商的關鍵敲門磚。這段「從零到一」的經驗大幅訓練了我的自學與表達能力，成功開啟技術顧問的職涯旅程。',
+          'AWS 校園大使計畫是我邁進頂尖外商的關鍵敲門磚。這段「從零到一」的經驗大幅訓練了我的自學與表達能力， 讓我在競爭激烈的雲端產業面試中精準展現自我，成功開啟技術顧問的職涯旅程。',
         careerPath: [
           { id: '01', text: '碩一擔任大使，從零經驗自學雲端技術並成功擔綱專屬講師' },
-          { id: '02', text: '曾任職於多間雲端廠商，具備深厚的售前、售後與顧問實務經驗' },
+          { id: '02', text: '曾任職於多間雲端廠商，具備深厚的售前、售後與顧問實戰經驗' },
           { id: '03', text: '捨棄高薪售後客服職位，毅然重返 AWS 深耕專案實作' },
         ],
         interviewer: 'Allison, Elma',
@@ -122,16 +131,19 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         tags: ['數據決策', '國際化'],
         image: '/images/Stories/Hsuan.png',
         highlights: [
-          '現任半導體廠 IT 工程師，以資管背景跨足智慧製造與半導體產業',
-          '曾任第六屆校園大使技術組，代表大使與企業高層對談雲端應用',
-          '擅長將複雜技術化繁為簡，致力於技術與人之間的溝通轉譯',
+          '資管背景跨足智慧製造，以跨域視角深耕半導體產業',
+          '從雲端大使到業界工程師，用每一次實戰累積技術判斷力',
+          '擅長將複雜技術化繁為簡，致力於技術與人之間的溝通與轉譯',
         ],
         quote:
-          'AWS 校園大使是我第一次把技術帶出課堂、放到真實場景裡驗證的機會，從中累積的實戰經驗為後來進入業界打下了重要的基礎。',
+          'AWS 校園大使是我第一次把技術帶出課堂、放到真實場景裡驗證的機會，從中累積的實戰經驗與溝通歷練，為後來進入業界打下了重要的基礎。',
         careerPath: [
-          { id: '01', text: '擔任第六屆技術組大使，並與企業高層對談雲端實務應用' },
-          { id: '02', text: '碩班期間參與機台預知保養與 LLM 教育訓練等產學合作專案' },
-          { id: '03', text: '進入半導體產業，投入大型企業系統的開發與維護工作' },
+          {
+            id: '01',
+            text: '曾任 AWS Educate 第六屆校園大使技術組，並曾代表大使與企業高層對談雲端應用',
+          },
+          { id: '02', text: '碩班期間參與多項產學合作，涵蓋機台預知保養與 LLM 教育訓練等實務專案' },
+          { id: '03', text: '現任半導體廠 IT 工程師，投入大型企業系統的開發與維護工作' },
         ],
         interviewer: 'Seren, Aaron, Selina',
       },
@@ -143,22 +155,28 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
     alumni: {
       Sharon: {
         name: 'Sharon Chen',
-        title: '第二屆 AWS Educate Taiwan 校園大使',
+        title: 'AWS Educate Taiwan 校園大使校友',
         tags: ['數據決策', '國際化'],
         image: '/images/Stories/Sharon.png',
         highlights: [
           '北教大語文創作系出身，以人文領域跨足外商科技業',
-          '將語文系的訓練內化為職場實力，以精準溝通達成高效專案推進',
-          '歷經微軟、獵頭、電商後鎖定雲端科技業，每段經歷皆成為養分',
+          '將語文系的訓練內化為職場實力，以精準溝通、協調資源能力達成高效專案推進',
+          '歷經微軟、獵頭、電商後鎖定雲端科技業，每段經歷皆成為職涯轉型的養分',
         ],
         quote:
-          '多方嘗試，找到自己的熱情所在。大使計畫讓我更確定對雲端產業的熱忱，也讓我學會以客戶角度出發思考。',
+          '多方嘗試，找到自己的熱情所在。大使計畫讓我更確定對雲端產業的熱忱，也讓我學會以客戶角度出發思考。你不需要一開始就選定方向，每個人都可以是你啟發與機會的來源。',
         careerPath: [
-          { id: '01', text: '微軟實習期間考取 AI 與雲端基礎證照' },
-          { id: '02', text: '擔任 AWS 校園大使，主動 Reach out HR 轉正' },
-          { id: '03', text: '現任 Amazon Lab 126 營運專案經理' },
+          {
+            id: '01',
+            text: '微軟實習期間考取 AI 與雲端基礎證照、跨部門建立人脈，將行政職位轉化為科技業入場券 ',
+          },
+          {
+            id: '02',
+            text: '擔任 AWS Educate 第三、四屆校園大使，主動 Reach out HR，以大使背景敲門轉正',
+          },
+          { id: '03', text: '現任 Amazon Lab 126 營運專案經理，跨國協調多方團隊' },
         ],
-        interviewer: 'Sharon 訪談記錄（未標註具體大使姓名）', // 根據原始 code 補回
+        interviewer: 'Allison, Elma',
       },
       葉禹旋: {
         name: '葉禹旋',
@@ -167,13 +185,16 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         image: '/images/Stories/Mina.png',
         highlights: [
           '政大資管背景出身，從技術端逐步探索至行銷與品牌領域',
-          '勇於跨域與跨產業嘗試，持續從科技、電信到外商品牌拓展視野',
-          '擅長將複雜技術轉譯成大眾易懂的內容，兼具數據邏輯與溝通力',
+          '擅長將複雜技術轉譯成大眾易懂的內容，兼具數據邏輯與溝通能力',
+          '勇於跨域與跨產業嘗試，從科技、電信到外商品牌行銷從持續拓展視野',
         ],
         quote: '我相信跨域不是從零開始，而是在一次次嘗試中，慢慢找到自己真正想投入的位置。',
         careerPath: [
           { id: '01', text: '大學時期由校園 App 專案後端開發轉向行銷，開啟跨域契機' },
-          { id: '02', text: '曾任 Acer 性能行銷實習生與遠傳產品行銷實習生' },
+          {
+            id: '02',
+            text: '曾任 Acer Media Performance Marketing Intern、遠傳 Product Marketing Intern',
+          },
           { id: '03', text: '現於 JTI 擔任 Brand Marketing Assistant，負責品牌行銷' },
         ],
         interviewer: 'Jessie Huang, Elma',
@@ -184,16 +205,22 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         tags: ['數據決策', '國際化'],
         image: '/images/Stories/Boyi.png',
         highlights: [
-          '台大生物產業傳播暨發展學系背景，勇於跨領域學習',
-          '從 AWS 校園大使到 AWS BD 再到 Marketing，積極探索多元職能',
-          '具備整合與協作能力，能將資料分析技術應用於解決商業問題',
+          '台大生物產業傳播暨發展學系背景',
+          '勇於跨領域學習，能夠將資料與分析技術應用於解決實際商業問題',
+          '從 AWS 雲端校園大使到 AWS BD 再到 Marketing，積極探索多元職能',
         ],
         quote:
-          '真正的職涯方向來自於不斷探索、學習和適應，整合不同領域的協作能力，是 AI 時代中不容易被取代的關鍵。',
+          '真正的職涯方向來自於不斷探索、學習和適應，不僅要精通某一技術，而是要具備在不同領域之間整合與協作的能力，而這也是 Boyi 認為在 AI 時代中不容易被取代的關鍵能力。',
         careerPath: [
-          { id: '01', text: '以第六屆大使為起點，後成為 AWS Strategic Programs BD 帶領大使計劃' },
-          { id: '02', text: '轉任 AWS Field Marketing，負責 Startup 與 Developer 生態系相關專案' },
-          { id: '03', text: '目前在創投公司 Mesh 擔任 Marketing，推動新創企業市場發展' },
+          {
+            id: '01',
+            text: '以第六屆 AWS 校園大使為起點，一路走到 AWS Strategic Programs 的 BD 帶領大使計劃',
+          },
+          {
+            id: '02',
+            text: '樂於跨部門學習，曾轉任 AWS Field Marketing，負責 Startup 與 Developer 生態系相關專案',
+          },
+          { id: '03', text: '目前在創投公司 Mesh 擔任 Marketing，推動新創企業的市場發展' },
         ],
         interviewer: 'Elma, Jessie Huang',
       },
@@ -203,180 +230,254 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
 
 export interface DirectoryPerson {
   name: string;
+  image?: string;
   school: string;
   dept: string;
-  role: string;
-  side: string;
+  experience: {
+    cohort: string;
+    subRole:
+      | 'Marketing'
+      | 'Tech'
+      | 'Event'
+      | 'Mentor'
+      | 'Marketing Team Lead'
+      | 'Tech Team Lead'
+      | 'Event Team Lead';
+  }[];
+  sideProjects: string[];
   certs: string[];
+  links?: {
+    linkedin?: string;
+    story?: string;
+  };
 }
 
 export const DIRECTORY: DirectoryPerson[] = [
   {
     name: '邱奕勳 Shiun Chiu',
+    image: '/images/Ambassador/Shiun Chiu.png',
     school: '知名外商',
-    dept: 'AWS Educate Taiwan Student Ambassador',
-    role: '8th Mentor',
-    side: '5th Tech, 6th Tech Lead, 7th Mentor',
+    dept: '',
+    experience: [
+      { cohort: '5th', subRole: 'Tech' },
+      { cohort: '6th', subRole: 'Tech Team Lead' },
+      { cohort: '7th', subRole: 'Mentor' },
+      { cohort: '8th', subRole: 'Mentor' },
+    ],
+    sideProjects: [],
     certs: [],
   },
   {
     name: '鍾至漢 Harry Chung',
     school: '知名外商',
-    dept: 'AWS Educate Taiwan Student Ambassador',
-    role: '8th Mentor',
-    side: '6th Tech, 7th Tech Team Lead',
+    dept: '',
+    experience: [
+      { cohort: '6th', subRole: 'Tech' },
+      { cohort: '7th', subRole: 'Tech Team Lead' },
+      { cohort: '8th', subRole: 'Mentor' },
+    ],
+    sideProjects: [],
     certs: [],
   },
   {
     name: 'Tony',
     school: '知名台商',
-    dept: 'AWS Educate Taiwan Student Ambassador',
-    role: '8th Mentor',
-    side: '6th Tech, 7th Tech Team Lead',
+    dept: '',
+    experience: [
+      { cohort: '6th', subRole: 'Tech' },
+      { cohort: '7th', subRole: 'Tech Team Lead' },
+      { cohort: '8th', subRole: 'Mentor' },
+    ],
+    sideProjects: [],
     certs: [],
   },
   {
     name: '廖珺安 Jingle Liao',
     school: 'University College London',
     dept: 'Creative and Collaborative Enterprise',
-    role: 'AWS Educate Taiwan Student Ambassador',
-    side: '',
+    experience: [
+      { cohort: '7th', subRole: 'Marketing' },
+      { cohort: '8th', subRole: 'Marketing Team Lead' },
+    ],
+    sideProjects: [],
     certs: [],
   },
   {
     name: '莊詠淳 Tracy Chuang',
     school: '國立政治大學',
     dept: '國際經營與貿易學系',
-    role: '8th Marketing Team Lead',
-    side: '6th Marketing, 7th Marketing Team Lead',
+    experience: [
+      { cohort: '6th', subRole: 'Marketing' },
+      { cohort: '7th', subRole: 'Marketing Team Lead' },
+      { cohort: '8th', subRole: 'Marketing Team Lead' },
+    ],
+    sideProjects: [],
     certs: [],
   },
   {
     name: '蔡昕呈 Allison Tsai',
+    image: '/images/Ambassador/Allison Tsai.png',
     school: '國立政治大學',
     dept: '經濟學系/金融科技專長學程',
-    role: '8th Marketing',
-    side: 'DGR Program, Dev Team Official Website...',
+    experience: [{ cohort: '8th', subRole: 'Marketing' }],
+    sideProjects: ['DGR Program', 'Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
   },
   {
     name: '陳儀珊 Selina Chen',
+    image: '/images/Ambassador/Selina Chen.png',
     school: '國立台灣科技大學',
     dept: '管理學士班雙主修資訊管理系',
-    role: '8th Marketing',
-    side: 'Dev Team Official Website, Alumni stories Hub',
+    experience: [{ cohort: '8th', subRole: 'Marketing' }],
+    sideProjects: ['Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01'],
   },
   {
     name: '李映嫻 Angela Li',
+    image: '/images/Ambassador/Angela Li.png',
     school: '天主教輔仁大學',
     dept: '資訊管理學系',
-    role: '8th Tech',
-    side: 'Dev Team Official Website, Alumni stories Hub',
+    experience: [{ cohort: '8th', subRole: 'Tech' }],
+    sideProjects: ['Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
   },
   {
     name: '陳珊汝 Olivia Chen',
     school: '國立政治大學',
     dept: '企業管理研究所',
-    role: '8th Event',
-    side: 'DGR Program',
+    experience: [{ cohort: '8th', subRole: 'Event' }],
+    sideProjects: ['Dev Team Official Website'],
     certs: ['AIF-C01'],
   },
   {
     name: '許惠心 Elma Syu',
+    image: '/images/Ambassador/Elma Syu.png',
     school: '國立臺北大學',
     dept: '企業管理研究所',
-    role: '8th Marketing',
-    side: 'DGR Program, Alumni stories Hub',
-    certs: ['AIF-C01'],
+    experience: [{ cohort: '8th', subRole: 'Marketing' }],
+    sideProjects: ['DGR Program', 'Alumni stories Hub'],
+    certs: [],
   },
   {
     name: '廖研伃 Seren Liao',
+    image: '/images/Ambassador/Seren Liao.png',
     school: '國立中央大學',
-    dept: '資管系',
-    role: '8th Tech',
-    side: 'Dev Team TPET, Alumni stories Hub',
+    dept: '資訊管理學系',
+    experience: [{ cohort: '8th', subRole: 'Tech' }],
+    sideProjects: ['Dev Team TPET', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
   },
   {
     name: '毛羚芳 Kathy Mao',
     school: '國立臺灣大學',
-    dept: '資訊管理系',
-    role: '8th Event',
-    side: 'Dev Team Official Website',
+    dept: '資訊管理學系',
+    experience: [{ cohort: '8th', subRole: 'Event' }],
+    sideProjects: ['Dev Team Official Website'],
     certs: [],
   },
   {
     name: '黃思恩 Jessie Huang',
+    image: '/images/Ambassador/Jessie Huang.png',
     school: '國立台北大學',
-    dept: '企管系',
-    role: '8th Event',
-    side: 'Alumni stories Hub',
+    dept: '企業管理學系',
+    experience: [{ cohort: '8th', subRole: 'Event' }],
+    sideProjects: ['Alumni stories Hub'],
     certs: [],
   },
   {
     name: '張育鳳 Jessie Chang',
+    image: '/images/Ambassador/Jessie Chang.png',
     school: '國立中正大學',
-    dept: '外文系/雙資管系',
-    role: '8th Event',
-    side: 'Dev team Anti disinformation and fraud proposal',
+    dept: '外文系雙主修資訊管理學系',
+    experience: [{ cohort: '8th', subRole: 'Event' }],
+    sideProjects: ['Dev team Anti disinformation and fraud proposal'],
     certs: ['AIF-C01'],
   },
   {
     name: '余芷葳 Ariel Yu',
+    image: '/images/Ambassador/Ariel Yu.png',
     school: '國立政治大學',
     dept: '資管系',
-    role: '8th Tech',
-    side: 'Dev Team TPET',
+    experience: [{ cohort: '8th', subRole: 'Tech' }],
+    sideProjects: ['Dev Team TPET'],
     certs: [],
   },
   {
     name: '陳璿修 Stanley Chen',
     school: '國立臺灣大學',
     dept: '資訊工程學系',
-    role: '8th Tech',
-    side: 'Dev Team TPET',
+    experience: [{ cohort: '8th', subRole: 'Tech' }],
+    sideProjects: ['Dev Team TPET'],
     certs: ['AIF-C01'],
   },
   {
+    name: '陳俊瑋 Aaron Chen',
+    image: '/images/Ambassador/Aaron Chen.png',
+    school: '國立中央大學',
+    dept: '資訊工程學系',
+    experience: [{ cohort: '8th', subRole: 'Tech' }],
+    sideProjects: ['Dev Team TPET', 'Alumni stories Hub'],
+    certs: ['AIF-C01', 'CLF-C02'],
+  },
+  {
     name: '陳敬翰 Vincent Chen',
+    image: '/images/Ambassador/Vincent Chen.png',
     school: '國立政治大學',
     dept: '資訊科學所',
-    role: '8th Tech',
-    side: 'Dev Team TPET, Alumni stories Hub',
+    experience: [{ cohort: '8th', subRole: 'Tech' }],
+    sideProjects: ['Dev Team TPET', 'Alumni stories Hub'],
     certs: [],
   },
   {
     name: '蘇郁茗 Maggie Su',
+    image: '/images/Ambassador/Maggie Su.png',
     school: '國立臺灣科技大學',
-    dept: '企管系',
-    role: '8th Event',
-    side: 'Dev team Anti disinformation and fraud proposal',
+    dept: '企業管理學系',
+    experience: [{ cohort: '8th', subRole: 'Event' }],
+    sideProjects: ['Dev team Anti disinformation and fraud proposal'],
     certs: ['AIF-C01'],
   },
   {
     name: '黃詠綺 Kiki Huang',
     school: '國立中央大學',
-    dept: '資工系',
-    role: '8th Tech Team Lead',
-    side: '7th Tech',
+    dept: '資訊工程學系',
+    experience: [
+      { cohort: '7th', subRole: 'Tech' },
+      { cohort: '8th', subRole: 'Tech Team Lead' },
+    ],
+    sideProjects: [],
     certs: ['AIF-C01', 'CLF-C02', 'SAA-C03'],
   },
   {
     name: '吳哲丞 Reeve Wu',
+    image: '/images/Ambassador/Reeve Wu.png',
     school: '國立臺北科技大學',
     dept: '資訊工程系',
-    role: '8th Tech Team Lead',
-    side: '7th Tech',
+    experience: [
+      { cohort: '7th', subRole: 'Tech' },
+      { cohort: '8th', subRole: 'Tech Team Lead' },
+    ],
+    sideProjects: [],
     certs: [],
   },
   {
     name: '許雅筑 Sophia Hsu',
     school: '國立中山大學',
     dept: '行銷傳播研究所',
-    role: '8th Marketing',
-    side: 'DGR Program, Dev Team Official Website, Alumni stories Hub',
+    experience: [{ cohort: '8th', subRole: 'Event' }],
+    sideProjects: ['DGR Program', 'Dev Team Official Website', 'Alumni stories Hub'],
     certs: [],
+  },
+  {
+    name: '王亭淇 Tiffany Wang',
+    image: '/images/Ambassador/Tiffany Wang.png',
+    school: '國立台北大學',
+    dept: '會計系',
+    experience: [
+      { cohort: '7th', subRole: 'Event' },
+      { cohort: '8th', subRole: 'Event Team Lead' },
+    ],
+    sideProjects: [],
+    certs: ['AIF-C01', 'CLF-C02'],
   },
 ];
