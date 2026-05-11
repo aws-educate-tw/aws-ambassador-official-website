@@ -1,11 +1,23 @@
 .section {
   width: 100%;
-  padding: 32px 80px;
+  padding: var(--section-padding-y-sm) var(--page-padding-x);
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-inline: var(--page-padding-x-sm);
+  }
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 80px;
+    padding: var(--section-padding-y) var(--page-padding-x-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-inline: var(--page-padding-x-lg);
   }
 }
 
@@ -44,12 +56,16 @@
 
 .card {
   position: relative;
-  background-color: var(--color-bg-primary);
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-2xl);
   border: 1px solid var(--color-border-subtle);
-  transform-style: preserve-3d;
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .card {
+    min-height: unset;
+  }
 }
 
 .cardInner {
@@ -58,15 +74,7 @@
   width: 100%;
   border-radius: var(--radius-2xl);
   overflow: hidden;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.cardInnerBack {
-  position: absolute;
-  inset: 0;
-  transform: rotateY(180deg);
-  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 768px) {
@@ -204,6 +212,8 @@
 .cardLeftFooter {
   margin-top: auto;
   padding-top: 40px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .interviewBtn {
@@ -235,6 +245,7 @@
 /* 右側淺色區 */
 .cardRight {
   flex: 1;
+  background-color: var(--color-neutral-50);
   padding: 32px;
   display: flex;
   flex-direction: column;

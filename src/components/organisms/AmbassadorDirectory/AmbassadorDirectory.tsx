@@ -119,12 +119,15 @@ export function AmbassadorDirectory() {
   }, []);
 
   const filtered = useMemo(() => {
-    setPage(1);
     return DIRECTORY.filter((p) => {
       const matchCohort = cohort === '' || p.experience.some((e) => e.cohort === cohort);
-      const matchRole = role === '' || p.experience.some((e) => e.subRole === role);
+      const matchRole = role === '' || p.experience.some((e) => e.subRole.includes(role));
       return matchCohort && matchRole;
     });
+  }, [cohort, role]);
+
+  useEffect(() => {
+    setPage(1);
   }, [cohort, role]);
 
   const totalPages = Math.ceil(filtered.length / pageSize);
@@ -171,8 +174,7 @@ export function AmbassadorDirectory() {
         <motion.div
           className={styles.grid}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
           variants={{
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.07 } },

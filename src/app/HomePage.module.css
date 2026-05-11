@@ -25,18 +25,18 @@
 
 /* ===== Stats Section ===== */
 .statsSection {
-  padding: var(--space-20) var(--space-4);
+  padding: var(--section-padding-y) var(--page-padding-x);
 }
 
 @media (min-width: 640px) {
   .statsSection {
-    padding: var(--space-20) var(--space-6);
+    padding-inline: var(--page-padding-x-sm);
   }
 }
 
 @media (min-width: 1024px) {
   .statsSection {
-    padding: var(--space-20) var(--space-8);
+    padding-inline: var(--page-padding-x-lg);
   }
 }
 
@@ -62,12 +62,24 @@
 
 /* ===== Program Explore Section (探索大使計畫) ===== */
 .programExploreSection {
-  padding: 6rem 2rem;
+  padding: var(--section-padding-y) var(--page-padding-x);
+}
+
+@media (min-width: 640px) {
+  .programExploreSection {
+    padding-inline: var(--page-padding-x-sm);
+  }
 }
 
 @media (min-width: 768px) {
   .programExploreSection {
-    padding: 6rem 5rem;
+    padding-inline: var(--page-padding-x-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .programExploreSection {
+    padding-inline: var(--page-padding-x-lg);
   }
 }
 
@@ -175,18 +187,18 @@
 
 /* ===== Features Section ===== */
 .featuresSection {
-  padding: var(--space-20) var(--space-4);
+  padding: var(--section-padding-y) var(--page-padding-x);
 }
 
 @media (min-width: 640px) {
   .featuresSection {
-    padding: var(--space-20) var(--space-6);
+    padding-inline: var(--page-padding-x-sm);
   }
 }
 
 @media (min-width: 1024px) {
   .featuresSection {
-    padding: var(--space-20) var(--space-8);
+    padding-inline: var(--page-padding-x-lg);
   }
 }
 
@@ -212,18 +224,18 @@
 
 /* ===== Pillars Section ===== */
 .pillarsSection {
-  padding: var(--space-10) var(--space-10);
+  padding: var(--section-padding-y) var(--page-padding-x);
 }
 
 @media (min-width: 640px) {
   .pillarsSection {
-    padding: var(--space-10) var(--space-10);
+    padding-inline: var(--page-padding-x-sm);
   }
 }
 
 @media (min-width: 1024px) {
   .pillarsSection {
-    padding: var(--space-10) var(--space-10);
+    padding-inline: var(--page-padding-x-lg);
   }
 }
 
@@ -311,18 +323,18 @@
 
 /* ===== Benefits Section ===== */
 .benefitsSection {
-  padding: var(--space-10) var(--space-10);
+  padding: var(--section-padding-y) var(--page-padding-x);
 }
 
 @media (min-width: 640px) {
   .benefitsSection {
-    padding: var(--space-10) var(--space-10);
+    padding-inline: var(--page-padding-x-sm);
   }
 }
 
 @media (min-width: 1024px) {
   .benefitsSection {
-    padding: var(--space-10) var(--space-10);
+    padding-inline: var(--page-padding-x-lg);
   }
 }
 
