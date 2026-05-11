@@ -21,7 +21,9 @@ function usePageSize() {
   useEffect(() => {
     const update = () => {
       const w = window.innerWidth;
-      setPageSize(w >= 1024 ? 9 : w >= 768 ? 8 : 9);
+      let size = 9;
+      if (w >= 768 && w < 1024) size = 8;
+      setPageSize(size);
     };
     update();
     window.addEventListener('resize', update);
@@ -35,12 +37,12 @@ function CustomSelect({
   onChange,
   options,
   placeholder,
-}: {
+}: Readonly<{
   value: string;
   onChange: (val: string) => void;
   options: { label: string; value: string }[];
   placeholder: string;
-}) {
+}>) {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -75,31 +77,27 @@ function CustomSelect({
 
       {isOpen && (
         <div className={styles.customSelectDropdown}>
-          <ul className={styles.customSelectList}>
-            <li
+          <div className={styles.customSelectList}>
+            <button
+              type="button"
               className={`${styles.customSelectOption} ${value === '' ? styles.customSelectOptionSelected : ''}`}
-              onClick={() => {
-                onChange('');
-                setIsOpen(false);
-              }}
+              onClick={() => { onChange(''); setIsOpen(false); }}
             >
               <span className={styles.customSelectOptionText}>{placeholder}</span>
               {value === '' && <Check size={16} className={styles.customSelectCheck} />}
-            </li>
+            </button>
             {options.map((opt) => (
-              <li
+              <button
                 key={opt.value}
+                type="button"
                 className={`${styles.customSelectOption} ${value === opt.value ? styles.customSelectOptionSelected : ''}`}
-                onClick={() => {
-                  onChange(opt.value);
-                  setIsOpen(false);
-                }}
+                onClick={() => { onChange(opt.value); setIsOpen(false); }}
               >
                 <span className={styles.customSelectOptionText}>{opt.label}</span>
                 {value === opt.value && <Check size={16} className={styles.customSelectCheck} />}
-              </li>
+              </button>
             ))}
-          </ul>
+          </div>
         </div>
       )}
     </div>
@@ -115,7 +113,7 @@ export function AmbassadorDirectory() {
   const cohorts = useMemo(() => {
     const allCohorts = DIRECTORY.flatMap((p) => p.experience.map((e) => e.cohort));
     const set = new Set(allCohorts);
-    return Array.from(set).sort();
+    return Array.from(set).sort((a, b) => a.localeCompare(b));
   }, []);
 
   const filtered = useMemo(() => {
@@ -180,9 +178,9 @@ export function AmbassadorDirectory() {
             visible: { opacity: 1, transition: { staggerChildren: 0.07 } },
           }}
         >
-          {paginated.map((person, i) => (
+          {paginated.map((person) => (
             <motion.div
-              key={i}
+              key={person.name}
               className={styles.card}
               variants={{
                 hidden: { opacity: 0, y: 16 },
@@ -225,8 +223,8 @@ export function AmbassadorDirectory() {
                     <Luggage className={styles.rowIcon} size={20} />
                     <div className={styles.detailTexts}>
                       <div className={styles.experienceList}>
-                        {person.experience.map((exp, idx) => (
-                          <span key={idx} className={styles.detailMain}>
+                        {person.experience.map((exp) => (
+                          <span key={`${exp.cohort}-${exp.subRole}`} className={styles.detailMain}>
                             {exp.cohort} {exp.subRole}
                           </span>
                         ))}
@@ -244,8 +242,8 @@ export function AmbassadorDirectory() {
                       <Luggage className={styles.rowIcon} size={20} />
                       <div className={styles.detailTexts}>
                         <div className={styles.experienceList}>
-                          {person.sideProjects.map((proj, idx) => (
-                            <span key={idx} className={styles.detailMain}>
+                          {person.sideProjects.map((proj) => (
+                            <span key={proj} className={styles.detailMain}>
                               {proj}
                             </span>
                           ))}
@@ -259,8 +257,8 @@ export function AmbassadorDirectory() {
                   {/* 5. 相關證照 */}
                   {person.certs && person.certs.length > 0 && (
                     <div className={styles.certContainer}>
-                      {person.certs.map((cert, idx) => (
-                        <div key={idx} className={styles.certBadge}>
+                      {person.certs.map((cert) => (
+                        <div key={cert} className={styles.certBadge}>
                           {cert}
                         </div>
                       ))}
