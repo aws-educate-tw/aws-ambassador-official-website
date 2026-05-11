@@ -48,7 +48,7 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         name: 'Chloe Chang',
         title: 'AWS Educate Taiwan 校園大使校友',
         tags: ['數據決策', '國際化'],
-        image: '/images/Stories/Chloe.png',
+        image: '',
         highlights: [
           '現任知名公司擔任資深產品分析師',
           '具備橫跨工業工程與資訊管理的跨領域專業背景',
@@ -110,7 +110,7 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         name: 'Aaron Huang',
         title: 'AWS Educate Taiwan 校園大使校友',
         tags: ['數據決策', '國際化'],
-        image: '/images/Stories/Aaron.png',
+        image: '',
         highlights: [
           '精準定位自我於「商業與技術的完美平衡」 ',
           '具備高情商與強大的跨領域溝通力，擅長管理客戶期待與解決複雜的專案需求',
@@ -129,7 +129,7 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         name: '許銘軒',
         title: 'AWS Educate Taiwan 校園大使校友',
         tags: ['數據決策', '國際化'],
-        image: '/images/Stories/Hsuan.png',
+        image: '',
         highlights: [
           '資管背景跨足智慧製造，以跨域視角深耕半導體產業',
           '從雲端大使到業界工程師，用每一次實戰累積技術判斷力',
@@ -450,7 +450,6 @@ export const DIRECTORY: DirectoryPerson[] = [
   },
   {
     name: '吳哲丞 Reeve Wu',
-    image: '/images/Ambassador/Reeve Wu.png',
     school: '國立臺北科技大學',
     dept: '資訊工程系',
     experience: [

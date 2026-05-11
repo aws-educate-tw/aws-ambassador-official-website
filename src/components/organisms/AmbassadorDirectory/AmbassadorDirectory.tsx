@@ -1,12 +1,34 @@
 'use client';
 
 import { DIRECTORY } from '@/data/alumni';
-import { ArrowLeft, ArrowRight, GraduationCap, Luggage, ChevronDown, Check } from 'lucide-react';
-import { useMemo, useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import {
+  ArrowLeft,
+  ArrowRight,
+  Check,
+  ChevronDown,
+  GraduationCap,
+  Luggage,
+  Users,
+} from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './AmbassadorDirectory.module.css';
 
-const PAGE_SIZE = 9;
 const ROLES = ['Marketing', 'Tech', 'Event'];
+
+function usePageSize() {
+  const [pageSize, setPageSize] = useState(9);
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setPageSize(w >= 1024 ? 9 : w >= 768 ? 8 : 9);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+  return pageSize;
+}
 
 function CustomSelect({
   value,
@@ -42,9 +64,7 @@ function CustomSelect({
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
-        <span
-          className={value === '' ? styles.customSelectPlaceholder : styles.customSelectValue}
-        >
+        <span className={value === '' ? styles.customSelectPlaceholder : styles.customSelectValue}>
           {selectedOption ? selectedOption.label : placeholder}
         </span>
         <ChevronDown
@@ -90,6 +110,7 @@ export function AmbassadorDirectory() {
   const [cohort, setCohort] = useState('');
   const [role, setRole] = useState('');
   const [page, setPage] = useState(1);
+  const pageSize = usePageSize();
 
   const cohorts = useMemo(() => {
     const allCohorts = DIRECTORY.flatMap((p) => p.experience.map((e) => e.cohort));
@@ -106,20 +127,32 @@ export function AmbassadorDirectory() {
     });
   }, [cohort, role]);
 
-  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
-  const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
-  const showPagination = filtered.length > PAGE_SIZE;
+  const totalPages = Math.ceil(filtered.length / pageSize);
+  const paginated = filtered.slice((page - 1) * pageSize, page * pageSize);
+  const showPagination = filtered.length > pageSize;
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
+        <motion.div
+          className={styles.header}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className={styles.title}>歷屆大使名錄</h2>
           <p className={styles.subtitle}>探索來自全台各大專院校的優秀雲端人才</p>
-        </div>
+        </motion.div>
 
         {/* 篩選列 */}
-        <div className={styles.filters}>
+        <motion.div
+          className={styles.filters}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+        >
           <CustomSelect
             value={cohort}
             onChange={setCohort}
@@ -132,21 +165,43 @@ export function AmbassadorDirectory() {
             options={ROLES.map((r) => ({ label: r, value: r }))}
             placeholder="所有職能"
           />
-        </div>
+        </motion.div>
 
         {/* 名錄卡片網格 */}
-        <div className={styles.grid}>
+        <motion.div
+          className={styles.grid}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.07 } },
+          }}
+        >
           {paginated.map((person, i) => (
-            <div key={i} className={styles.card}>
+            <motion.div
+              key={i}
+              className={styles.card}
+              variants={{
+                hidden: { opacity: 0, y: 16 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
               <div className={styles.cardTop}>
                 {/* 1. 照片：若資料沒給照片，則顯示一個預設圖 */}
-                <img
-                  src={person.image || 'https://placehold.co/84x120?text=AWS'}
-                  className={styles.avatar}
-                  alt={person.name}
-                  width={84}
-                  height={120}
-                />
+                {person.image ? (
+                  <img
+                    src={person.image}
+                    className={styles.avatar}
+                    alt={person.name}
+                    width={84}
+                    height={120}
+                  />
+                ) : (
+                  <div className={styles.avatarPlaceholder}>
+                    <Users size={32} color="#222F3E" />
+                  </div>
+                )}
 
                 <div className={styles.cardInfo}>
                   {/* 姓名 */}
@@ -241,9 +296,9 @@ export function AmbassadorDirectory() {
                   </button>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {showPagination && (
           <div className={styles.pagination}>
