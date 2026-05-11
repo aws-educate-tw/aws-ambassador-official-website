@@ -7,7 +7,7 @@ export interface AlumniProfile {
   name: string;
   title: string;
   tags: string[];
-  image: string;
+  image?: string;
   highlights: string[];
   quote: string;
   careerPath: CareerStep[];

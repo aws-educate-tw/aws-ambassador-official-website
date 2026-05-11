@@ -109,6 +109,7 @@ export function AmbassadorDirectory() {
   const [role, setRole] = useState('');
   const [page, setPage] = useState(1);
   const pageSize = usePageSize();
+  const sectionRef = useRef<HTMLElement>(null);
 
   const cohorts = useMemo(() => {
     const allCohorts = DIRECTORY.flatMap((p) => p.experience.map((e) => e.cohort));
@@ -129,11 +130,27 @@ export function AmbassadorDirectory() {
   }, [cohort, role]);
 
   const totalPages = Math.ceil(filtered.length / pageSize);
+
+  useEffect(() => {
+    setPage((p) => Math.min(p, totalPages || 1));
+  }, [pageSize, totalPages]);
   const paginated = filtered.slice((page - 1) * pageSize, page * pageSize);
   const showPagination = filtered.length > pageSize;
 
+  const shouldScrollRef = useRef(false);
+  useEffect(() => {
+    if (!shouldScrollRef.current) return;
+    shouldScrollRef.current = false;
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [page]);
+
+  function changePage(next: number) {
+    shouldScrollRef.current = true;
+    setPage(next);
+  }
+
   return (
-    <section className={styles.section}>
+    <section className={styles.section} ref={sectionRef}>
       <div className={styles.container}>
         <motion.div
           className={styles.header}
@@ -304,7 +321,7 @@ export function AmbassadorDirectory() {
           <div className={styles.pagination}>
             <button
               className={styles.pageBtn}
-              onClick={() => setPage((p) => p - 1)}
+              onClick={() => changePage(page - 1)}
               disabled={page === 1}
             >
               <ArrowLeft size={20} color="white" />
@@ -315,7 +332,7 @@ export function AmbassadorDirectory() {
             </span>
             <button
               className={styles.pageBtn}
-              onClick={() => setPage((p) => p + 1)}
+              onClick={() => changePage(page + 1)}
               disabled={page === totalPages}
             >
               <span className={styles.pageBtnLabel}>下一頁</span>

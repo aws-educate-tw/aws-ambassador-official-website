@@ -1,6 +1,5 @@
 .section {
   padding: var(--section-padding-y) var(--page-padding-x);
-  /* background-color: #ffffff; */
 }
 
 @media (min-width: 640px) {

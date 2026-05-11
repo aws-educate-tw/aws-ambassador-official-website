@@ -2,8 +2,8 @@
 
 import { StoryCategory } from '@/data/alumni';
 import { motion } from 'framer-motion';
-import { Quote, Star } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { Quote, Star, Users } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 import styles from './StorySection.module.css';
 
@@ -16,7 +16,9 @@ function AlumniCardContent({ data }: Readonly<{ data: StoryCategory['alumni'][st
     <>
       <div className={styles.cardLeft}>
         <div className={styles.profileRow}>
-          <img src={data.image} alt={data.name} className={styles.avatar} />
+          {data.image
+            ? <img src={data.image} alt={data.name} className={styles.avatar} />
+            : <div className={styles.avatarPlaceholder} aria-hidden="true"><Users size={48} color="rgba(255,255,255,0.4)" /></div>}
           <h3 className={styles.name}>{data.name}</h3>
         </div>
         <div className={styles.info}>
@@ -43,7 +45,7 @@ function AlumniCardContent({ data }: Readonly<{ data: StoryCategory['alumni'][st
       </div>
 
       <div className={styles.cardRight}>
-        <div className={styles.quoteIconWrapper}>
+        <div className={styles.quoteDecor}>
           <Quote size={40} color="#FF9900" />
         </div>
         <p className={styles.quote}>&ldquo;{data.quote}&rdquo;</p>
@@ -68,7 +70,7 @@ function AlumniCardContent({ data }: Readonly<{ data: StoryCategory['alumni'][st
 
 type Phase = 'idle' | 'flipping';
 
-const FLIP_DURATION = 600;
+const FLIP_DURATION_MS = 700;
 
 export function StorySection({ category }: Readonly<StorySectionProps>) {
   const alumniKeys = Object.keys(category.alumni);
@@ -76,15 +78,19 @@ export function StorySection({ category }: Readonly<StorySectionProps>) {
   const [phase, setPhase] = useState<Phase>('idle');
   const [rotation, setRotation] = useState(0);
   const pendingKey = useRef<string | null>(null);
+  const flipTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => { if (flipTimer.current) clearTimeout(flipTimer.current); }, []);
 
   const handleSwitch = (key: string) => {
     if (key === activeKey || phase !== 'idle') return;
     pendingKey.current = key;
     setPhase('flipping');
     setRotation((prev) => prev + 180);
-    setTimeout(() => {
+    flipTimer.current = setTimeout(() => {
       setActiveKey(pendingKey.current!);
-    }, FLIP_DURATION / 2);
+      flipTimer.current = null;
+    }, FLIP_DURATION_MS / 2);
   };
 
   const handleTransitionEnd = (e: React.TransitionEvent<HTMLDivElement>) => {
@@ -111,7 +117,7 @@ export function StorySection({ category }: Readonly<StorySectionProps>) {
         <div className={styles.cardPerspective}>
           <div
             className={styles.card}
-            style={{ transform: `rotateY(${rotation}deg)` }}
+            style={{ transform: `rotateY(${rotation}deg)`, transitionDuration: `${FLIP_DURATION_MS}ms` }}
             onTransitionEnd={handleTransitionEnd}
           >
             {alumniKeys.map((key) => {
@@ -121,6 +127,7 @@ export function StorySection({ category }: Readonly<StorySectionProps>) {
                   key={key}
                   className={styles.cardInner}
                   style={{
+                    transitionDuration: `${FLIP_DURATION_MS}ms`,
                     ...(isActive
                       ? {}
                       : {
