@@ -292,7 +292,7 @@ export function AmbassadorDirectory() {
                     大使旅程全心得
                   </a>
                 ) : (
-                  <button className={styles.btn} disabled>
+                  <button type="button" className={styles.btn} disabled>
                     心得整理中
                   </button>
                 )}
@@ -308,7 +308,7 @@ export function AmbassadorDirectory() {
                     LinkedIn 連結
                   </a>
                 ) : (
-                  <button className={styles.btn} disabled>
+                  <button type="button" className={styles.btn} disabled>
                     尚未提供連結
                   </button>
                 )}
@@ -320,6 +320,7 @@ export function AmbassadorDirectory() {
         {showPagination && (
           <div className={styles.pagination}>
             <button
+              type="button"
               className={styles.pageBtn}
               onClick={() => changePage(page - 1)}
               disabled={page === 1}
@@ -331,6 +332,7 @@ export function AmbassadorDirectory() {
               {page} / {totalPages}
             </span>
             <button
+              type="button"
               className={styles.pageBtn}
               onClick={() => changePage(page + 1)}
               disabled={page === totalPages}

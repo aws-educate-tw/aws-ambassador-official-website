@@ -16,9 +16,13 @@ function AlumniCardContent({ data }: Readonly<{ data: StoryCategory['alumni'][st
     <>
       <div className={styles.cardLeft}>
         <div className={styles.profileRow}>
-          {data.image
-            ? <img src={data.image} alt={data.name} className={styles.avatar} />
-            : <div className={styles.avatarPlaceholder} aria-hidden="true"><Users size={48} color="rgba(255,255,255,0.4)" /></div>}
+          {data.image ? (
+            <img src={data.image} alt={data.name} className={styles.avatar} />
+          ) : (
+            <div className={styles.avatarPlaceholder} aria-hidden="true">
+              <Users size={48} color="rgba(255,255,255,0.4)" />
+            </div>
+          )}
           <h3 className={styles.name}>{data.name}</h3>
         </div>
         <div className={styles.info}>
@@ -40,7 +44,9 @@ function AlumniCardContent({ data }: Readonly<{ data: StoryCategory['alumni'][st
           </div>
         </div>
         <div className={styles.cardLeftFooter}>
-          <button className={styles.interviewBtn}>查看更多訪談資訊</button>
+          <button type="button" className={styles.interviewBtn}>
+            查看更多訪談資訊
+          </button>
         </div>
       </div>
 
@@ -80,7 +86,12 @@ export function StorySection({ category }: Readonly<StorySectionProps>) {
   const pendingKey = useRef<string | null>(null);
   const flipTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => () => { if (flipTimer.current) clearTimeout(flipTimer.current); }, []);
+  useEffect(
+    () => () => {
+      if (flipTimer.current) clearTimeout(flipTimer.current);
+    },
+    [],
+  );
 
   const handleSwitch = (key: string) => {
     if (key === activeKey || phase !== 'idle') return;
@@ -117,7 +128,10 @@ export function StorySection({ category }: Readonly<StorySectionProps>) {
         <div className={styles.cardPerspective}>
           <div
             className={styles.card}
-            style={{ transform: `rotateY(${rotation}deg)`, transitionDuration: `${FLIP_DURATION_MS}ms` }}
+            style={{
+              transform: `rotateY(${rotation}deg)`,
+              transitionDuration: `${FLIP_DURATION_MS}ms`,
+            }}
             onTransitionEnd={handleTransitionEnd}
           >
             {alumniKeys.map((key) => {
@@ -153,6 +167,7 @@ export function StorySection({ category }: Readonly<StorySectionProps>) {
             {alumniKeys.map((key) => (
               <button
                 key={key}
+                type="button"
                 onClick={() => handleSwitch(key)}
                 className={`${styles.switchBtn} ${activeKey === key ? styles.switchBtnActive : ''}`}
               >

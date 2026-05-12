@@ -1,5 +1,3 @@
-'use client';
-
 import { AlumniHero } from '@/components/organisms/AlumniHero/AlumniHero';
 import { AmbassadorDirectory } from '@/components/organisms/AmbassadorDirectory/AmbassadorDirectory';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
