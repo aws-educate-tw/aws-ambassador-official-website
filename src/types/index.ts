@@ -61,6 +61,7 @@ export interface FeatureCard {
   title: string;
   description: string;
   icon: string;
+  tag?: string;
   cta: {
     label: string;
     href: string;
