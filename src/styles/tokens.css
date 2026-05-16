@@ -176,6 +176,24 @@
   --principle-icon-bg-sand: #fef3c7;
   --principle-icon-bg-rose: #ffe4e6;
   --principle-icon-bg-mint: #d1fae5;
+
+  /* ===== Program Section ===== */
+  --program-section-padding: 40px;
+  --program-section-padding-mobile: 32px 16px;
+  --program-section-header-gap: 12px;
+  --program-section-section-gap: 20px;
+  --program-section-grid-gap: 12px;
+  --program-section-title-size: 36px;
+  --program-section-title-size-mobile: 30px;
+  --program-section-title-line-height: 36px;
+  --program-section-title-line-height-mobile: 32px;
+  --program-section-title-color: var(--color-surface-600);
+  --program-section-subtitle-size: 14px;
+  --program-section-subtitle-line-height: 20px;
+  --program-section-subtitle-color: var(--color-neutral-600);
+  --program-section-grid-max-width: 1280px;
+  --program-section-grid-columns: repeat(3, minmax(0, 1fr));
+  --program-section-grid-columns-mobile: 1fr;
 }
 
 /* Reduced Motion Support */
