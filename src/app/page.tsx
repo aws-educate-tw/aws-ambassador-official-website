@@ -110,28 +110,11 @@ const leadershipPrinciples = [
 ] as const;
 /* 首頁 */
 
-// Header
-const navigationData = {
-  logo: { text: 'AWS', subtitle: 'Educate Ambassador' },
-  items: [
-    { label: '首頁', href: '/' },
-    { label: '大使計畫總覽', href: '/program' },
-    { label: '活動中心', href: '#events' },
-    { label: '校友專區', href: '#alumni' },
-    { label: '聯絡我們', href: '#contact' },
-  ],
-  ctaLabel: '立即申請',
-  ctaHref: '/apply',
-};
-
 export default function HomePage() {
   const marqueePrinciples = [...leadershipPrinciples, ...leadershipPrinciples];
 
   return (
     <div className={styles.page}>
-      {/* Navigation */}
-      <Navigation {...navigationData} />
-
       {/* HeroSection */}
       <HeroSection {...homeData.hero} statistics={homeData.statistics} />
 

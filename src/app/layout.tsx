@@ -1,4 +1,5 @@
 import { Footer } from '@/components/organisms/Footer/Footer';
+import { Navigation } from '@/components/organisms/Navigation/Navigation';
 import layoutData from '@/content/layout.json';
 import '@/styles/animations.css';
 import '@/styles/globals.css';
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       </head>
       <body className="bg-white text-neutral-900">
         <div className="flex min-h-screen flex-col">
+          <Navigation {...layoutData.navigation} />
           <main className="flex-1">{children}</main>
           <Footer {...layoutData.footer} />
         </div>

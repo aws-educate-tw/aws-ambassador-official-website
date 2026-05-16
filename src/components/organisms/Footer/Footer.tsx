@@ -6,10 +6,11 @@ import styles from './Footer.module.css';
 export interface FooterProps {
   copyright?: string;
   brandTitle?: string;
-  brandSubtext?: string;
+  brandSubtexts?: string[];
+  brandDesc?: string;
 }
 
-export function Footer({ copyright, brandTitle, brandSubtext }: Readonly<FooterProps>) {
+export function Footer({ copyright, brandTitle, brandSubtexts, brandDesc }: Readonly<FooterProps>) {
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
@@ -27,8 +28,11 @@ export function Footer({ copyright, brandTitle, brandSubtext }: Readonly<FooterP
         <div className={styles.gridContainer}>
           {/* 品牌區 */}
           <div>
-            <h3 className={styles.brandTitle}>{brandTitle || 'AWS Educate TW'}</h3>
-            <p className={styles.brandSubtext}>{brandSubtext || '賦能創新 · 連結未來'}</p>
+            {brandTitle && <h3 className={styles.brandTitle}>{brandTitle}</h3>}
+            {brandSubtexts?.map((text, idx) => (
+              <p key={idx} className={styles.brandSubtext}>{text}</p>
+            ))}
+            {brandDesc && <p className={styles.brandDesc}>{brandDesc}</p>}
           </div>
 
           {/* 快速連結 */}

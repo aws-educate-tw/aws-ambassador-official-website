@@ -70,7 +70,7 @@
   line-height: 1.6;
 }
 
-/* ===== 區段標題 ===== */
+/* ===== 區段標題 (快速連結、聯絡我們) ===== */
 .sectionTitle {
   font-size: 18px;
   font-weight: 700;
@@ -92,7 +92,7 @@
   font-size: 15px;
   color: #232f3e;
   text-decoration: none;
-  transition: color 300ms ease;
+  transition: opacity 300ms ease;
   cursor: pointer;
 }
 

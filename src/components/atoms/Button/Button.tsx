@@ -15,6 +15,8 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   ariaLabel?: string;
   className?: string;
+  target?: '_blank' | '_self' | '_parent' | '_top';
+  rel?: string;
 }
 
 export function Button({
@@ -28,6 +30,8 @@ export function Button({
   type = 'button',
   ariaLabel,
   className = '',
+  target,
+  rel,
 }: ButtonProps) {
   const classes = [
     styles.button,
@@ -42,7 +46,7 @@ export function Button({
 
   if (href && !disabled) {
     return (
-      <Link href={href} className={classes} aria-label={ariaLabel}>
+      <Link href={href} className={classes} aria-label={ariaLabel} target={target} rel={rel}>
         {children}
       </Link>
     );
