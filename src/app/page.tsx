@@ -1,29 +1,14 @@
 'use client';
 
+import BenefitList from '@/components/molecules/BenefitList/BenefitList';
 import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
 import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
 import { Navigation } from '@/components/organisms/Navigation/Navigation';
+import { ProgramExploreSection } from '@/components/organisms/ProgramSection/ProgramSection';
 import homeData from '@/content/home.json';
 import { motion } from 'framer-motion';
-import { Briefcase, Heart, Rocket, Sparkles, TrendingUp, Users } from 'lucide-react';
 import styles from './HomePage.module.css';
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
 
 const leadershipPrinciples = [
   {
@@ -123,15 +108,6 @@ const leadershipPrinciples = [
     icon: 'broad-responsibility',
   },
 ] as const;
-const benefitIconMap = {
-  rocket: Rocket,
-  users: Users,
-  briefcase: Briefcase,
-  sparkles: Sparkles,
-  trendingUp: TrendingUp,
-  heart: Heart,
-} as const;
-
 /* 首頁 */
 
 // Header
@@ -158,46 +134,6 @@ export default function HomePage() {
 
       {/* HeroSection */}
       <HeroSection {...homeData.hero} statistics={homeData.statistics} />
-
-      {/* 功能區 - 探索大使計畫 */}
-      <section className={styles.programExploreSection}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className={styles.sectionHeader}
-        >
-          <h2 id="benefits-heading" className={styles.sectionTitle}>
-            成為大使的六大優勢
-          </h2>
-        </motion.div>
-
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className={styles.programGrid}
-        >
-          {homeData.benefits.map((benefit, index) => {
-            const BenefitIcon =
-              benefitIconMap[benefit.icon as keyof typeof benefitIconMap] ?? Rocket;
-
-            return (
-              <motion.div key={`benefit-${index}-${benefit.text}`} variants={fadeInUp}>
-                <div
-                  className={`${styles.benefitCard} ${benefit.highlight ? styles.highlight : ''}`}
-                >
-                  <div className={styles.benefitIcon}>
-                    <BenefitIcon size={24} strokeWidth={2.25} aria-hidden="true" />
-                  </div>
-                  <span className={styles.benefitText}>{benefit.text}</span>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-      </section>
 
       {/* 四大支柱 */}
       <section className={styles.pillarsSection} aria-labelledby="pillars-heading">
@@ -231,6 +167,11 @@ export default function HomePage() {
           </div>
         </motion.div>
       </section>
+
+      {/* 功能區 - 探索大使計畫 */}
+      <ProgramExploreSection features={homeData.features} />
+
+      <BenefitList benefits={homeData.benefits} />
 
       {/* CTA 區 */}
       <CTASection
