@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "logo": { "text": "AWS Educate TW" },
+    "logo": { "text": "AWS Educate Taiwan" },
     "items": [
       { "label": "首頁", "href": "/" },
       { "label": "大使計畫總覽", "href": "/program" },
@@ -11,12 +11,9 @@
     "ctaHref": "https://www.instagram.com/awseducatestdambtw/"
   },
   "footer": {
-    "brandTitle": "AWS Educate TW",
-    "brandSubtexts": [
-      "賦能創新 · 連結未來",
-      "AWS Educate"
-    ],
-    "brandDesc": "TW Cloud Ambassador",
-    "copyright": "AWS Educate TW Campus Ambassador. All rights reserved."
+    "brandTitle": "AWS Educate Taiwan",
+    "brandSubtexts": ["賦能創新 · 連結未來", "AWS Educate"],
+    "brandDesc": "Taiwan Cloud Ambassador",
+    "copyright": "AWS Educate Taiwan Cloud Ambassador. Operated by 學生組織、大使團隊，自主營運"
   }
 }
