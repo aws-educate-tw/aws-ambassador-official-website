@@ -60,7 +60,7 @@ export function Navigation({
             priority
           />
           <span className={styles.logoText}>
-            {logo?.subtitle ? `${logo.text} ${logo.subtitle}` : logo?.text || 'AWS Educate TW'}
+            {logo?.subtitle ? `${logo.text} ${logo.subtitle}` : logo?.text || 'AWS Educate Taiwan'}
           </span>
         </Link>
 
