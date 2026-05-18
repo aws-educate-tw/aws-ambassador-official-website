@@ -12,6 +12,7 @@ export interface AlumniProfile {
   quote: string;
   careerPath: CareerStep[];
   interviewer: string;
+  interviewUrl?: string;
 }
 
 export interface StoryCategory {
@@ -48,7 +49,7 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         name: 'Chloe Chang',
         title: 'AWS Educate Taiwan 校園大使校友',
         tags: ['數據決策', '國際化'],
-        image: '',
+        image: '/images/Stories/Chloe.jpg',
         highlights: [
           '現任知名公司擔任資深產品分析師',
           '具備橫跨工業工程與資訊管理的跨領域專業背景',
@@ -70,7 +71,7 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
             text: '精準掌握營運效率、數據說故事與使用者體驗之間的差異，成為技術與商業團隊間的關鍵翻譯官。',
           },
         ],
-        interviewer: 'Selina, Jessie Huang',
+        interviewer: 'Selina, Jessie',
       },
     },
   },
@@ -104,7 +105,9 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
             text: '長期經營 Notion 技術輸出與個人品牌，獲邀至 K8s Summit 大型技術年會分享',
           },
         ],
-        interviewer: 'Allison, Elma',
+        interviewer: 'Vincent, Angela, Selina',
+        interviewUrl:
+          'https://medium.com/@awseducate.cloudambassador/alumni-stories-shiun-%E7%9A%84%E9%9B%B2%E7%AB%AF%E9%80%B2%E5%8C%96%E6%97%85%E7%A8%8B-%E5%9C%A8%E5%A4%A7%E4%BD%BF%E6%B7%AC%E9%8D%8A%E8%88%87%E5%BA%95%E5%B1%A4%E9%91%BD%E7%A0%94%E4%B8%AD%E6%89%BE%E5%88%B0%E5%AE%9A%E4%BD%8D-3240506f757a',
       },
       Aaron: {
         name: 'Aaron Huang',
@@ -123,7 +126,9 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           { id: '02', text: '曾任職於多間雲端廠商，具備深厚的售前、售後與顧問實戰經驗' },
           { id: '03', text: '捨棄高薪售後客服職位，毅然重返 AWS 深耕專案實作' },
         ],
-        interviewer: 'Allison, Elma',
+        interviewer: 'Vincent, Angela, Seren',
+        interviewUrl:
+          'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E4%BD%A0%E4%B8%8D%E9%9C%80%E8%A6%81%E5%BE%88%E5%8E%B2%E5%AE%B3%E6%89%8B%E5%87%BA%E7%99%BC-%E4%BD%A0%E5%BF%85%E9%A0%88%E5%85%88%E5%87%BA%E7%99%BC-%E6%89%8B%E6%9C%89%E8%B7%A8%E5%A4%A7-aaron-%E7%9A%84%E5%A4%96%E5%95%86%E6%B1%82%E8%81%B7%E4%B9%8B%E8%B7%AF-951834d93582',
       },
       許銘軒: {
         name: '許銘軒',
@@ -146,6 +151,8 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           { id: '03', text: '現任半導體廠 IT 工程師，投入大型企業系統的開發與維護工作' },
         ],
         interviewer: 'Seren, Aaron, Selina',
+        interviewUrl:
+          'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E6%8A%80%E8%A1%93%E6%88%90%E9%95%B7%E4%B8%A6%E9%9D%9E%E7%9B%B4%E7%B7%9A%E5%89%8D%E9%80%B2-%E8%80%8C%E6%98%AF%E5%9C%A8%E5%AF%A6%E6%88%B0%E4%B8%AD%E4%B8%8D%E6%96%B7%E4%BF%AE%E6%AD%A3%E6%96%B9%E5%90%91-alan-%E7%9A%84%E6%8A%80%E8%A1%93%E6%88%90%E9%95%B7%E8%B7%AF%E5%BE%91-f0e68dc6d9a4',
       },
     },
   },
@@ -176,7 +183,9 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           },
           { id: '03', text: '現任 Amazon Lab 126 營運專案經理，跨國協調多方團隊' },
         ],
-        interviewer: 'Allison, Elma',
+        interviewer: 'Jessie, Allison',
+        interviewUrl:
+          'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E5%BE%9E%E8%AA%9E%E6%96%87%E5%89%B5%E4%BD%9C%E8%B5%B0%E5%85%A5%E9%9B%B2%E7%AB%AF-sharon-%E7%9A%84%E8%B7%A8%E5%9F%9F%E6%88%90%E9%95%B7%E8%BB%8C%E8%B7%A1-ecf19715f40d',
       },
       葉禹旋: {
         name: '葉禹旋',
@@ -197,7 +206,9 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           },
           { id: '03', text: '現於 JTI 擔任 Brand Marketing Assistant，負責品牌行銷' },
         ],
-        interviewer: 'Jessie Huang, Elma',
+        interviewer: 'Jessie, Elma',
+        interviewUrl:
+          'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E5%BE%9E%E5%AF%AB%E7%A8%8B%E5%BC%8F%E5%88%B0%E8%AA%AA%E6%95%85%E4%BA%8B-mina-%E7%9A%84%E8%B7%A8%E5%9F%9F%E6%88%90%E9%95%B7%E8%B7%AF%E5%BE%91-18a9481ae40c',
       },
       王柏詒: {
         name: '王柏詒',
@@ -222,7 +233,9 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           },
           { id: '03', text: '目前在創投公司 Mesh 擔任 Marketing，推動新創企業的市場發展' },
         ],
-        interviewer: 'Elma, Jessie Huang',
+        interviewer: 'Jessie, Elma',
+        interviewUrl:
+          'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E8%81%B7%E6%B6%AF%E4%B8%8D%E6%98%AF%E8%A6%8F%E5%8A%83%E5%87%BA%E4%BE%86%E7%9A%84-%E8%80%8C%E6%98%AF%E8%B5%B0%E5%87%BA%E4%BE%86%E7%9A%84-boyi-%E7%9A%84%E8%B7%A8%E5%9F%9F%E8%81%B7%E6%B6%AF%E6%8E%A2%E7%B4%A2-ff2c81c963c8',
       },
     },
   },
@@ -266,6 +279,11 @@ export const DIRECTORY: DirectoryPerson[] = [
     ],
     sideProjects: [],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/shiunchiu',
+      story:
+        'https://medium.com/@shiunchiu.me/mentor-視角回顧-aws-educate-cloud-ambassador-大使計劃-40241223d36d',
+    },
   },
   {
     name: '鍾至漢 Harry Chung',
@@ -278,6 +296,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     ],
     sideProjects: [],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/chih-han-chung',
+    },
   },
   {
     name: 'Tony',
@@ -290,6 +311,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     ],
     sideProjects: [],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/tonywang1024/',
+    },
   },
   {
     name: '廖珺安 Jingle Liao',
@@ -301,6 +325,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     ],
     sideProjects: [],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/jun-an-jingle-liao-6b72b32a3/',
+    },
   },
   {
     name: '莊詠淳 Tracy Chuang',
@@ -322,6 +349,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Marketing' }],
     sideProjects: ['DGR Program', 'Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/allison-tsai-205702355/',
+    },
   },
   {
     name: '陳儀珊 Selina Chen',
@@ -331,6 +361,11 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Marketing' }],
     sideProjects: ['Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/selina-chen-050582170/',
+      story:
+        'https://medium.com/@yishan2004931022/aws-educate-cloud-ambassador-%E5%BF%83%E5%BE%97-cd6b3e031f78?postPublishedType=repub',
+    },
   },
   {
     name: '李映嫻 Angela Li',
@@ -340,6 +375,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Tech' }],
     sideProjects: ['Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/angeliii/',
+    },
   },
   {
     name: '陳珊汝 Olivia Chen',
@@ -348,6 +386,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Event' }],
     sideProjects: ['Dev Team Official Website'],
     certs: ['AIF-C01'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/selina-chen-050582170/',
+    },
   },
   {
     name: '許惠心 Elma Syu',
@@ -366,6 +407,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Tech' }],
     sideProjects: ['Dev Team TPET', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/yenyul/',
+    },
   },
   {
     name: '毛羚芳 Kathy Mao',
@@ -392,6 +436,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Event' }],
     sideProjects: ['Dev team Anti disinformation and fraud proposal'],
     certs: ['AIF-C01'],
+    links: {
+      linkedin: 'http://www.linkedin.com/in/jessie-chang-886485397',
+    },
   },
   {
     name: '余芷葳 Ariel Yu',
@@ -401,6 +448,11 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Tech' }],
     sideProjects: ['Dev Team TPET'],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/ariel-yu-183a66346/',
+      story:
+        'https://medium.com/@arielyu999/aws-educate-cloud-ambassador-%E9%9B%B2%E7%AB%AF%E4%B9%8B%E6%97%85-3445d4f58d20',
+    },
   },
   {
     name: '陳璿修 Stanley Chen',
@@ -418,6 +470,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Tech' }],
     sideProjects: ['Dev Team TPET', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/chun-wei-chen-494ab6354/',
+    },
   },
   {
     name: '陳敬翰 Vincent Chen',
@@ -427,6 +482,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Tech' }],
     sideProjects: ['Dev Team TPET', 'Alumni stories Hub'],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/%E6%95%AC%E7%BF%B0-%E9%99%B3-15b727233/',
+    },
   },
   {
     name: '蘇郁茗 Maggie Su',
@@ -436,6 +494,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Event' }],
     sideProjects: ['Dev team Anti disinformation and fraud proposal'],
     certs: ['AIF-C01'],
+    links: {
+      linkedin: 'http://www.linkedin.com/in/maggie-ymsu',
+    },
   },
   {
     name: '黃詠綺 Kiki Huang',
@@ -447,6 +508,11 @@ export const DIRECTORY: DirectoryPerson[] = [
     ],
     sideProjects: [],
     certs: ['AIF-C01', 'CLF-C02', 'SAA-C03'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/yung-chi-huang/',
+      story:
+        'https://medium.com/@hynnch1i/aws-eduacte-tw-cloud-ambassador-%E7%9A%84%E9%9B%B2%E7%AB%AF%E4%B9%8B%E6%97%85-79ded319d70b',
+    },
   },
   {
     name: '吳哲丞 Reeve Wu',
@@ -458,6 +524,11 @@ export const DIRECTORY: DirectoryPerson[] = [
     ],
     sideProjects: [],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/reeve-wu/',
+      story:
+        'https://medium.com/@reeve0319/aws-educate-cloud-ambassador-%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB-0927c5315a34',
+    },
   },
   {
     name: '許雅筑 Sophia Hsu',
@@ -478,5 +549,8 @@ export const DIRECTORY: DirectoryPerson[] = [
     ],
     sideProjects: [],
     certs: ['AIF-C01', 'CLF-C02'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/ting-chi-wang/',
+    },
   },
 ];

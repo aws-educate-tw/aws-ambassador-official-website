@@ -44,9 +44,15 @@ function AlumniCardContent({ data }: Readonly<{ data: StoryCategory['alumni'][st
           </div>
         </div>
         <div className={styles.cardLeftFooter}>
-          <button type="button" className={styles.interviewBtn}>
-            查看更多訪談資訊
-          </button>
+          {data.interviewUrl ? (
+            <a href={data.interviewUrl} target="_blank" rel="noopener noreferrer" className={styles.interviewBtn}>
+              查看更多訪談資訊
+            </a>
+          ) : (
+            <button type="button" className={styles.interviewBtn} disabled>
+              訪談內容整理中
+            </button>
+          )}
         </div>
       </div>
 

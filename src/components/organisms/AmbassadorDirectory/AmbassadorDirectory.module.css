@@ -83,7 +83,7 @@
   }
 }
 
-/* 個人卡片 — 嚴格對齊 Figma spec */
+/* 個人卡片 */
 .card {
   width: 100%;
   background-color: var(--color-bg-primary);
@@ -96,6 +96,7 @@
   align-items: center;
   gap: var(--space-4);
   box-sizing: border-box;
+  min-height: 512px;
 }
 
 /* 上半部：頭像 + 資訊 */

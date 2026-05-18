@@ -220,11 +220,10 @@
 
 .interviewBtn {
   display: inline-flex;
-  align-items: center;
   gap: 8px;
   padding: 12px 24px;
   background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
-  color: white;
+  color: var(--color-text-inverse);
   border-radius: var(--radius-full);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-sm);
@@ -234,6 +233,9 @@
     transform var(--duration-fast) var(--easing-ease-out);
   cursor: pointer;
   border: none;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .interviewBtn:hover {
@@ -242,6 +244,12 @@
 
 .interviewBtn:active {
   transform: scale(0.95);
+}
+
+.interviewBtn:disabled,
+.interviewBtn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* 右側淺色區 */
@@ -314,7 +322,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--color-text-inverse);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-lg);
   box-shadow: var(--shadow-md);
@@ -366,7 +374,7 @@
 
 .switchBtnActive {
   background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
-  color: white;
+  color: var(--color-text-inverse);
   box-shadow: var(--shadow-lg);
   transform: scale(1.05);
 }
