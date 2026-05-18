@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'Empower the next generation of cloud leaders through AWS Educate Campus Ambassador Program',
   robots: 'index, follow',
   icons: {
-    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="%23FF9900"/><text x="50%" y="50%" font-size="40" fill="white" text-anchor="middle" dy=".3em" font-weight="bold">A</text></svg>',
+    icon: '/AWS_Educate_Logo.svg',
   },
   openGraph: {
     title: 'AWS Educate Campus Ambassador',
