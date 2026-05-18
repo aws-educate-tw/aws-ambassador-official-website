@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'AWS Educate Taiwan',
     images: [
       {
-        url: '/images/OG Image.png',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
       },
