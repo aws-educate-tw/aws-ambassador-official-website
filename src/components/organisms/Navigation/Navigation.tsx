@@ -53,7 +53,7 @@ export function Navigation({
         <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
           <Image
             src="/AWS_Educate_Logo.svg"
-            alt="AWS Educate LOGO"
+            alt="AWS Educate logo"
             width={42}
             height={50}
             className={styles.logoIcon}
