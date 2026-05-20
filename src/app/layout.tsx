@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: 'Student Cloud Ambassador',
   robots: 'index, follow',
   icons: {
-    icon: '/AWS_Educate_Logo.svg',
+    icon: '/images/AWS_Educate_Logo.svg',
   },
   openGraph: {
     title: 'AWS Educate Taiwan',
