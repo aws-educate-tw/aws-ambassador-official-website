@@ -37,7 +37,7 @@ export function SideProjectTestimonialsCarousel({
       </div>
 
       <div className={styles.footer}>
-        <a href="\events" className={styles.button}>
+        <a href="/events" className={styles.button}>
           查看更多大使計畫活動
         </a>
       </div>

@@ -12,7 +12,9 @@ export interface PageBannerProps {
   };
 }
 
-export function PageBanner({ title, descriptions, ctaButton }: PageBannerProps) {
+export function PageBanner({ title, descriptions, ctaButton }: Readonly<PageBannerProps>) {
+  const isExternal = ctaButton ? /^https?:\/\//.test(ctaButton.href) : false;
+
   return (
     <section className={styles.banner}>
       <div className={styles.container}>
@@ -26,7 +28,7 @@ export function PageBanner({ title, descriptions, ctaButton }: PageBannerProps) 
           <h1 className={styles.title}>{title}</h1>
           <div className={styles.descriptionCard}>
             {descriptions.map((desc, index) => (
-              <p key={index} className={styles.description}>
+              <p key={desc} className={styles.description}>
                 {desc}
               </p>
             ))}
@@ -36,8 +38,8 @@ export function PageBanner({ title, descriptions, ctaButton }: PageBannerProps) 
               <a
                 href={ctaButton.href}
                 className={styles.ctaButton}
-                target={/^https?:\/\//.test(ctaButton.href) ? '_blank' : undefined}
-                rel={/^https?:\/\//.test(ctaButton.href) ? 'noopener noreferrer' : undefined}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
               >
                 {ctaButton.label}
               </a>
