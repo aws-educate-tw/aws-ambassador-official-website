@@ -6,6 +6,8 @@ import '@/styles/globals.css';
 import type { Metadata, Viewport } from 'next';
 import { ReactNode } from 'react';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aws-educate.tw';
+
 export const viewport: Viewport = {
   themeColor: '#FF9900',
   width: 'device-width',
@@ -13,6 +15,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'AWS Educate Taiwan',
   description: 'Student Cloud Ambassador',
   robots: 'index, follow',
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AWS Educate Taiwan',
     description: 'Student Cloud Ambassador',
-    url: 'https://www.aws-educate.tw/',
+    url: siteUrl,
     siteName: 'AWS Educate Taiwan',
     images: [
       {
