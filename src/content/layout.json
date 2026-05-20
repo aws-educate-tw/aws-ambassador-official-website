@@ -13,6 +13,7 @@
   "footer": {
     "brandTitle": "AWS Educate Taiwan",
     "brandSubtexts": ["賦能創新 · 連結未來", "AWS Educate"],
-    "brandDesc": "Taiwan Cloud Ambassador"
+    "brandDesc": "Taiwan Cloud Ambassador",
+    "copyright": "AWS Educate Taiwan Cloud Ambassador. Operated by 學生組織、大使團隊，自主營運"
   }
 }
