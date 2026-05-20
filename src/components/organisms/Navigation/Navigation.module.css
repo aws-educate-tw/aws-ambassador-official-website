@@ -291,7 +291,7 @@
   background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .logoText {
     font-size: 32px;
   }
