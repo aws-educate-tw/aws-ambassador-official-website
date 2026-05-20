@@ -37,11 +37,23 @@ export function CTASection({
         <p className={styles.description}>{description}</p>
 
         <div className={styles.actions}>
-          <Button href={primaryCTA.href} variant="secondary" size="lg">
+          <Button
+            href={primaryCTA.href}
+            variant="secondary"
+            size="lg"
+            target={/^https?:\/\//.test(primaryCTA.href) ? '_blank' : undefined}
+            rel={/^https?:\/\//.test(primaryCTA.href) ? 'noopener noreferrer' : undefined}
+          >
             {primaryCTA.label}
           </Button>
           {secondaryCTA && (
-            <Button href={secondaryCTA.href} variant="outline" size="lg">
+            <Button
+              href={secondaryCTA.href}
+              variant="outline"
+              size="lg"
+              target={/^https?:\/\//.test(secondaryCTA.href) ? '_blank' : undefined}
+              rel={/^https?:\/\//.test(secondaryCTA.href) ? 'noopener noreferrer' : undefined}
+            >
               {secondaryCTA.label}
             </Button>
           )}

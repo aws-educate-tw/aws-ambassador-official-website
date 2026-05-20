@@ -33,7 +33,12 @@ export function Navigation({
 }: Readonly<NavigationProps>) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const highlightedHref = activeItemHref ?? pathname;
+  const [clientPath, setClientPath] = useState<string | null>(null);
+  useEffect(() => {
+    setClientPath(pathname ?? null);
+  }, [pathname]);
+
+  const highlightedHref = activeItemHref ?? clientPath;
   const isExternalCta = /^https?:\/\//.test(ctaHref);
 
   useEffect(() => {

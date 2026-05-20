@@ -116,16 +116,21 @@ export function HeroSection(props: Readonly<HeroSectionProps>) {
           <p className={styles.description}>{description}</p>
 
           <div className={styles.actions}>
-            {ctas.map((cta) => (
-              <Link
-                key={`${cta.label}-${cta.href}`}
-                href={cta.href}
-                className={`${styles.ctaButton} ${cta.variant === 'dark' ? styles.ctaDark : styles.ctaPrimary}`}
-              >
-                <span>{cta.label}</span>
-                {cta.variant === 'primary' && <ArrowRight size={12} aria-hidden="true" />}
-              </Link>
-            ))}
+            {ctas.map((cta) => {
+              const isExternal = /^https?:\/\//.test(cta.href);
+              return (
+                <Link
+                  key={`${cta.label}-${cta.href}`}
+                  href={cta.href}
+                  className={`${styles.ctaButton} ${cta.variant === 'dark' ? styles.ctaDark : styles.ctaPrimary}`}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                >
+                  <span>{cta.label}</span>
+                  {cta.variant === 'primary' && <ArrowRight size={12} aria-hidden="true" />}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>

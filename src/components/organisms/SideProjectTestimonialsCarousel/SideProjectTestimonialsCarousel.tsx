@@ -7,7 +7,9 @@ export interface SideProjectTestimonialsCarouselProps {
   testimonials: TestimonialCardProps[];
 }
 
-export function SideProjectTestimonialsCarousel({ testimonials }: SideProjectTestimonialsCarouselProps) {
+export function SideProjectTestimonialsCarousel({
+  testimonials,
+}: SideProjectTestimonialsCarouselProps) {
   const doubled = [...testimonials, ...testimonials];
 
   return (
@@ -35,7 +37,7 @@ export function SideProjectTestimonialsCarousel({ testimonials }: SideProjectTes
       </div>
 
       <div className={styles.footer}>
-        <a href="#events" className={styles.button}>
+        <a href="\events" className={styles.button}>
           查看更多大使計畫活動
         </a>
       </div>
