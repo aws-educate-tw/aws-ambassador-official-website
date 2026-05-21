@@ -5,7 +5,7 @@ import { Footer } from '@/components/organisms/Footer/Footer';
 import { Navigation } from '@/components/organisms/Navigation/Navigation';
 import { motion } from 'framer-motion';
 import { Bell } from 'lucide-react';
-import styles from './coming-soon/ComingSoonPage.module.css';
+import styles from './ComingSoonPage.module.css';
 
 const navigationData = {
   logo: { text: 'AWS', subtitle: 'Educate Taiwan' },
