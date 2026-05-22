@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowUp, Facebook, Instagram, Mail } from 'lucide-react';
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export interface FooterProps {
@@ -30,7 +31,9 @@ export function Footer({ copyright, brandTitle, brandSubtexts, brandDesc }: Read
           <div>
             {brandTitle && <h3 className={styles.brandTitle}>{brandTitle}</h3>}
             {brandSubtexts?.map((text, idx) => (
-              <p key={idx} className={styles.brandSubtext}>{text}</p>
+              <p key={idx} className={styles.brandSubtext}>
+                {text}
+              </p>
             ))}
             {brandDesc && <p className={styles.brandDesc}>{brandDesc}</p>}
           </div>
@@ -40,24 +43,24 @@ export function Footer({ copyright, brandTitle, brandSubtexts, brandDesc }: Read
             <h4 className={styles.sectionTitle}>快速連結</h4>
             <ul className={styles.linkList}>
               <li>
-                <a href="#" className={styles.footerLink}>
+                <Link href="/" className={styles.footerLink}>
+                  首頁
+                </Link>
+              </li>
+              <li>
+                <Link href="/program" className={styles.footerLink}>
                   大使計畫總覽
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className={styles.footerLink}>
+                <Link href="/events" className={styles.footerLink}>
                   活動中心
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className={styles.footerLink}>
+                <Link href="/alumni" className={styles.footerLink}>
                   校友專區
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.footerLink}>
-                  申請成為大使
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -102,7 +105,9 @@ export function Footer({ copyright, brandTitle, brandSubtexts, brandDesc }: Read
         {/* 底部法律區 */}
         <div className={styles.bottomSection}>
           <p className={styles.copyright}>
-            © {currentYear} {copyright || 'AWS Educate TW Campus Ambassador. All rights reserved.'}
+            © {currentYear}{' '}
+            {copyright ||
+              'AWS Educate Taiwan Cloud Ambassador. Operated by 學生組織、大使團隊，自主營運'}
           </p>
         </div>
 

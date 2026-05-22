@@ -4,7 +4,6 @@ import BenefitList from '@/components/molecules/BenefitList/BenefitList';
 import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
 import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
-import { Navigation } from '@/components/organisms/Navigation/Navigation';
 import { ProgramExploreSection } from '@/components/organisms/ProgramSection/ProgramSection';
 import homeData from '@/content/home.json';
 import { motion } from 'framer-motion';

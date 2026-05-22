@@ -52,15 +52,15 @@ export function Navigation({
       <div className={styles.container}>
         <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
           <Image
-            src="/images/Nav_mascot.svg"
-            alt="AWS Educate TW mascot"
-            width={44}
-            height={52}
+            src="/images/AWS_Educate_Logo.svg"
+            alt="AWS Educate logo"
+            width={42}
+            height={50}
             className={styles.logoIcon}
             priority
           />
           <span className={styles.logoText}>
-            {logo?.subtitle ? `${logo.text} ${logo.subtitle}` : logo?.text || 'AWS Educate TW'}
+            {logo?.subtitle ? `${logo.text} ${logo.subtitle}` : logo?.text || 'AWS Educate Taiwan'}
           </span>
         </Link>
 
