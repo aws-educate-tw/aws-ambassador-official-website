@@ -1,4 +1,4 @@
-# AWS Educate TW Campus Ambassador - Official Website
+# AWS Educate Taiwan Campus Ambassador - Official Website
 
 ## 概述 (Overview)
 

@@ -1,7 +1,7 @@
 {
   "name": "aws-ambassador-official-website",
   "version": "1.0.0",
-  "description": "AWS Educate TW Campus Ambassador Official Website - Production Ready",
+  "description": "AWS Educate Taiwan Campus Ambassador Official Website - Production Ready",
   "private": true,
   "scripts": {
     "dev": "next dev",
