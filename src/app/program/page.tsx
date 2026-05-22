@@ -38,7 +38,7 @@ export default function ProgramPage() {
 
       <CTASection
         title="準備好加入了嗎？"
-        description="加入 AWS Educate TW 雲端校園大使，與我們一起探索雲端世界！"
+        description="加入 AWS Educate Taiwan 雲端校園大使，與我們一起探索雲端世界！"
         primaryCTA={{ label: '立即申請成為大使', href: '/apply' }}
         deadline="申請截止日：2025 年 10 月 3 日"
       />
