@@ -1,31 +1,41 @@
 'use client';
 
-import { Mail } from 'lucide-react';
-import Image from 'next/image';
+import { ArrowUp, Facebook, Instagram, Mail } from 'lucide-react';
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export interface FooterProps {
   copyright?: string;
-  links?: Array<{
-    label: string;
-    href: string;
-  }>;
+  brandTitle?: string;
+  brandSubtexts?: string[];
+  brandDesc?: string;
 }
 
-export function Footer({ copyright, links }: FooterProps) {
-  // 取得當前年份
+export function Footer({ copyright, brandTitle, brandSubtexts, brandDesc }: Readonly<FooterProps>) {
   const currentYear = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.container}>
+        {/* 標題 */}
+        <div>
+          <h1 className={styles.mainTitle}>Contact US</h1>
+        </div>
         {/* 主內容區 */}
         <div className={styles.gridContainer}>
           {/* 品牌區 */}
           <div>
-            <h3 className={styles.brandTitle}>AWS Educate TW</h3>
-            <p className={styles.brandSubtext}>賦能創新 · 連結未來</p>
-            <p className={styles.brandDesc}>Campus Ambassador Program</p>
+            {brandTitle && <h3 className={styles.brandTitle}>{brandTitle}</h3>}
+            {brandSubtexts?.map((text, idx) => (
+              <p key={idx} className={styles.brandSubtext}>
+                {text}
+              </p>
+            ))}
+            {brandDesc && <p className={styles.brandDesc}>{brandDesc}</p>}
           </div>
 
           {/* 快速連結 */}
@@ -33,51 +43,24 @@ export function Footer({ copyright, links }: FooterProps) {
             <h4 className={styles.sectionTitle}>快速連結</h4>
             <ul className={styles.linkList}>
               <li>
-                <a href="#" className={styles.footerLink}>
+                <Link href="/" className={styles.footerLink}>
+                  首頁
+                </Link>
+              </li>
+              <li>
+                <Link href="/program" className={styles.footerLink}>
                   大使計畫總覽
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className={styles.footerLink}>
+                <Link href="/events" className={styles.footerLink}>
                   活動中心
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className={styles.footerLink}>
+                <Link href="/alumni" className={styles.footerLink}>
                   校友專區
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.footerLink}>
-                  申請成為大使
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* 資源 */}
-          <div>
-            <h4 className={styles.sectionTitle}>資源</h4>
-            <ul className={styles.linkList}>
-              <li>
-                <a href="#" className={styles.footerLink}>
-                  AWS Educate 官網
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.footerLink}>
-                  學習資源
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.footerLink}>
-                  常見問題 FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.footerLink}>
-                  活動回顧
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -85,43 +68,35 @@ export function Footer({ copyright, links }: FooterProps) {
           {/* 聯絡我們 */}
           <div>
             <h4 className={styles.sectionTitle}>聯絡我們</h4>
-            <div className={styles.contactInfo}>
-              <Mail size={18} className={styles.contactIcon} />
-              <a href="mailto:awseducate.cloudambassador@gmail.com" className={styles.footerLink}>
-                awseducate.cloudambassador@gmail.com
-              </a>
-            </div>
-            <div className={styles.socialLinks}>
-              <a
-                href="https://www.facebook.com/awseducatestudentambassadortaiwan"
-                className={styles.socialLink}
-                aria-label="Facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/images/icons/Facebook.svg"
-                  alt="Facebook"
-                  width={24}
-                  height={24}
-                  className={styles.socialIcon}
-                />
-              </a>
 
+            {/* Email */}
+            <a href="mailto:awseducate.cloudambassador@gmail.com" className={styles.contactLink}>
+              <Mail size={20} className={styles.contactIcon} />
+              <span className={styles.contactLabel}>awseducate.cloudambassador@gmail.com</span>
+            </a>
+
+            {/* 社群媒體列表 */}
+            <div className={styles.socialLinks}>
+              {/* Instagram */}
               <a
                 href="https://www.instagram.com/awseducatestdambtw/"
-                className={styles.socialLink}
-                aria-label="Instagram"
+                className={styles.contactLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image
-                  src="/images/icons/Instagram.svg"
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                  className={styles.socialIcon}
-                />
+                <Instagram size={20} className={styles.contactIcon} />
+                <span className={styles.contactLabel}>@ awseducatestdambtw</span>
+              </a>
+
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/awseducatestudentambassadortaiwan"
+                className={styles.contactLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook size={20} className={styles.contactIcon} />
+                <span className={styles.contactLabel}>@ awseducatestdambtw</span>
               </a>
             </div>
           </div>
@@ -130,29 +105,17 @@ export function Footer({ copyright, links }: FooterProps) {
         {/* 底部法律區 */}
         <div className={styles.bottomSection}>
           <p className={styles.copyright}>
-            {copyright || `© ${currentYear} AWS Educate TW Campus Ambassador. All rights reserved.`}
+            © {currentYear}{' '}
+            {copyright ||
+              'AWS Educate Taiwan Cloud Ambassador. Operated by 學生組織、大使團隊，自主營運'}
           </p>
-          <nav className={styles.legalLinks} aria-label="法律政策">
-            {links && links.length > 0 ? (
-              links.map((link) => (
-                <a key={link.href} href={link.href} className={styles.legalLink}>
-                  {link.label}
-                </a>
-              ))
-            ) : (
-              <>
-                <a href="#" className={styles.legalLink}>
-                  使用條款
-                </a>
-                <a href="#" className={styles.legalLink}>
-                  隱私權政策
-                </a>
-                <a href="#" className={styles.legalLink}>
-                  Cookie 設定
-                </a>
-              </>
-            )}
-          </nav>
+        </div>
+
+        <div className={styles.backToTopWrapper}>
+          <button type="button" className={styles.backToTopButton} onClick={scrollToTop}>
+            <span className={styles.backToTopLabel}>Back To Top</span>
+            <ArrowUp size={20} className={styles.backToTopIcon} aria-hidden="true" />
+          </button>
         </div>
       </div>
     </footer>

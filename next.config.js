@@ -48,6 +48,12 @@ const nextConfig = {
   rewrites: async () => {
     return {
       beforeFiles: [],
+      // 尚未完成的頁面先指向 coming-soon，等該頁面建立後刪除對應規則即可
+      afterFiles: [
+        { source: '/program', destination: '/coming-soon' },
+        { source: '/events', destination: '/coming-soon' },
+        { source: '/alumni', destination: '/coming-soon' },
+      ],
     };
   },
 
