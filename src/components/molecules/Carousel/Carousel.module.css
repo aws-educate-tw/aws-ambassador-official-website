@@ -1,0 +1,38 @@
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.track {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  gap: var(--carousel-gap, 20px);
+  animation: carousel-scroll var(--carousel-duration, 40s) linear infinite;
+  will-change: transform;
+}
+
+.wrapper:hover .track {
+  animation-play-state: paused;
+}
+
+.item {
+  flex-shrink: 0;
+}
+
+@keyframes carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - (var(--carousel-gap, 20px) / 2)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
