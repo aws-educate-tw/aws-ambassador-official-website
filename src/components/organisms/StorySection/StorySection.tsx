@@ -131,6 +131,21 @@ export function StorySection({ category }: Readonly<StorySectionProps>) {
           <p className={styles.subtitle}>{category.subtitle}</p>
         </div>
 
+        {alumniKeys.length > 1 && (
+          <div className={styles.switcher}>
+            {alumniKeys.map((key) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => handleSwitch(key)}
+                className={`${styles.switchBtn} ${activeKey === key ? styles.switchBtnActive : ''}`}
+              >
+                {key}
+              </button>
+            ))}
+          </div>
+        )}
+
         <div className={styles.cardPerspective}>
           <div
             className={styles.card}
@@ -167,21 +182,6 @@ export function StorySection({ category }: Readonly<StorySectionProps>) {
             })}
           </div>
         </div>
-
-        {alumniKeys.length > 1 && (
-          <div className={styles.switcher}>
-            {alumniKeys.map((key) => (
-              <button
-                key={key}
-                type="button"
-                onClick={() => handleSwitch(key)}
-                className={`${styles.switchBtn} ${activeKey === key ? styles.switchBtnActive : ''}`}
-              >
-                {key}
-              </button>
-            ))}
-          </div>
-        )}
       </motion.div>
     </section>
   );
