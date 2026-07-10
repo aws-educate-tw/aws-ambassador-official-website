@@ -27,7 +27,7 @@ export function Carousel<T>({
   className,
   itemClassName,
   ariaLabel,
-}: CarouselProps<T>) {
+}: Readonly<CarouselProps<T>>) {
   const doubled = [...items, ...items];
 
   const trackStyle = {
@@ -37,16 +37,25 @@ export function Carousel<T>({
   } as CSSProperties;
 
   return (
-    <div className={[styles.wrapper, className].filter(Boolean).join(' ')} aria-label={ariaLabel}>
+    <div
+      className={[styles.wrapper, className].filter(Boolean).join(' ')}
+      role={ariaLabel ? 'region' : undefined}
+      aria-label={ariaLabel}
+    >
       <div className={styles.track} style={trackStyle}>
-        {doubled.map((item, index) => (
-          <div
-            key={keyExtractor ? keyExtractor(item, index) : index}
-            className={[styles.item, itemClassName].filter(Boolean).join(' ')}
-          >
-            {renderItem(item, index)}
-          </div>
-        ))}
+        {doubled.map((item, index) => {
+          const originalIndex = index % items.length;
+          const copyIndex = Math.floor(index / items.length);
+          const baseKey = keyExtractor ? keyExtractor(item, originalIndex) : originalIndex;
+          return (
+            <div
+              key={`${String(baseKey)}-${copyIndex}`}
+              className={[styles.item, itemClassName].filter(Boolean).join(' ')}
+            >
+              {renderItem(item, index)}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
