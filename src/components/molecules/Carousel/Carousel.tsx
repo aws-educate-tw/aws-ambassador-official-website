@@ -33,30 +33,32 @@ export function Carousel<T>({
   const trackStyle = {
     '--carousel-duration': `${duration}s`,
     '--carousel-gap': `${gap}px`,
-    animationPlayState: pauseOnHover ? undefined : 'running',
   } as CSSProperties;
 
   return (
-    <div
-      className={[styles.wrapper, className].filter(Boolean).join(' ')}
-      role={ariaLabel ? 'region' : undefined}
+    <section
+      className={[styles.wrapper, pauseOnHover && styles.pauseOnHover, className]
+        .filter(Boolean)
+        .join(' ')}
       aria-label={ariaLabel}
     >
       <div className={styles.track} style={trackStyle}>
         {doubled.map((item, index) => {
           const originalIndex = index % items.length;
           const copyIndex = Math.floor(index / items.length);
+          const isClone = copyIndex > 0;
           const baseKey = keyExtractor ? keyExtractor(item, originalIndex) : originalIndex;
           return (
             <div
               key={`${String(baseKey)}-${copyIndex}`}
               className={[styles.item, itemClassName].filter(Boolean).join(' ')}
+              aria-hidden={isClone || undefined}
             >
-              {renderItem(item, index)}
+              {renderItem(item, originalIndex)}
             </div>
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }

@@ -14,7 +14,7 @@
   will-change: transform;
 }
 
-.wrapper:hover .track {
+.wrapper.pauseOnHover:hover .track {
   animation-play-state: paused;
 }
 
