@@ -132,23 +132,22 @@ export default function HomePage() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-          <div className={styles.pillarsMarquee}>
-            <Carousel
-              items={leadershipPrinciples}
-              duration={80}
-              gap={24}
-              ariaLabel="Amazon Leadership Principles 輪播"
-              keyExtractor={(principle, index) => `pillar-${principle.title}-${index}`}
-              renderItem={(principle, index) => (
-                <PillarCard
-                  title={principle.title}
-                  subtitle={principle.subtitle}
-                  description={principle.description}
-                  imageIndex={index}
-                />
-              )}
-            />
-          </div>
+          <Carousel
+            className={styles.pillarsMarquee}
+            items={leadershipPrinciples}
+            duration={80}
+            gap={24}
+            ariaLabel="Amazon Leadership Principles 輪播"
+            keyExtractor={(principle, index) => `pillar-${principle.title}-${index}`}
+            renderItem={(principle, index) => (
+              <PillarCard
+                title={principle.title}
+                subtitle={principle.subtitle}
+                description={principle.description}
+                imageIndex={index}
+              />
+            )}
+          />
         </motion.div>
       </section>
 
