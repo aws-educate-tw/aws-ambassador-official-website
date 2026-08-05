@@ -1,12 +1,24 @@
 .hero {
   position: relative;
-  padding: var(--space-12) var(--space-5);
+  padding: var(--section-padding-y-sm) var(--page-padding-x);
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .hero {
+    padding-inline: var(--page-padding-x-sm);
+  }
 }
 
 @media (min-width: 768px) {
   .hero {
-    padding: var(--space-12) var(--space-10);
+    padding-inline: var(--page-padding-x-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-inline: var(--page-padding-x-lg);
   }
 }
 
