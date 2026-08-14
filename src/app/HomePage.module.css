@@ -239,56 +239,15 @@
   }
 }
 
-@keyframes principleMarquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-50% - (var(--principle-card-gap) / 2)));
-  }
-}
-
 .pillarsMarquee {
   max-width: 1280px;
   margin: 0 auto;
   padding: var(--space-3) 0 var(--space-5);
-  overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-}
-
-.pillarsTrack {
-  display: flex;
-  align-items: stretch;
-  width: max-content;
-  gap: var(--principle-card-gap);
-  animation: principleMarquee 80s linear infinite;
-  will-change: transform;
-}
-
-.pillarsMarquee:hover .pillarsTrack {
-  animation-play-state: paused;
-}
-
-.pillarsItem {
-  flex-shrink: 0;
 }
 
 @media (max-width: 640px) {
   .pillarsMarquee {
     padding: var(--space-3) var(--space-3) var(--space-5);
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  }
-
-  .pillarsTrack {
-    gap: var(--space-4);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .pillarsTrack {
-    animation: none;
   }
 }
 

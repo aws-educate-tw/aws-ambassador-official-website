@@ -1,5 +1,6 @@
 'use client';
 
+import { Carousel } from '@/components/molecules/Carousel/Carousel';
 import BenefitList from '@/components/molecules/BenefitList/BenefitList';
 import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
@@ -110,8 +111,6 @@ const leadershipPrinciples = [
 /* 首頁 */
 
 export default function HomePage() {
-  const marqueePrinciples = [...leadershipPrinciples, ...leadershipPrinciples];
-
   return (
     <div className={styles.page}>
       {/* HeroSection */}
@@ -133,20 +132,22 @@ export default function HomePage() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-          <div className={styles.pillarsMarquee}>
-            <div className={styles.pillarsTrack}>
-              {marqueePrinciples.map((principle, index) => (
-                <div key={`pillar-${principle.title}-${index}`} className={styles.pillarsItem}>
-                  <PillarCard
-                    title={principle.title}
-                    subtitle={principle.subtitle}
-                    description={principle.description}
-                    imageIndex={index}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <Carousel
+            className={styles.pillarsMarquee}
+            items={leadershipPrinciples}
+            duration={80}
+            gap={24}
+            ariaLabel="Amazon Leadership Principles 輪播"
+            keyExtractor={(principle, index) => `pillar-${principle.title}-${index}`}
+            renderItem={(principle, index) => (
+              <PillarCard
+                title={principle.title}
+                subtitle={principle.subtitle}
+                description={principle.description}
+                imageIndex={index}
+              />
+            )}
+          />
         </motion.div>
       </section>
 
