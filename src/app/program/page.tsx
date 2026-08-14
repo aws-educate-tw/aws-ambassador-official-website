@@ -23,7 +23,7 @@ export default function ProgramPage() {
           'AWS Educate 台灣雲端校園大使計畫由 Amazon Web Services 支持，旨在培育台灣下一代雲端技術人才。我們提供完整的學習資源、實作機會和產業連結，讓學生在校園時期就能累積實戰經驗。',
           '大使們不僅學習 AWS 雲端技術，更透過舉辦活動、分享知識、領導專案等方式，培養領導力、溝通力和創新思維。我們相信，每位大使都能成為推動台灣科技產業發展的重要力量。',
         ]}
-        ctaButton={{ label: '立即申請', href: '/apply' }}
+        ctaButton={{ label: '立即申請', href: 'https://www.instagram.com/awseducatestdambtw/' }}
       />
 
       <BenefitsSection />
@@ -39,7 +39,10 @@ export default function ProgramPage() {
       <CTASection
         title="準備好加入了嗎？"
         description="加入 AWS Educate Taiwan 雲端校園大使，與我們一起探索雲端世界！"
-        primaryCTA={{ label: '立即申請成為大使', href: '/apply' }}
+        primaryCTA={{
+          label: '立即申請成為大使',
+          href: 'https://www.instagram.com/awseducatestdambtw/',
+        }}
         deadline="申請截止日：2025 年 10 月 3 日"
       />
     </div>

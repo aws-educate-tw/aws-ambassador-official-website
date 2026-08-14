@@ -24,7 +24,10 @@ export function CTASection({
   primaryCTA,
   secondaryCTA,
   deadline,
-}: CTASectionProps) {
+}: Readonly<CTASectionProps>) {
+  const primaryIsExternal = /^https?:\/\//.test(primaryCTA.href);
+  const secondaryIsExternal = secondaryCTA ? /^https?:\/\//.test(secondaryCTA.href) : false;
+
   return (
     <section className={styles.section}>
       <motion.div
@@ -37,11 +40,23 @@ export function CTASection({
         <p className={styles.description}>{description}</p>
 
         <div className={styles.actions}>
-          <Button href={primaryCTA.href} variant="secondary" size="lg">
+          <Button
+            href={primaryCTA.href}
+            variant="secondary"
+            size="lg"
+            target={primaryIsExternal ? '_blank' : undefined}
+            rel={primaryIsExternal ? 'noopener noreferrer' : undefined}
+          >
             {primaryCTA.label}
           </Button>
           {secondaryCTA && (
-            <Button href={secondaryCTA.href} variant="outline" size="lg">
+            <Button
+              href={secondaryCTA.href}
+              variant="outline"
+              size="lg"
+              target={secondaryIsExternal ? '_blank' : undefined}
+              rel={secondaryIsExternal ? 'noopener noreferrer' : undefined}
+            >
               {secondaryCTA.label}
             </Button>
           )}
