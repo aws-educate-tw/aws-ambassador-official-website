@@ -8,10 +8,6 @@
       "label": "查看大使計畫詳情",
       "href": "#program"
     },
-    "secondaryCTA": {
-      "label": "探索活動",
-      "href": "/program"
-    },
     "tertiaryCTA": {
       "label": "立即申請大使",
       "href": "https://www.instagram.com/awseducatestdambtw/"
@@ -27,7 +23,7 @@
       "label": "累積考取 AWS 證照學員"
     },
     {
-      "number": "150",
+      "number": "100",
       "label": "累積活動"
     }
   ],
@@ -48,7 +44,7 @@
       "title": "活動中心",
       "description": "參與技術工作坊、黑客松、職涯講座，與業界專家面對面交流",
       "icon": "calendar",
-      "tag": "累積 150+ 場活動",
+      "tag": "累積 100+ 場活動",
       "cta": {
         "label": "查看活動詳情",
         "href": "/events"
