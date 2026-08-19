@@ -22,18 +22,15 @@ dist-ssr
 *.tsbuildinfo
 next-env.d.ts
 
-# Production
-.env.production.local
+# Environment
+.env
 .env.production
-
-# Development
-.env.local
-.env.*.local
 *.local
 
 # Misc
 .DS_Store
 *.pem
+*.exe
 ehthumbs.db
 .AppleDouble
 .LSOverride
@@ -63,7 +60,6 @@ lerna-debug.log*
 *.swp
 *.swo
 *~
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
@@ -85,7 +81,3 @@ lerna-debug.log*
 # Vercel & Hosting
 .vercel
 .netlify
-
-# Environment
-.env
-.env.test.local
