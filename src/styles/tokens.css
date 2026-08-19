@@ -190,8 +190,8 @@
   --program-section-subtitle-size: 14px;
   --program-section-subtitle-line-height: 20px;
   --program-section-subtitle-color: var(--color-neutral-600);
-  --program-section-grid-max-width: 1280px;
-  --program-section-grid-columns: repeat(3, minmax(0, 1fr));
+  --program-section-grid-max-width: 850px;
+  --program-section-grid-columns: repeat(2, minmax(0, 1fr));
   --program-section-grid-columns-mobile: 1fr;
 }
 

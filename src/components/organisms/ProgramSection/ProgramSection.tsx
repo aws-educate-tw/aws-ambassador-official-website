@@ -27,7 +27,7 @@ export interface ProgramExploreSectionProps {
   subtitle?: string;
 }
 
-const PROGRAM_FEATURE_IDS = ['overview', 'events', 'alumni'] as const;
+const PROGRAM_FEATURE_IDS = ['overview', 'alumni'] as const;
 
 export function ProgramExploreSection({
   features,
