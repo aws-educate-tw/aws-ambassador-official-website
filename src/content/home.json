@@ -152,12 +152,10 @@
   ],
   "cta_section": {
     "title": "準備好開始了嗎？",
-    "description": "加入 AWS Educate 第八屆雲端校園大使，與我們一起創造影響力！",
+    "description": "加入 AWS Educate Taiwan 雲端校園大使，與我們一起探索雲端世界！",
     "primary_cta": {
       "label": "立即申請成為大使",
-      "href": "https://www.instagram.com/awseducatestdambtw/"
-    },
-
-    "deadline": "申請截止日：2026 年 3 月 31 日"
+      "href": "https://www.surveycake.com/s/PbDLv?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaATtQkFwZG9mAmZkaWQWUMjT8I56MrNzrHPMS2TKHNIuOEBEemV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp7hGrY_67KERuZFmaU-MX_HGwxwbrSOLhtM6ip64LA4qAfxCD0XQOeespmzf_aem_AjY1E_eJJ55edAawaX_-UQ&utm_id=97760_v0_s00_e0_tv3"
+    }
   }
 }

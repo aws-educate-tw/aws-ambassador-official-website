@@ -51,13 +51,20 @@
 }
 
 .secondary {
-  background-color: var(--color-neutral-50);
-  color: var(--color-primary-600);
-  border: 2px solid var(--color-primary-500);
+  width: 160px;
+  height: 40px;
+  padding: 0;
+  background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  border: none;
+  border-radius: 9999px;
 }
 
 .secondary:hover:not(.disabled) {
-  background-color: var(--color-primary-50);
+  filter: brightness(1.05);
   transform: translateY(-1px);
 }
 

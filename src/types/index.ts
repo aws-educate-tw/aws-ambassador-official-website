@@ -53,7 +53,6 @@ export interface FooterData {
 export interface Statistic {
   number: string;
   label: string;
-
 }
 
 export interface FeatureCard {
@@ -94,7 +93,6 @@ export interface CTASection {
     label: string;
     href: string;
   };
-  deadline: string;
 }
 
 export interface HomePage {

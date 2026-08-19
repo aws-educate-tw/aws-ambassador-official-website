@@ -37,7 +37,6 @@ export interface HomePageData {
     description: string;
     primary_cta: { label: string; href: string };
     secondary_cta?: { label: string; href: string };
-    deadline?: string;
   };
 }
 
