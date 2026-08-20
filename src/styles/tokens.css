@@ -17,6 +17,9 @@
   --color-primary-800: #b36b00;
   --color-primary-900: #995c00;
 
+  /* CTA button gradient */
+  --gradient-cta: linear-gradient(180deg, var(--color-primary-500) 0%, #ffb84d 100%);
+
   /* Surface - Dark Blue */
   --color-surface-50: #f8fafb;
   --color-surface-100: #f0f4f8;
@@ -148,13 +151,13 @@
 
   /* ===== Layout ===== */
   /* 頁面水平 padding（各 section 統一使用） */
-  --page-padding-x: var(--space-4);       /* mobile  ≤ 639px  → 16px */
-  --page-padding-x-sm: var(--space-6);    /* sm      640-767  → 24px */
-  --page-padding-x-md: var(--space-10);   /* md      768-1023 → 40px */
-  --page-padding-x-lg: var(--space-16);   /* lg      ≥ 1024   → 64px */
+  --page-padding-x: var(--space-4); /* mobile  ≤ 639px  → 16px */
+  --page-padding-x-sm: var(--space-6); /* sm      640-767  → 24px */
+  --page-padding-x-md: var(--space-10); /* md      768-1023 → 40px */
+  --page-padding-x-lg: var(--space-16); /* lg      ≥ 1024   → 64px */
   /* 頁面垂直 padding（各 section 統一使用） */
-  --section-padding-y: var(--space-20);   /* 80px */
-  --section-padding-y-sm: var(--space-12);/* 48px（小螢幕） */
+  --section-padding-y: var(--space-20); /* 80px */
+  --section-padding-y-sm: var(--space-12); /* 48px（小螢幕） */
   /* 內容最大寬度 */
   --content-max-width: 1280px;
 
