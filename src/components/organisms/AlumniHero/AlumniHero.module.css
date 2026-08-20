@@ -27,38 +27,35 @@
   margin: 0 auto;
 }
 
-.glowRight {
-  position: absolute;
-  top: 160px;
-  right: 0;
-  width: 256px;
-  height: 256px;
-  background: rgba(219, 234, 254, 0.4);
-  border-radius: 9999px;
-  filter: blur(48px);
-  z-index: 0;
-  pointer-events: none;
+.introBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  z-index: 1;
 }
 
-.glowLeft {
-  position: absolute;
-  top: 240px;
-  left: 40px;
-  width: 192px;
-  height: 192px;
-  background: rgba(252, 231, 243, 0.4);
-  border-radius: 9999px;
-  filter: blur(48px);
-  z-index: 0;
-  pointer-events: none;
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-primary-500);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  z-index: 1;
 }
 
 .title {
   position: relative;
+  margin: 0;
   font-size: 48px;
   font-weight: 900;
   color: var(--color-surface-600);
-  margin: 0 0 32px 0;
   letter-spacing: -0.02em;
   z-index: 1;
 }
@@ -91,13 +88,20 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
-  margin-top: var(--space-10);
+  margin-top: var(--space-16);
 }
 
-/* 0%→70%：從節點 03 到 01；70%→100%：放大淡出 */
+@media (max-width: 768px) {
+  .journey {
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}
+
+/* 0%→70%：從時間軸最右緣滑到節點 01；70%→100%：在節點 01 放大淡出 */
 @keyframes journeyActiveDotSlide {
   0% {
-    left: var(--journey-node-last-x);
+    left: 100%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
@@ -117,7 +121,7 @@
 
 /* 裝飾用指示點：進場時沿時間軸從最後一個節點滑向第一個節點，僅桌機（≥768px）顯示 */
 .activeDot {
-  display: none;
+  visibility: hidden;
   position: absolute;
   top: var(--journey-node-y, 1.25rem);
   width: 0.75rem;
@@ -128,6 +132,10 @@
   transform: translate(-50%, -50%);
   z-index: 2;
   pointer-events: none;
+}
+
+.activeDotPlay {
+  animation: journeyActiveDotSlide 2.4s 0.3s both;
 }
 
 @media (min-width: 768px) {
@@ -158,12 +166,8 @@
   }
 
   .activeDot {
-    display: block;
-    left: var(--journey-node-last-x);
-  }
-
-  .activeDotPlay {
-    animation: journeyActiveDotSlide 2.4s 0.3s both;
+    visibility: visible;
+    left: 100%;
   }
 }
 
