@@ -6,7 +6,6 @@ export interface CareerStep {
 export interface AlumniProfile {
   name: string;
   title: string;
-  tags: string[];
   image?: string;
   highlights: string[];
   quote: string;
@@ -29,7 +28,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       羅子函: {
         name: '羅子函',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Han.png',
         highlights: [
           '政大國貿背景的科技轉型，從文法商領域跨足科技業',
@@ -44,11 +42,12 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           { id: '03', text: '於巴黎 Dataiku 負責數據導向的商務營運與策略' },
         ],
         interviewer: 'Allison, Elma',
+        interviewUrl:
+          'https://medium.com/@awseducate.cloudambassador/%E5%9C%A8%E5%B7%B4%E9%BB%8E-ai-%E5%85%AC%E5%8F%B8-%E6%96%87%E6%B3%95%E5%95%86%E8%83%8C%E6%99%AF%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%AE%9A%E4%BD%8D-%E5%AD%90%E5%87%BD%E7%9A%84%E8%B7%A8%E5%9C%8B%E8%81%B7%E6%B6%AF%E8%B7%AF%E5%BE%91-8f00421db8af',
       },
       Chloe: {
         name: 'Chloe Chang',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Chloe.jpg',
         highlights: [
           '現任知名公司擔任資深產品分析師',
@@ -72,6 +71,8 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           },
         ],
         interviewer: 'Selina, Jessie',
+        interviewUrl:
+          'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E5%BE%9E%E5%B1%A5%E6%AD%B7%E7%A9%BA%E7%99%BD%E5%88%B0%E5%A4%96%E5%95%86%E8%B3%87%E6%B7%B1%E7%94%A2%E5%93%81%E5%88%86%E6%9E%90%E5%B8%AB-chloe-%E5%AD%B8%E5%A7%8A-%E7%9A%84-%E5%AE%9A%E7%BE%A9%E5%95%8F%E9%A1%8C-%E5%AF%A6%E6%88%B0%E8%B7%AF%E5%BE%91-c45ddaed6e5f',
       },
     },
   },
@@ -82,7 +83,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       Shiun: {
         name: 'Shiun Chiu',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Shiun.png',
         highlights: [
           '深耕 Networking 與 Linux Kernel 等底層技術的外商雲端工程師',
@@ -112,7 +112,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       Aaron: {
         name: 'Aaron Huang',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '',
         highlights: [
           '精準定位自我於「商業與技術的完美平衡」 ',
@@ -133,7 +132,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       許銘軒: {
         name: '許銘軒',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '',
         highlights: [
           '資管背景跨足智慧製造，以跨域視角深耕半導體產業',
@@ -163,7 +161,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       Sharon: {
         name: 'Sharon Chen',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Sharon.png',
         highlights: [
           '北教大語文創作系出身，以人文領域跨足外商科技業',
@@ -190,7 +187,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       葉禹旋: {
         name: '葉禹旋',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Mina.png',
         highlights: [
           '政大資管背景出身，從技術端逐步探索至行銷與品牌領域',
@@ -213,7 +209,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       王柏詒: {
         name: '王柏詒',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Boyi.png',
         highlights: [
           '台大生物產業傳播暨發展學系背景',
