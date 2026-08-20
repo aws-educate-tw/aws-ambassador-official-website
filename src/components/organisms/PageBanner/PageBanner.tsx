@@ -12,7 +12,6 @@ export interface PageBannerProps {
     label: string;
     href: string;
   };
-  /** Time in ms between background slide transitions. */
   slideInterval?: number;
 }
 
