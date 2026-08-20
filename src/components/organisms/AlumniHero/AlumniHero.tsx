@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import styles from './AlumniHero.module.css';
 
 const journeySteps = [
@@ -29,6 +30,8 @@ const stepVariant = {
 };
 
 export function AlumniHero() {
+  const [dotPlaying, setDotPlaying] = useState(false);
+
   return (
     <section className={styles.hero}>
       <div className={styles.inner}>
@@ -53,6 +56,7 @@ export function AlumniHero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          onViewportEnter={() => setDotPlaying(true)}
         >
           {journeySteps.map((step, index) => (
             <motion.div className={styles.journeyStep} variants={stepVariant} key={step.title}>
@@ -61,6 +65,11 @@ export function AlumniHero() {
               <p className={styles.stepDescription}>{step.description}</p>
             </motion.div>
           ))}
+
+          <div
+            className={`${styles.activeDot} ${dotPlaying ? styles.activeDotPlay : ''}`}
+            aria-hidden="true"
+          />
         </motion.div>
       </div>
     </section>

@@ -94,22 +94,76 @@
   margin-top: var(--space-10);
 }
 
+/* 0%→70%：從節點 03 到 01；70%→100%：放大淡出 */
+@keyframes journeyActiveDotSlide {
+  0% {
+    left: var(--journey-node-last-x);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  70% {
+    left: var(--journey-node-first-x);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    left: var(--journey-node-first-x);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.2);
+  }
+}
+
+/* 裝飾用指示點：進場時沿時間軸從最後一個節點滑向第一個節點，僅桌機（≥768px）顯示 */
+.activeDot {
+  display: none;
+  position: absolute;
+  top: var(--journey-node-y, 1.25rem);
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-500);
+  box-shadow: 0 0 0 6px rgba(255, 153, 0, 0.18);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 @media (min-width: 768px) {
   .journey {
+    /* 節點圓心的座標 */
+    --journey-gap: var(--space-6);
+    --journey-node-radius: 1.25rem; /* 直徑的一半 */
+    --journey-node-y: 1.25rem;
+    --journey-node-first-x: var(--journey-node-radius);
+    --journey-node-last-x: calc(
+      ((100% - 2 * var(--journey-gap)) / 3) * 2 + var(--journey-gap) * 2 +
+        var(--journey-node-radius)
+    );
     flex-direction: row;
     align-items: flex-start;
-    gap: var(--space-6);
+    gap: var(--journey-gap);
   }
 
   .journey::before {
     content: '';
     position: absolute;
-    top: 1.25rem;
+    top: var(--journey-node-y);
     left: 0;
     right: 0;
     height: 1px;
     background-color: var(--color-border-default);
     z-index: 0;
+  }
+
+  .activeDot {
+    display: block;
+    left: var(--journey-node-last-x);
+  }
+
+  .activeDotPlay {
+    animation: journeyActiveDotSlide 2.4s 0.3s both;
   }
 }
 
