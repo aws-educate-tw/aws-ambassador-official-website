@@ -129,10 +129,10 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         interviewUrl:
           'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E4%BD%A0%E4%B8%8D%E9%9C%80%E8%A6%81%E5%BE%88%E5%8E%B2%E5%AE%B3%E6%89%8B%E5%87%BA%E7%99%BC-%E4%BD%A0%E5%BF%85%E9%A0%88%E5%85%88%E5%87%BA%E7%99%BC-%E6%89%8B%E6%9C%89%E8%B7%A8%E5%A4%A7-aaron-%E7%9A%84%E5%A4%96%E5%95%86%E6%B1%82%E8%81%B7%E4%B9%8B%E8%B7%AF-951834d93582',
       },
-      許銘軒: {
-        name: '許銘軒',
+      Alan: {
+        name: 'Alan Hsu',
         title: 'AWS Educate Taiwan 校園大使校友',
-        image: '',
+        image: '/images/Stories/Alan.jpg',
         highlights: [
           '資管背景跨足智慧製造，以跨域視角深耕半導體產業',
           '從雲端大使到業界工程師，用每一次實戰累積技術判斷力',
@@ -206,8 +206,8 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         interviewUrl:
           'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E5%BE%9E%E5%AF%AB%E7%A8%8B%E5%BC%8F%E5%88%B0%E8%AA%AA%E6%95%85%E4%BA%8B-mina-%E7%9A%84%E8%B7%A8%E5%9F%9F%E6%88%90%E9%95%B7%E8%B7%AF%E5%BE%91-18a9481ae40c',
       },
-      王柏詒: {
-        name: '王柏詒',
+      Boyi: {
+        name: 'Boyi Wang',
         title: 'AWS Educate Taiwan 校園大使校友',
         image: '/images/Stories/Boyi.png',
         highlights: [
