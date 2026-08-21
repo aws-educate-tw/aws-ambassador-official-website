@@ -1,16 +1,19 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle } from 'lucide-react';
+import { Rocket } from 'lucide-react';
 import styles from './BenefitsSection.module.css';
 
 const benefits = [
-  '專屬 AWS 大使 On Board 禮包',
-  '獲得 AWS 正職 1:1 交流機會',
-  '參與 AWS 證照/技術培訓課程',
-  '優先獲得 AWS 最新實習資訊',
-  '參與 AWS 知名客戶與夥伴參訪機會',
-  '表現優異者可取得 AWS Educate Taiwan 大使參與證書',
+  'AWS 考照資源',
+  'AWS 正職 1:1 交流機會',
+  '免費參與 AWS 培訓工作坊',
+  '優先參與 AWS 知名客戶參訪',
+  '優良大使還能解鎖實習機會、履歷健檢',
+  '任期結束之後可以獲得 AWS 大使參與證書',
+  '學習 AWS 企業文化、了解科技業工作模式',
+  '優先參加各類型 AWS 舉辦或協辦的活動',
+  '獨立舉辦近百人活動，培養領導決策能力',
 ];
 
 export function BenefitsSection() {
@@ -24,18 +27,20 @@ export function BenefitsSection() {
         className={styles.container}
       >
         <h2 className={styles.heading}>加入雲端校園大使，你可以獲得：</h2>
-        <ul className={styles.list}>
+        <ul className={styles.grid}>
           {benefits.map((benefit, index) => (
             <motion.li
               key={index}
-              className={styles.item}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className={styles.card}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
             >
-              <CheckCircle className={styles.icon} size={16} />
-              <span>{benefit}</span>
+              <span className={styles.iconWrapper}>
+                <Rocket size={16} aria-hidden="true" />
+              </span>
+              <span className={styles.text}>{benefit}</span>
             </motion.li>
           ))}
         </ul>
