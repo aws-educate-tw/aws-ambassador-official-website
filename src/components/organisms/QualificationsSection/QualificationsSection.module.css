@@ -1,10 +1,22 @@
 .section {
-  padding: 80px 32px;
+  padding: var(--section-padding-y) var(--page-padding-x);
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-inline: var(--page-padding-x-sm);
+  }
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 80px 80px;
+    padding-inline: var(--page-padding-x-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-inline: var(--page-padding-x-lg);
   }
 }
 
@@ -14,15 +26,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: var(--space-5);
 }
 
 .heading {
-  font-size: 32px;
-  font-weight: 900;
-  color: #1a202c;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-surface-600);
   text-align: center;
-  margin: 0 0 8px 0;
+  line-height: 1;
+  margin: 0;
 }
 
 /* 置中的基本資格卡，最大寬度與 grid 一致 */
@@ -33,7 +46,7 @@
 }
 
 .topRow .card {
-  max-width: 640px;
+  max-width: 472px;
   text-align: center;
   justify-content: center;
 }
@@ -42,7 +55,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: var(--space-4);
   width: 100%;
 }
 
@@ -56,18 +69,29 @@
 .card {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 18px 20px;
-  background-color: #f3f4f6;
-  border: 1px solid #d1d5db;
-  border-radius: 20px;
-  font-size: 14px;
-  color: #374151;
-  line-height: 1.6;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-neutral-800);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-primary);
+  line-height: 16px;
 }
 
-/* icon 使用 --color-primary (#ff9900) */
+/* icon 外框：置中圓形容器 */
+.iconBox {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 .icon {
   flex-shrink: 0;
-  color: var(--color-primary, #ff9900);
+  color: var(--color-primary-500);
 }
