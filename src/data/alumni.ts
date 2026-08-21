@@ -112,7 +112,7 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       Aaron: {
         name: 'Aaron Huang',
         title: 'AWS Educate Taiwan 校園大使校友',
-        image: '',
+        image: '/images/Stories/Aaron.JPG',
         highlights: [
           '精準定位自我於「商業與技術的完美平衡」 ',
           '具備高情商與強大的跨領域溝通力，擅長管理客戶期待與解決複雜的專案需求',
