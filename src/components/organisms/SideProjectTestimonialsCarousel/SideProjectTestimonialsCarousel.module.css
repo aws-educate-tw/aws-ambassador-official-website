@@ -18,7 +18,7 @@
 }
 
 .subheading {
-  color: #4A5565;
+  color: #4a5565;
   text-align: center;
   font-family: Inter, sans-serif;
   font-size: 12px;
@@ -75,12 +75,6 @@
 }
 
 .role {
-  margin: 0;
-  font-size: 13px;
-  color: #6b7280;
-}
-
-.company {
   margin: 0;
   font-size: 13px;
   color: #6b7280;

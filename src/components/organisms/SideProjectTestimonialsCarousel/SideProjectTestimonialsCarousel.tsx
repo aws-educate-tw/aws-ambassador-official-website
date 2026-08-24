@@ -8,7 +8,9 @@ export interface SideProjectTestimonialsCarouselProps {
   testimonials: TestimonialCardProps[];
 }
 
-export function SideProjectTestimonialsCarousel({ testimonials }: SideProjectTestimonialsCarouselProps) {
+export function SideProjectTestimonialsCarousel({
+  testimonials,
+}: SideProjectTestimonialsCarouselProps) {
   return (
     <section className={styles.section}>
       <div className={styles.header}>
@@ -29,7 +31,6 @@ export function SideProjectTestimonialsCarousel({ testimonials }: SideProjectTes
               <div className={styles.userDetails}>
                 <p className={styles.name}>{t.name}</p>
                 <p className={styles.role}>{t.role}</p>
-                <p className={styles.company}>{t.company}</p>
               </div>
             </div>
             <p className={styles.quote}>{t.quote}</p>
