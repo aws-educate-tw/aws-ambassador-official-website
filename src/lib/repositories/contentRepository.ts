@@ -4,8 +4,10 @@ export interface HomePageData {
   hero: {
     title: string;
     subtitle: string;
+    tagline?: string;
     description: string;
     primaryCTA: { label: string; href: string };
+    tertiaryCTA?: { label: string; href: string };
   };
   statistics: Array<{
     number: string;

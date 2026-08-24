@@ -49,7 +49,7 @@
   margin: 0;
   font-size: 16px;
   font-weight: 400;
-  color: #d1d5dc;
+  color: var(--color-neutral-300);
   line-height: 20px;
   max-width: 672px;
 }
