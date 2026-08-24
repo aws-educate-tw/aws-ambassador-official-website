@@ -256,7 +256,8 @@ export interface DirectoryPerson {
   certs: string[];
   links?: {
     linkedin?: string;
-    story?: string;
+    /** undefined = 尚未提供；null = 確定沒有心得 */
+    story?: string | null;
   };
 }
 
@@ -345,7 +346,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['DGR Program', 'Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
     links: {
-      linkedin: 'https://www.linkedin.com/in/allison-tsai-205702355/',
+      linkedin: 'https://www.linkedin.com/in/allison-t-205702355',
     },
   },
   {
@@ -371,7 +372,8 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
     links: {
-      linkedin: 'https://www.linkedin.com/in/angeliii/',
+      linkedin: 'https://www.linkedin.com/in/angeliii',
+      story: null,
     },
   },
   {
@@ -382,7 +384,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev Team Official Website'],
     certs: ['AIF-C01'],
     links: {
-      linkedin: 'https://www.linkedin.com/in/selina-chen-050582170/',
+      linkedin: 'https://www.linkedin.com/in/olivia-chen-321337219/',
     },
   },
   {
@@ -393,6 +395,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Marketing' }],
     sideProjects: ['DGR Program', 'Alumni stories Hub'],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/elma-syu',
+    },
   },
   {
     name: '廖研伃 Seren Liao',
@@ -413,6 +418,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Event' }],
     sideProjects: ['Dev Team Official Website'],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/ling-fang-mao',
+    },
   },
   {
     name: '黃思恩 Jessie Huang',
@@ -422,6 +430,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Event' }],
     sideProjects: ['Alumni stories Hub'],
     certs: [],
+    links: {
+      story: null,
+    },
   },
   {
     name: '張育鳳 Jessie Chang',
@@ -432,7 +443,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev team Anti disinformation and fraud proposal'],
     certs: ['AIF-C01'],
     links: {
-      linkedin: 'http://www.linkedin.com/in/jessie-chang-886485397',
+      linkedin: 'https://www.linkedin.com/in/jessie-chang-886485397',
     },
   },
   {
@@ -444,7 +455,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev Team TPET'],
     certs: [],
     links: {
-      linkedin: 'https://www.linkedin.com/in/ariel-yu-183a66346/',
+      linkedin: 'https://www.linkedin.com/in/ariel-yu-183a66346',
       story:
         'https://medium.com/@arielyu999/aws-educate-cloud-ambassador-%E9%9B%B2%E7%AB%AF%E4%B9%8B%E6%97%85-3445d4f58d20',
     },
@@ -456,6 +467,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Tech' }],
     sideProjects: ['Dev Team TPET'],
     certs: ['AIF-C01'],
+    links: {
+      story: null,
+    },
   },
   {
     name: '陳俊瑋 Aaron Chen',
@@ -467,6 +481,8 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: ['AIF-C01', 'CLF-C02'],
     links: {
       linkedin: 'https://www.linkedin.com/in/chun-wei-chen-494ab6354/',
+      story:
+        'https://medium.com/@aaronwayway/8th-aws-educate-cloud-ambassador-tech-support-%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB-eaa8a924a844?sharedUserId=aaronwayway',
     },
   },
   {
@@ -478,7 +494,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev Team TPET', 'Alumni stories Hub'],
     certs: [],
     links: {
-      linkedin: 'https://www.linkedin.com/in/%E6%95%AC%E7%BF%B0-%E9%99%B3-15b727233/',
+      linkedin: 'https://www.linkedin.com/in/敬翰-陳-15b727233',
     },
   },
   {
@@ -490,7 +506,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev team Anti disinformation and fraud proposal'],
     certs: ['AIF-C01'],
     links: {
-      linkedin: 'http://www.linkedin.com/in/maggie-ymsu',
+      linkedin: 'https://www.linkedin.com/in/maggie-ymsu',
     },
   },
   {
@@ -532,6 +548,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Event' }],
     sideProjects: ['DGR Program', 'Dev Team Official Website', 'Alumni stories Hub'],
     certs: [],
+    links: {
+      story: null,
+    },
   },
   {
     name: '王亭淇 Tiffany Wang',
