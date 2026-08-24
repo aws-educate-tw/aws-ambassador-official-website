@@ -131,40 +131,6 @@
       "highlight": false
     }
   ],
-  "testimonials": [
-    {
-      "name": "Alisa",
-      "role": "AWS Campus Ambassador 第七屆",
-      "company": "台灣大學資訊工程學系",
-      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
-      "rating": 5,
-      "quote": "擔任 AWS 大使讓我從害羞的學生蛻變成自信的講者，不僅學到雲端技術，更培養了領導力和溝通能力。感謝團隊給我這麼多成長機會！"
-    },
-    {
-      "name": "Kevin",
-      "role": "AWS Campus Ambassador 第七屆",
-      "company": "清華大學資訊工程學系",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
-      "rating": 5,
-      "quote": "大使計畫是我大學最棒的決定！從申請、培訓到舉辦活動，每一步都讓我收穫滿滿。現在已經拿到 AWS 的實習 offer，超級感謝這段經歷！"
-    },
-    {
-      "name": "Charlene",
-      "role": "AWS Campus Ambassador 第六屆",
-      "company": "交通大學電機工程學系",
-      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
-      "rating": 5,
-      "quote": "在大使團隊認識了一群志同道合的夥伴，大家一起學習、一起辦活動、一起成長。這份革命情感和人脈網絡，是我最寶貴的資產！"
-    },
-    {
-      "name": "Jason",
-      "role": "AWS Campus Ambassador 第七屆",
-      "company": "成功大學資訊工程學系",
-      "avatar": "https://images.unsplash.com/photo-1507876466326-583ecf51d88f?w=200&h=200&fit=crop",
-      "rating": 5,
-      "quote": "大使計畫提供的 AWS 認證補助和學習資源超級實用！我已經考取三張認證，履歷加分不少。更棒的是能參與業界交流活動，提前了解職場趨勢。"
-    }
-  ],
   "cta_section": {
     "title": "準備好開始了嗎？",
     "description": "加入 AWS Educate 第八屆雲端校園大使，與我們一起創造影響力！",

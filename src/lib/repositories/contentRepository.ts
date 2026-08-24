@@ -25,14 +25,6 @@ export interface HomePageData {
     description: string;
     icon?: string;
   }>;
-  testimonials: Array<{
-    name: string;
-    role: string;
-    company?: string;
-    quote: string;
-    avatar?: string;
-    rating?: number;
-  }>;
   cta_section: {
     title: string;
     description: string;
