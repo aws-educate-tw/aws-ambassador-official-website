@@ -36,7 +36,7 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
           renderItem={(t) => (
             <div className={styles.card}>
               <div className={styles.rating} aria-label={`評分 ${t.rating ?? 5} 顆星`}>
-                {[...Array(t.rating || 5)].map((_, i) => (
+                {[...Array(t.rating ?? 5)].map((_, i) => (
                   <Star key={i} size={14} className={styles.star} />
                 ))}
               </div>
