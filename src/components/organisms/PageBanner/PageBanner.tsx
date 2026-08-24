@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styles from './PageBanner.module.css';
 
@@ -26,6 +27,10 @@ export function PageBanner({
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
+    setActiveIndex((prev) => (prev >= backgroundImages.length ? 0 : prev));
+  }, [backgroundImages.length]);
+
+  useEffect(() => {
     if (backgroundImages.length <= 1) return;
 
     const timer = setInterval(() => {
@@ -34,6 +39,9 @@ export function PageBanner({
 
     return () => clearInterval(timer);
   }, [backgroundImages.length, slideInterval]);
+
+  const nextIndex =
+    backgroundImages.length > 1 ? (activeIndex + 1) % backgroundImages.length : activeIndex;
 
   return (
     <section className={styles.banner}>
@@ -44,8 +52,18 @@ export function PageBanner({
             className={[styles.slide, index === activeIndex && styles.slideActive]
               .filter(Boolean)
               .join(' ')}
-            style={{ backgroundImage: `url("${src}")` }}
-          />
+          >
+            {(index === activeIndex || index === nextIndex) && (
+              <Image
+                src={src}
+                alt=""
+                fill
+                sizes="100vw"
+                priority={index === 0}
+                className={styles.slideImage}
+              />
+            )}
+          </div>
         ))}
       </div>
       <div className={styles.overlay} aria-hidden="true" />

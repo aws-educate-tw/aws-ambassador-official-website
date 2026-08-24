@@ -17,14 +17,17 @@
 .slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
   opacity: 0;
   transition: opacity var(--duration-slower) var(--easing-ease-in-out);
 }
 
 .slideActive {
   opacity: 1;
+}
+
+.slideImage {
+  object-fit: cover;
+  object-position: center;
 }
 
 .overlay {
