@@ -1,11 +1,5 @@
 .section {
-  padding: 80px 32px;
-}
-
-@media (min-width: 768px) {
-  .section {
-    padding: 80px 80px;
-  }
+  padding: var(--space-20) var(--space-8);
 }
 
 .container {
@@ -15,13 +9,14 @@
 
 .header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: var(--space-12);
 }
 
 .heading {
-  font-size: 32px;
-  font-weight: 900;
-  color: #1a202c;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-surface-600);
   margin: 0;
 }
 
@@ -29,118 +24,122 @@
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  position: relative;
+  gap: 0;
 }
 
-/* 貫穿所有點的連線：從第一點中心到最後一點中心 */
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 13px; /* dotWrapper(28px) 中心 14px - 線寬一半 1px */
-  top: 70px;  /* 卡片高 140px 的一半 */
-  bottom: 70px;
-  width: 2px;
-  background-color: #222F3E;
-  z-index: 0;
+@media (min-width: 768px) {
+  .timeline {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 
 .item {
   display: flex;
-  flex-direction: row;
-  align-items: center; /* dot 與卡片垂直置中對齊 */
-  gap: 28px;
+  align-items: stretch;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
 }
 
-/* ===== Dot & Line ===== */
-.dotWrapper {
-  position: relative;
-  width: 28px;
-  flex-shrink: 0;
+@media (min-width: 768px) {
+  .item {
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+    max-width: none;
+    margin: 0;
+  }
+}
+
+/* ===== Step number + connector ===== */
+.stepCol {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.dot {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 4px solid #222F3E;
-  background-color: #ffffff;
+@media (min-width: 768px) {
+  .stepCol {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+.stepCircle {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: 1;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-500);
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   flex-shrink: 0;
 }
 
-.dotInner {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #222F3E;
+.stepConnector {
+  flex: 1 1 auto;
+  min-height: var(--space-6);
+  width: 2px;
+  background-color: var(--color-primary-500);
 }
 
+.stepCol > .stepConnector:first-child {
+  flex: 0 0 0;
+  min-height: 0;
+}
 
-/* ===== 深藍色卡片（照使用者規格） ===== */
-.card {
-  /* display: flex;
-  width: 800px;
-  height: 140px;
-  padding: 32px 32px 0 32px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  background-color: #1e2d40;
-  border-radius: 20px;
-  flex-shrink: 0;
-  overflow: hidden; */
+@media (min-width: 768px) {
+  .stepConnector {
+    width: auto;
+    min-height: 0;
+    height: 2px;
+  }
 
+  .stepCol > .stepConnector:first-child {
+    flex: 1 1 auto;
+  }
+}
+
+.stepConnectorHidden {
+  visibility: hidden;
+}
+
+/* ===== Content ===== */
+.content {
   display: flex;
-  width: 800px;
-  height: 140px;
-  padding: 32px 32px 0 32px;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  border-radius: 16px;
-  background:  #222F3E;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.10), 0 8px 10px -6px rgba(0, 0, 0, 0.10);
+  gap: var(--space-2);
+  padding-bottom: var(--space-8);
 }
 
-.cardWithNote {
-  height: 164px;
-}
-
-@media (max-width: 960px) {
-  .card,
-  .cardWithNote {
-    width: 100%;
-    height: auto;
-    padding-bottom: 24px;
+@media (min-width: 768px) {
+  .content {
+    align-items: center;
+    text-align: center;
+    padding: var(--space-5) var(--space-3) 0;
   }
 }
 
 .date {
-  font-size: 18px;
-  font-weight: 700;
-  color: #ff9900;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-500);
   margin: 0;
-  line-height: 28px;
 }
 
 .title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffffff;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-700);
   margin: 0;
-  line-height: 28px;
-}
-
-.note {
-  font-size: 16px;
-  color: #ffffff;
-  margin: 0;
-  line-height: 24px;
 }
