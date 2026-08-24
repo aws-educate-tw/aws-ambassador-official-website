@@ -2,7 +2,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  margin-top: calc(-1 * var(--nav-height));
+  padding-top: var(--nav-height);
   background-image: url('/images/backgrounds/AlumniPageBG.png');
   background-size: cover;
   background-position: center top;

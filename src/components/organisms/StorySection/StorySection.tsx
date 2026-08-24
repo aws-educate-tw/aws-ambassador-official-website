@@ -27,13 +27,6 @@ function AlumniCardContent({ data }: Readonly<{ data: StoryCategory['alumni'][st
         </div>
         <div className={styles.info}>
           <p className={styles.ambassadorTitle}>{data.title}</p>
-          <div className={styles.tags}>
-            {data.tags.map((tag) => (
-              <span key={tag} className={styles.tag}>
-                {tag}
-              </span>
-            ))}
-          </div>
           <div className={styles.highlights}>
             {data.highlights.map((h) => (
               <div key={h} className={styles.highlightItem}>

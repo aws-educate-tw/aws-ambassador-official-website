@@ -27,38 +27,35 @@
   margin: 0 auto;
 }
 
-.glowRight {
-  position: absolute;
-  top: 160px;
-  right: 0;
-  width: 256px;
-  height: 256px;
-  background: rgba(219, 234, 254, 0.4);
-  border-radius: 9999px;
-  filter: blur(48px);
-  z-index: 0;
-  pointer-events: none;
+.introBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  z-index: 1;
 }
 
-.glowLeft {
-  position: absolute;
-  top: 240px;
-  left: 40px;
-  width: 192px;
-  height: 192px;
-  background: rgba(252, 231, 243, 0.4);
-  border-radius: 9999px;
-  filter: blur(48px);
-  z-index: 0;
-  pointer-events: none;
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-primary-500);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  z-index: 1;
 }
 
 .title {
   position: relative;
+  margin: 0;
   font-size: 48px;
   font-weight: 900;
-  color: #222f3e;
-  margin: 0 0 32px 0;
+  color: var(--color-surface-600);
   letter-spacing: -0.02em;
   z-index: 1;
 }
@@ -78,8 +75,138 @@
   border: 1px solid var(--color-border-subtle);
   max-width: 672px;
   line-height: var(--line-height-relaxed);
-  color: #222f3e;
+  color: var(--color-surface-600);
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   z-index: 1;
+}
+
+/* ===== 成長時間軸 ===== */
+.journey {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-top: var(--space-16);
+}
+
+@media (max-width: 768px) {
+  .journey {
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}
+
+/* 0%→70%：從時間軸最右緣滑到節點 01；70%→100%：在節點 01 放大淡出 */
+@keyframes journeyActiveDotSlide {
+  0% {
+    left: 100%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  70% {
+    left: var(--journey-node-first-x);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    left: var(--journey-node-first-x);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.2);
+  }
+}
+
+/* 裝飾用指示點：進場時沿時間軸從最後一個節點滑向第一個節點，僅桌機（≥768px）顯示 */
+.activeDot {
+  visibility: hidden;
+  position: absolute;
+  top: var(--journey-node-y, 1.25rem);
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-500);
+  box-shadow: 0 0 0 6px rgba(255, 153, 0, 0.18);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.activeDotPlay {
+  animation: journeyActiveDotSlide 2.4s 0.3s both;
+}
+
+@media (min-width: 768px) {
+  .journey {
+    /* 節點圓心的座標 */
+    --journey-gap: var(--space-6);
+    --journey-node-radius: 1.25rem; /* 直徑的一半 */
+    --journey-node-y: 1.25rem;
+    --journey-node-first-x: var(--journey-node-radius);
+    --journey-node-last-x: calc(
+      ((100% - 2 * var(--journey-gap)) / 3) * 2 + var(--journey-gap) * 2 +
+        var(--journey-node-radius)
+    );
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--journey-gap);
+  }
+
+  .journey::before {
+    content: '';
+    position: absolute;
+    top: var(--journey-node-y);
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--color-border-default);
+    z-index: 0;
+  }
+
+  .activeDot {
+    visibility: visible;
+    left: 100%;
+  }
+}
+
+.journeyStep {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.stepNumber {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-primary-500);
+  background-color: var(--color-bg-primary);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-primary-500);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.stepTitle {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-surface-600);
+}
+
+.stepDescription {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
 }
