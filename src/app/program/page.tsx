@@ -24,13 +24,13 @@ export default function ProgramPage() {
         ctaButton={{ label: '立即申請', href: 'https://www.instagram.com/awseducatestdambtw/' }}
       />
 
-      <BenefitsSection />
       <SkillsSection />
+      <BenefitsSection />
       <MissionSection />
       <SideProjectSection />
       <QualificationsSection />
-      <RolesSection />
       <TimelineSection />
+      <RolesSection />
       <FAQSection />
 
       <CTASection
