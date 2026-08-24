@@ -74,15 +74,6 @@ export interface Pillar {
   icon: string;
 }
 
-export interface Testimonial {
-  name: string;
-  role: string;
-  company: string;
-  avatar: string;
-  rating: number;
-  quote: string;
-}
-
 export interface CTASection {
   title: string;
   description: string;
@@ -114,7 +105,6 @@ export interface HomePage {
   statistics: Statistic[];
   features: FeatureCard[];
   pillars: Pillar[];
-  testimonials: Testimonial[];
   cta_section: CTASection;
 }
 
