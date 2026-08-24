@@ -6,6 +6,7 @@ import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
 import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
 import { ProgramExploreSection } from '@/components/organisms/ProgramSection/ProgramSection';
+import { TestimonialsCarousel } from '@/components/organisms/TestimonialsCarousel/TestimonialsCarousel';
 import homeData from '@/content/home.json';
 import { motion } from 'framer-motion';
 import styles from './HomePage.module.css';
@@ -144,6 +145,9 @@ export default function HomePage() {
       <ProgramExploreSection features={homeData.features} />
 
       <BenefitList benefits={homeData.benefits} />
+
+      {/* 大使心得 */}
+      <TestimonialsCarousel testimonials={homeData.testimonials} />
 
       {/* CTA 區 */}
       <CTASection
