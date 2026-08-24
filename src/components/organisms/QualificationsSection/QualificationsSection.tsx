@@ -28,36 +28,38 @@ export function QualificationsSection() {
           大使計劃報名資格
         </motion.h2>
 
-        {/* 置中的基本資格卡 */}
-        <motion.div
-          className={styles.topRow}
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <div className={styles.card}>
-            <p className="whitespace-pre-line">{baseQualification}</p>
-          </div>
-        </motion.div>
-
-        {/* 2x2 grid */}
-        <motion.div
-          className={styles.grid}
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          {gridQualifications.map((text, index) => (
-            <div key={index} className={styles.card}>
-              <div className={styles.iconBox}>
-                <Rocket size={18} className={styles.icon} />
-              </div>
-              <span>{text}</span>
+        <div className={styles.list}>
+          {/* 置中的基本資格卡 */}
+          <motion.div
+            className={styles.topRow}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <div className={styles.card}>
+              <p className="whitespace-pre-line">{baseQualification}</p>
             </div>
-          ))}
-        </motion.div>
+          </motion.div>
+
+          {/* 2x2 grid */}
+          <motion.div
+            className={styles.grid}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {gridQualifications.map((text, index) => (
+              <div key={index} className={styles.card}>
+                <div className={styles.iconBox}>
+                  <Rocket size={18} className={styles.icon} />
+                </div>
+                <span>{text}</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
