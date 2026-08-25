@@ -88,6 +88,11 @@ export interface CTASection {
     label: string;
     href: string;
   };
+  secondary_cta?: {
+    label: string;
+    href: string;
+  };
+  deadline: string;
 }
 
 export interface HomePage {
@@ -96,6 +101,10 @@ export interface HomePage {
     subtitle: string;
     description: string;
     primaryCTA: {
+      label: string;
+      href: string;
+    };
+    secondaryCTA: {
       label: string;
       href: string;
     };

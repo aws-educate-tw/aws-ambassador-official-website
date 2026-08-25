@@ -19,6 +19,10 @@ export interface HeroSectionProps {
     label: string;
     href: string;
   };
+  secondaryCTA: {
+    label: string;
+    href: string;
+  };
   tertiaryCTA?: {
     label: string;
     href: string;
@@ -85,6 +89,7 @@ export function HeroSection(props: Readonly<HeroSectionProps>) {
     description,
     statistics,
     primaryCTA,
+    secondaryCTA,
     tertiaryCTA,
   } = props;
 
@@ -95,7 +100,8 @@ export function HeroSection(props: Readonly<HeroSectionProps>) {
 
   const ctas = [
     { ...primaryCTA, variant: 'primary' as const },
-    ...(tertiaryCTA ? [{ ...tertiaryCTA, variant: 'dark' as const }] : []),
+    { ...secondaryCTA, variant: 'dark' as const },
+    ...(tertiaryCTA ? [{ ...tertiaryCTA, variant: 'primary' as const }] : []),
   ];
 
   return (
@@ -121,7 +127,7 @@ export function HeroSection(props: Readonly<HeroSectionProps>) {
                   rel={isExternal ? 'noopener noreferrer' : undefined}
                 >
                   <span>{cta.label}</span>
-                  <ArrowRight size={12} aria-hidden="true" />
+                  {cta.variant === 'primary' && <ArrowRight size={12} aria-hidden="true" />}
                 </Link>
               );
             })}

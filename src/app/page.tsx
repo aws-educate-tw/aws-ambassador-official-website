@@ -154,6 +154,7 @@ export default function HomePage() {
         title={homeData.cta_section.title}
         description={homeData.cta_section.description}
         primaryCTA={homeData.cta_section.primary_cta}
+        deadline={homeData.cta_section.deadline}
       />
     </div>
   );
