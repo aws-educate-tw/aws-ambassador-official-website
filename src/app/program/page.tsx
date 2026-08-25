@@ -10,6 +10,7 @@ import { RolesSection } from '@/components/organisms/RolesSection/RolesSection';
 import { SideProjectSection } from '@/components/organisms/SideProjectSection/SideProjectSection';
 import { SkillsSection } from '@/components/organisms/SkillsSection/SkillsSection';
 import { TimelineSection } from '@/components/organisms/TimelineSection/TimelineSection';
+import { CTA_CONTENT } from '@/data/cta';
 import styles from './program.module.css';
 
 export default function ProgramPage() {
@@ -34,13 +35,9 @@ export default function ProgramPage() {
       <FAQSection />
 
       <CTASection
-        title="準備好加入了嗎？"
-        description="加入 AWS Educate Taiwan 雲端校園大使，與我們一起探索雲端世界！"
-        primaryCTA={{
-          label: '立即申請成為大使',
-          href: 'https://www.instagram.com/awseducatestdambtw/',
-        }}
-        deadline="申請截止日：2025 年 10 月 3 日"
+        title={CTA_CONTENT.program.title}
+        description={CTA_CONTENT.program.description}
+        primaryCTA={CTA_CONTENT.program.primaryCTA}
       />
     </div>
   );

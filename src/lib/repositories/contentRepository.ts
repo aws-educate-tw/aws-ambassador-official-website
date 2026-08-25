@@ -25,13 +25,6 @@ export interface HomePageData {
     description: string;
     icon?: string;
   }>;
-  cta_section: {
-    title: string;
-    description: string;
-    primary_cta: { label: string; href: string };
-    secondary_cta?: { label: string; href: string };
-    deadline?: string;
-  };
 }
 
 /**

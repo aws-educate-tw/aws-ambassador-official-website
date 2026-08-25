@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import styles from './Button.module.css';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
-export type ButtonSize = 'sm' | 'md' | 'lg';
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'gradient';
+export type ButtonSize = 'sm' | 'md' | 'lg' | 'xl';
 
 export interface ButtonProps {
   children: React.ReactNode;

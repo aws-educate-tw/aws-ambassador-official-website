@@ -74,20 +74,6 @@ export interface Pillar {
   icon: string;
 }
 
-export interface CTASection {
-  title: string;
-  description: string;
-  primary_cta: {
-    label: string;
-    href: string;
-  };
-  secondary_cta?: {
-    label: string;
-    href: string;
-  };
-  deadline: string;
-}
-
 export interface HomePage {
   hero: {
     title: string;
@@ -105,7 +91,6 @@ export interface HomePage {
   statistics: Statistic[];
   features: FeatureCard[];
   pillars: Pillar[];
-  cta_section: CTASection;
 }
 
 export interface Ambassador {
