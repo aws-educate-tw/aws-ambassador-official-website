@@ -6,15 +6,11 @@
     "description": "加入台灣最活躍的雲端學生社群，與 180+ 位優秀大使一起學習 AWS 技術、舉辦創新活動、連結產業資源，開啟你的科技職涯之路！",
     "primaryCTA": {
       "label": "查看大使計畫詳情",
-      "href": "#program"
-    },
-    "secondaryCTA": {
-      "label": "探索活動",
       "href": "/program"
     },
     "tertiaryCTA": {
       "label": "立即申請大使",
-      "href": "https://www.instagram.com/awseducatestdambtw/"
+      "href": "https://awsedu.tw/2026-9th-ambassador"
     }
   },
   "statistics": [

@@ -104,10 +104,6 @@ export interface HomePage {
       label: string;
       href: string;
     };
-    secondaryCTA: {
-      label: string;
-      href: string;
-    };
   };
   statistics: Statistic[];
   features: FeatureCard[];
