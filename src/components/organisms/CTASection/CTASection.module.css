@@ -43,19 +43,37 @@
 
 .title {
   margin: 0;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-inverse);
   line-height: 1.2;
 }
 
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: var(--font-size-5xl);
+  }
+}
+
 .description {
   margin: 0;
   max-width: 672px;
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-normal);
   color: var(--color-neutral-300);
   line-height: var(--line-height-tight);
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: var(--font-size-base);
+  }
 }
 
 .actions {

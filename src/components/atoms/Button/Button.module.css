@@ -39,6 +39,13 @@
   font-size: var(--font-size-xl);
 }
 
+@media (max-width: 767px) {
+  .xl {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-lg);
+  }
+}
+
 /* Variants */
 .primary {
   background-color: var(--color-primary-500);
