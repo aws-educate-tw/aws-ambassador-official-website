@@ -1,10 +1,22 @@
 .section {
-  padding: var(--space-20) var(--space-8);
+  padding: var(--section-padding-y-sm) var(--page-padding-x);
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-inline: var(--page-padding-x-sm);
+  }
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: var(--space-10);
+    padding: var(--section-padding-y) var(--page-padding-x-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-inline: var(--page-padding-x-lg);
   }
 }
 
