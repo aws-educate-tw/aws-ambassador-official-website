@@ -23,7 +23,7 @@ export function Footer({ copyright, brandTitle, brandSubtexts, brandDesc }: Read
       <div className={styles.container}>
         {/* 標題 */}
         <div>
-          <h1 className={styles.mainTitle}>Contact US</h1>
+          <h1 className={styles.mainTitle}>Contact us</h1>
         </div>
         {/* 主內容區 */}
         <div className={styles.gridContainer}>
@@ -72,7 +72,9 @@ export function Footer({ copyright, brandTitle, brandSubtexts, brandDesc }: Read
             {/* Email */}
             <a href="mailto:awseducate.cloudambassador@gmail.com" className={styles.contactLink}>
               <Mail size={20} className={styles.contactIcon} />
-              <span className={styles.contactLabel}>awseducate.cloudambassador@gmail.com</span>
+              <span className={styles.contactLabel}>
+                awseducate.cloudambassador<wbr />@gmail.com
+              </span>
             </a>
 
             {/* 社群媒體列表 */}
