@@ -157,6 +157,8 @@
   --section-padding-y-sm: var(--space-12); /* 48px（小螢幕） */
   /* 內容最大寬度 */
   --content-max-width: 1280px;
+  /* Navigation 列高度 */
+  --nav-height: 85px;
 
   /* ===== Breakpoints (for reference in JS) ===== */
   --breakpoint-sm: 640px;
@@ -202,5 +204,12 @@
     --duration-normal: 0ms;
     --duration-slow: 0ms;
     --duration-slower: 0ms;
+  }
+}
+
+/* 對齊 Navigation.module.css 的手機斷點（.container min-height 72px + 1px border） */
+@media (max-width: 819.5px) {
+  :root {
+    --nav-height: 73px;
   }
 }

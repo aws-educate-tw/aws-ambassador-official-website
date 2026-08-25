@@ -2,7 +2,6 @@
 node_modules/
 /.pnp
 .pnp.js
-package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
@@ -19,18 +18,19 @@ pnpm-lock.yaml
 /dist
 dist-ssr
 
-# Production
-.env.production.local
-.env.production
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
 
-# Development
-.env.local
-.env.*.local
+# Environment
+.env
+.env.production
 *.local
 
 # Misc
 .DS_Store
 *.pem
+*.exe
 ehthumbs.db
 .AppleDouble
 .LSOverride
@@ -60,7 +60,6 @@ lerna-debug.log*
 *.swp
 *.swo
 *~
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
@@ -82,7 +81,3 @@ lerna-debug.log*
 # Vercel & Hosting
 .vercel
 .netlify
-
-# Environment
-.env
-.env.test.local

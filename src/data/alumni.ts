@@ -6,7 +6,6 @@ export interface CareerStep {
 export interface AlumniProfile {
   name: string;
   title: string;
-  tags: string[];
   image?: string;
   highlights: string[];
   quote: string;
@@ -29,7 +28,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       羅子函: {
         name: '羅子函',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Han.png',
         highlights: [
           '政大國貿背景的科技轉型，從文法商領域跨足科技業',
@@ -44,11 +42,12 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           { id: '03', text: '於巴黎 Dataiku 負責數據導向的商務營運與策略' },
         ],
         interviewer: 'Allison, Elma',
+        interviewUrl:
+          'https://medium.com/@awseducate.cloudambassador/%E5%9C%A8%E5%B7%B4%E9%BB%8E-ai-%E5%85%AC%E5%8F%B8-%E6%96%87%E6%B3%95%E5%95%86%E8%83%8C%E6%99%AF%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%AE%9A%E4%BD%8D-%E5%AD%90%E5%87%BD%E7%9A%84%E8%B7%A8%E5%9C%8B%E8%81%B7%E6%B6%AF%E8%B7%AF%E5%BE%91-8f00421db8af',
       },
       Chloe: {
         name: 'Chloe Chang',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Chloe.jpg',
         highlights: [
           '現任知名公司擔任資深產品分析師',
@@ -72,6 +71,8 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           },
         ],
         interviewer: 'Selina, Jessie',
+        interviewUrl:
+          'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E5%BE%9E%E5%B1%A5%E6%AD%B7%E7%A9%BA%E7%99%BD%E5%88%B0%E5%A4%96%E5%95%86%E8%B3%87%E6%B7%B1%E7%94%A2%E5%93%81%E5%88%86%E6%9E%90%E5%B8%AB-chloe-%E5%AD%B8%E5%A7%8A-%E7%9A%84-%E5%AE%9A%E7%BE%A9%E5%95%8F%E9%A1%8C-%E5%AF%A6%E6%88%B0%E8%B7%AF%E5%BE%91-c45ddaed6e5f',
       },
     },
   },
@@ -82,7 +83,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       Shiun: {
         name: 'Shiun Chiu',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Shiun.png',
         highlights: [
           '深耕 Networking 與 Linux Kernel 等底層技術的外商雲端工程師',
@@ -112,8 +112,7 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       Aaron: {
         name: 'Aaron Huang',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
-        image: '',
+        image: '/images/Stories/Aaron.JPG',
         highlights: [
           '精準定位自我於「商業與技術的完美平衡」 ',
           '具備高情商與強大的跨領域溝通力，擅長管理客戶期待與解決複雜的專案需求',
@@ -130,11 +129,10 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         interviewUrl:
           'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E4%BD%A0%E4%B8%8D%E9%9C%80%E8%A6%81%E5%BE%88%E5%8E%B2%E5%AE%B3%E6%89%8B%E5%87%BA%E7%99%BC-%E4%BD%A0%E5%BF%85%E9%A0%88%E5%85%88%E5%87%BA%E7%99%BC-%E6%89%8B%E6%9C%89%E8%B7%A8%E5%A4%A7-aaron-%E7%9A%84%E5%A4%96%E5%95%86%E6%B1%82%E8%81%B7%E4%B9%8B%E8%B7%AF-951834d93582',
       },
-      許銘軒: {
-        name: '許銘軒',
+      Alan: {
+        name: 'Alan Hsu',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
-        image: '',
+        image: '/images/Stories/Alan.jpg',
         highlights: [
           '資管背景跨足智慧製造，以跨域視角深耕半導體產業',
           '從雲端大使到業界工程師，用每一次實戰累積技術判斷力',
@@ -163,7 +161,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       Sharon: {
         name: 'Sharon Chen',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Sharon.png',
         highlights: [
           '北教大語文創作系出身，以人文領域跨足外商科技業',
@@ -190,7 +187,6 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
       葉禹旋: {
         name: '葉禹旋',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Mina.png',
         highlights: [
           '政大資管背景出身，從技術端逐步探索至行銷與品牌領域',
@@ -210,10 +206,9 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         interviewUrl:
           'https://medium.com/@awseducate.cloudambassador/alumni-stories-%E5%BE%9E%E5%AF%AB%E7%A8%8B%E5%BC%8F%E5%88%B0%E8%AA%AA%E6%95%85%E4%BA%8B-mina-%E7%9A%84%E8%B7%A8%E5%9F%9F%E6%88%90%E9%95%B7%E8%B7%AF%E5%BE%91-18a9481ae40c',
       },
-      王柏詒: {
-        name: '王柏詒',
+      Boyi: {
+        name: 'Boyi Wang',
         title: 'AWS Educate Taiwan 校園大使校友',
-        tags: ['數據決策', '國際化'],
         image: '/images/Stories/Boyi.png',
         highlights: [
           '台大生物產業傳播暨發展學系背景',
@@ -261,7 +256,8 @@ export interface DirectoryPerson {
   certs: string[];
   links?: {
     linkedin?: string;
-    story?: string;
+    /** undefined = 尚未提供；null = 確定沒有心得 */
+    story?: string | null;
   };
 }
 
@@ -350,7 +346,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['DGR Program', 'Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
     links: {
-      linkedin: 'https://www.linkedin.com/in/allison-tsai-205702355/',
+      linkedin: 'https://www.linkedin.com/in/allison-t-205702355',
     },
   },
   {
@@ -376,7 +372,8 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
     links: {
-      linkedin: 'https://www.linkedin.com/in/angeliii/',
+      linkedin: 'https://www.linkedin.com/in/angeliii',
+      story: null,
     },
   },
   {
@@ -387,7 +384,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev Team Official Website'],
     certs: ['AIF-C01'],
     links: {
-      linkedin: 'https://www.linkedin.com/in/selina-chen-050582170/',
+      linkedin: 'https://www.linkedin.com/in/olivia-chen-321337219/',
     },
   },
   {
@@ -398,6 +395,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Marketing' }],
     sideProjects: ['DGR Program', 'Alumni stories Hub'],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/elma-syu',
+    },
   },
   {
     name: '廖研伃 Seren Liao',
@@ -418,6 +418,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Event' }],
     sideProjects: ['Dev Team Official Website'],
     certs: [],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/ling-fang-mao',
+    },
   },
   {
     name: '黃思恩 Jessie Huang',
@@ -427,6 +430,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Event' }],
     sideProjects: ['Alumni stories Hub'],
     certs: [],
+    links: {
+      story: null,
+    },
   },
   {
     name: '張育鳳 Jessie Chang',
@@ -437,7 +443,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev team Anti disinformation and fraud proposal'],
     certs: ['AIF-C01'],
     links: {
-      linkedin: 'http://www.linkedin.com/in/jessie-chang-886485397',
+      linkedin: 'https://www.linkedin.com/in/jessie-chang-886485397',
     },
   },
   {
@@ -449,7 +455,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev Team TPET'],
     certs: [],
     links: {
-      linkedin: 'https://www.linkedin.com/in/ariel-yu-183a66346/',
+      linkedin: 'https://www.linkedin.com/in/ariel-yu-183a66346',
       story:
         'https://medium.com/@arielyu999/aws-educate-cloud-ambassador-%E9%9B%B2%E7%AB%AF%E4%B9%8B%E6%97%85-3445d4f58d20',
     },
@@ -461,6 +467,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Tech' }],
     sideProjects: ['Dev Team TPET'],
     certs: ['AIF-C01'],
+    links: {
+      story: null,
+    },
   },
   {
     name: '陳俊瑋 Aaron Chen',
@@ -472,6 +481,8 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: ['AIF-C01', 'CLF-C02'],
     links: {
       linkedin: 'https://www.linkedin.com/in/chun-wei-chen-494ab6354/',
+      story:
+        'https://medium.com/@aaronwayway/8th-aws-educate-cloud-ambassador-tech-support-%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB-eaa8a924a844?sharedUserId=aaronwayway',
     },
   },
   {
@@ -483,7 +494,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev Team TPET', 'Alumni stories Hub'],
     certs: [],
     links: {
-      linkedin: 'https://www.linkedin.com/in/%E6%95%AC%E7%BF%B0-%E9%99%B3-15b727233/',
+      linkedin: 'https://www.linkedin.com/in/敬翰-陳-15b727233',
     },
   },
   {
@@ -495,7 +506,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Dev team Anti disinformation and fraud proposal'],
     certs: ['AIF-C01'],
     links: {
-      linkedin: 'http://www.linkedin.com/in/maggie-ymsu',
+      linkedin: 'https://www.linkedin.com/in/maggie-ymsu',
     },
   },
   {
@@ -537,6 +548,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     experience: [{ cohort: '8th', subRole: 'Event' }],
     sideProjects: ['DGR Program', 'Dev Team Official Website', 'Alumni stories Hub'],
     certs: [],
+    links: {
+      story: null,
+    },
   },
   {
     name: '王亭淇 Tiffany Wang',

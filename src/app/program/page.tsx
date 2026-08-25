@@ -8,10 +8,8 @@ import { PageBanner } from '@/components/organisms/PageBanner/PageBanner';
 import { QualificationsSection } from '@/components/organisms/QualificationsSection/QualificationsSection';
 import { RolesSection } from '@/components/organisms/RolesSection/RolesSection';
 import { SideProjectSection } from '@/components/organisms/SideProjectSection/SideProjectSection';
-import { SideProjectTestimonialsCarousel } from '@/components/organisms/SideProjectTestimonialsCarousel/SideProjectTestimonialsCarousel';
 import { SkillsSection } from '@/components/organisms/SkillsSection/SkillsSection';
 import { TimelineSection } from '@/components/organisms/TimelineSection/TimelineSection';
-import homeData from '@/content/home.json';
 import styles from './program.module.css';
 
 export default function ProgramPage() {
@@ -26,14 +24,13 @@ export default function ProgramPage() {
         ctaButton={{ label: '立即申請', href: 'https://www.instagram.com/awseducatestdambtw/' }}
       />
 
-      <BenefitsSection />
       <SkillsSection />
+      <BenefitsSection />
       <MissionSection />
       <SideProjectSection />
-      <SideProjectTestimonialsCarousel testimonials={homeData.testimonials} />
       <QualificationsSection />
-      <RolesSection />
       <TimelineSection />
+      <RolesSection />
       <FAQSection />
 
       <CTASection

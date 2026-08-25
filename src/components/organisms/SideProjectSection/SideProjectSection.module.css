@@ -1,5 +1,23 @@
 .section {
-  padding: 80px 32px;
+  padding: var(--section-padding-y) var(--page-padding-x);
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-inline: var(--page-padding-x-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-inline: var(--page-padding-x-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-inline: var(--page-padding-x-lg);
+  }
 }
 
 .container {
@@ -7,51 +25,51 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--space-6);
 }
 
 /* ===== Header ===== */
 .header {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 }
 
 .heading {
-  font-size: 32px;
-  font-weight: 900;
-  color: #1a202c;
-  margin: 0 0 16px 0;
-  line-height: 1.2;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-surface-600);
+  margin: 0 0 var(--space-4) 0;
+  line-height: 36px;
 }
 
 .subheading {
-  color: #4A5565;
+  color: var(--color-neutral-600);
   text-align: center;
-  font-family: Inter, sans-serif;
-  font-size: 12px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
   line-height: 16px;
   margin: 0;
 }
 
 /* ===== Dev Team Card ===== */
 .devTeamCard {
-  background-color: #1e2d40;
-  border-radius: 20px;
-  padding: 28px 32px;
+  background-color: var(--color-surface-600);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  color: #ffffff;
+  gap: var(--space-5);
+  color: var(--color-text-inverse);
 }
 
 /* ===== Dark Card Icon ===== */
 .cardIconBox {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.15);
+  width: var(--space-10);
+  height: var(--space-10);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,28 +77,29 @@
 }
 
 .cardIcon {
-  color: #ffffff;
+  color: var(--color-text-inverse);
 }
 
 .devTeamTitle {
-  font-size: 18px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 8px 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+  margin: 0 0 var(--space-2) 0;
+  line-height: 28px;
 }
 
 .devTeamDesc {
-  font-size: 14px;
-  color: #d1d5db;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-inverse);
   margin: 0;
-  line-height: 1.75;
+  line-height: 25px;
 }
 
 /* ===== Sub-projects Grid (white, 2-col) ===== */
 .subProjectGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px 24px;
+  gap: var(--space-8);
 }
 
 @media (min-width: 768px) {
@@ -92,84 +111,114 @@
 .subProject {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-4);
   height: 100%;
 }
 
 .subTitle {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1a202c;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-surface-600);
   margin: 0;
+  line-height: 20px;
 }
 
 .subDesc {
-  font-size: 14px;
-  color: #6b7280;
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
   margin: 0;
-  line-height: 1.75;
+  line-height: var(--line-height-relaxed);
   flex: 1;
 }
 
 /* Skills list */
 .skillList {
   list-style: none;
-  margin: 8px 0 0 0;
-  padding: 16px 20px;
+  margin: var(--space-2) 0 0 0;
+  padding: var(--space-5);
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background-color: #f9fafb;
+  gap: var(--space-2);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-secondary);
 }
 
 .skillItem {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: #374151;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  line-height: 16px;
+  color: var(--color-text-primary);
 }
 
 .checkIcon {
-  color: #ff9900;
+  color: var(--color-primary-500);
   flex-shrink: 0;
 }
 
-/* ===== Bottom Grid (2 dark cards) ===== */
+/* ===== Bottom Grid ===== */
 .bottomGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-areas:
+    'dgrCard'
+    'dgrSkills'
+    'alumniCard'
+    'alumniSkills';
+  gap: var(--space-4);
 }
 
 @media (min-width: 768px) {
   .bottomGrid {
     grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'dgrCard alumniCard'
+      'dgrSkills alumniSkills';
+    gap: var(--space-6) var(--space-8);
   }
 }
 
+.dgrCardArea {
+  grid-area: dgrCard;
+}
+
+.dgrSkillsArea {
+  grid-area: dgrSkills;
+  margin-top: 0;
+}
+
+.alumniCardArea {
+  grid-area: alumniCard;
+}
+
+.alumniSkillsArea {
+  grid-area: alumniSkills;
+  margin-top: 0;
+}
+
 .darkCard {
-  background-color: #1e2d40;
-  border-radius: 20px;
-  padding: 28px 32px;
+  background-color: var(--color-surface-600);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  color: #ffffff;
+  gap: var(--space-5);
+  color: var(--color-text-inverse);
 }
 
 .darkCardTitle {
-  font-size: 18px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 8px 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+  margin: 0 0 var(--space-2) 0;
+  line-height: 28px;
 }
 
 .darkCardDesc {
-  font-size: 14px;
-  color: #d1d5db;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-inverse);
   margin: 0;
-  line-height: 1.75;
+  line-height: 25px;
 }

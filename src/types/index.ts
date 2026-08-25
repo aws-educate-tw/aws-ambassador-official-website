@@ -112,7 +112,6 @@ export interface HomePage {
   statistics: Statistic[];
   features: FeatureCard[];
   pillars: Pillar[];
-  testimonials: Testimonial[];
   cta_section: CTASection;
 }
 

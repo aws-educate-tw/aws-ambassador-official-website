@@ -16,6 +16,23 @@ import styles from './AmbassadorDirectory.module.css';
 
 const ROLES = ['Marketing', 'Tech', 'Event'];
 
+/** story === null 代表確定沒有心得（不顯示按鈕）；undefined 代表尚未提供（顯示灰色預設按鈕） */
+function StoryButton({ story }: Readonly<{ story?: string | null }>) {
+  if (story === null) return null;
+  if (!story) {
+    return (
+      <button type="button" className={styles.btn} disabled>
+        心得整理中
+      </button>
+    );
+  }
+  return (
+    <a href={story} target="_blank" rel="noopener noreferrer" className={styles.btn}>
+      大使旅程全心得
+    </a>
+  );
+}
+
 function usePageSize() {
   const [pageSize, setPageSize] = useState(9);
   useEffect(() => {
@@ -81,7 +98,10 @@ function CustomSelect({
             <button
               type="button"
               className={`${styles.customSelectOption} ${value === '' ? styles.customSelectOptionSelected : ''}`}
-              onClick={() => { onChange(''); setIsOpen(false); }}
+              onClick={() => {
+                onChange('');
+                setIsOpen(false);
+              }}
             >
               <span className={styles.customSelectOptionText}>{placeholder}</span>
               {value === '' && <Check size={16} className={styles.customSelectCheck} />}
@@ -91,7 +111,10 @@ function CustomSelect({
                 key={opt.value}
                 type="button"
                 className={`${styles.customSelectOption} ${value === opt.value ? styles.customSelectOptionSelected : ''}`}
-                onClick={() => { onChange(opt.value); setIsOpen(false); }}
+                onClick={() => {
+                  onChange(opt.value);
+                  setIsOpen(false);
+                }}
               >
                 <span className={styles.customSelectOptionText}>{opt.label}</span>
                 {value === opt.value && <Check size={16} className={styles.customSelectCheck} />}
@@ -287,15 +310,7 @@ export function AmbassadorDirectory() {
               {/* 6 & 7. 心得和 LinkedIn */}
               <div className={styles.actions}>
                 {/* 心得連結 */}
-                {person.links?.story ? (
-                  <a href={person.links.story} className={styles.btn}>
-                    大使旅程全心得
-                  </a>
-                ) : (
-                  <button type="button" className={styles.btn} disabled>
-                    心得整理中
-                  </button>
-                )}
+                <StoryButton story={person.links?.story} />
 
                 {/* LinkedIn 連結 */}
                 {person.links?.linkedin ? (
