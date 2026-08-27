@@ -172,7 +172,7 @@
   --principle-card-min-height: 19.5rem; /* 312px */
   --principle-card-hover-bg: #fffaf0;
   --principle-icon-shell-size: 8rem; /* 128px */
-  --principle-icon-size: 4rem; /* 64px */
+  --principle-icon-size: 6.25rem; /* 100px */
   --principle-icon-bg-blue: #dbeafe;
   --principle-icon-bg-sand: #fef3c7;
   --principle-icon-bg-rose: #ffe4e6;
@@ -192,8 +192,8 @@
   --program-section-subtitle-size: 14px;
   --program-section-subtitle-line-height: 20px;
   --program-section-subtitle-color: var(--color-neutral-600);
-  --program-section-grid-max-width: 1280px;
-  --program-section-grid-columns: repeat(3, minmax(0, 1fr));
+  --program-section-grid-max-width: 850px;
+  --program-section-grid-columns: repeat(2, minmax(0, 1fr));
   --program-section-grid-columns-mobile: 1fr;
 }
 

@@ -1,19 +1,16 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 import styles from './PillarCard.module.css';
 
 export interface PillarCardProps {
   title: string;
   subtitle: string;
   description: string;
+  icon: string;
   imageIndex: number;
 }
-
-const PRINCIPLE_IMAGES = [
-  '/images/Learning.png',
-  '/images/Implementation.png',
-  '/images/Sharing.png',
-  '/images/Lead.png',
-] as const;
 
 const ICON_VARIANTS = [
   styles['principle-card__icon-shell--blue'],
@@ -26,9 +23,10 @@ export function PillarCard({
   title,
   subtitle,
   description,
+  icon,
   imageIndex,
 }: Readonly<PillarCardProps>) {
-  const imageSrc = PRINCIPLE_IMAGES[imageIndex % PRINCIPLE_IMAGES.length];
+  const [imageFailed, setImageFailed] = useState(false);
   const iconVariantClass = ICON_VARIANTS[imageIndex % ICON_VARIANTS.length];
 
   return (
@@ -37,13 +35,16 @@ export function PillarCard({
         className={`${styles['principle-card__icon-shell']} ${iconVariantClass}`}
         aria-hidden="true"
       >
-        <Image
-          src={imageSrc}
-          alt=""
-          width={80}
-          height={80}
-          className={styles['principle-card__character-image']}
-        />
+        {!imageFailed && (
+          <Image
+            src={`/images/LP/${icon}.png`}
+            alt=""
+            width={80}
+            height={80}
+            className={styles['principle-card__character-image']}
+            onError={() => setImageFailed(true)}
+          />
+        )}
       </div>
 
       <h3 className={styles['principle-card__heading-group']}>
