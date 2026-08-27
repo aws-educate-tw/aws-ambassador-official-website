@@ -1,133 +1,133 @@
 .banner {
   position: relative;
-  padding: 60px 32px 60px;
+  display: flex;
+  align-items: center;
+  min-height: 26rem;
+  padding: var(--section-padding-y-sm) var(--page-padding-x);
+  background-color: var(--color-surface-600);
   overflow: hidden;
+}
+
+.slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--duration-slower) var(--easing-ease-in-out);
+}
+
+.slideActive {
+  opacity: 1;
+}
+
+.slideImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 640px) {
+  .banner {
+    padding-inline: var(--page-padding-x-sm);
+  }
 }
 
 @media (min-width: 768px) {
   .banner {
-    padding: 80px 80px 80px;
+    min-height: 32rem;
+    padding-inline: var(--page-padding-x-md);
   }
-}
-
-/* 兩欄佈局：左側內容 + 右側圖片 */
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
 }
 
 @media (min-width: 1024px) {
-  .container {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 40px;
+  .banner {
+    min-height: 38rem;
+    padding-inline: var(--page-padding-x-lg);
   }
 }
 
-/* ===== 左側 ===== */
-.contentLeft {
-  flex: 1;
-  min-width: 0;
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  max-width: 44rem;
 }
 
 .title {
-  font-size: 36px;
-  font-weight: 900;
-  color: #222f3e;
-  line-height: 1.25;
-  margin: 0 0 32px 0;
+  margin: 0;
+  color: var(--color-text-inverse);
+  font-size: clamp(1.75rem, 1.1rem + 3vw, 3rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
   word-break: keep-all;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-@media (min-width: 768px) {
-  .title {
-    font-size: 44px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .title {
-    font-size: 48px;
-  }
-}
-
-/* 描述文字白色圓角卡片 */
-.descriptionCard {
-  background-color: #ffffff;
-  border-radius: 50px;
-  padding: 24px 28px;
-  margin-bottom: 32px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+.descriptions {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-5);
 }
 
 .description {
-  font-size: 16px;
-  color: #364153;
   margin: 0;
-  line-height: 1.85;
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-relaxed);
   word-break: keep-all;
 }
 
 @media (min-width: 768px) {
   .description {
-    font-size: 17px;
+    font-size: var(--font-size-lg);
   }
-}
-
-.ctaWrapper {
-  padding-left: 4px;
 }
 
 .ctaButton {
   display: inline-flex;
-  padding: 10px 20px;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
-  border-radius: 9999px;
-  background: linear-gradient(180deg, #FF9900 0%, #FFB84D 100%);
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 700;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-10);
+  border-radius: var(--radius-full);
+  background: var(--gradient-cta);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition:
+    opacity var(--duration-normal) var(--easing-ease-out),
+    transform var(--duration-normal) var(--easing-ease-out);
 }
 
 .ctaButton:hover {
   opacity: 0.9;
+  transform: translateY(-1px);
 }
 
-/* ===== 下方三張照片列 ===== */
-.photoRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 24px;
-  padding: 0 32px 60px;
-  flex-wrap: wrap;
-}
-
-@media (min-width: 768px) {
-  .photoRow {
-    padding: 0 80px 80px;
-  }
-}
-
-.photoCard {
-  width: 318px;
-  height: 178px;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background-color: #EBE1D5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.ctaIcon {
+  width: 1rem;
+  height: 1rem;
   flex-shrink: 0;
 }

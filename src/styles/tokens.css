@@ -17,6 +17,9 @@
   --color-primary-800: #b36b00;
   --color-primary-900: #995c00;
 
+  /* CTA button gradient */
+  --gradient-cta: linear-gradient(180deg, var(--color-primary-500) 0%, #ffb84d 100%);
+
   /* Surface - Dark Blue */
   --color-surface-50: #f8fafb;
   --color-surface-100: #f0f4f8;
