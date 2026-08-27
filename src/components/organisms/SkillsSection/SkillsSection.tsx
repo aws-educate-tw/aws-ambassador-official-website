@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Rocket, ChevronsLeftRight, Lightbulb, Users, Target } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { ChevronsLeftRight, Lightbulb, Rocket, Users } from 'lucide-react';
 import styles from './SkillsSection.module.css';
 
 const skills: { title: string; description: string; Icon: LucideIcon }[] = [
@@ -13,7 +13,7 @@ const skills: { title: string; description: string; Icon: LucideIcon }[] = [
   },
   {
     title: '多元與跨領域實踐',
-    description: '如：數位行銷、雲端技術、技術教學',
+    description: '如：數位行銷、雲端技術',
     Icon: ChevronsLeftRight,
   },
   {
@@ -22,13 +22,8 @@ const skills: { title: string; description: string; Icon: LucideIcon }[] = [
     Icon: Users,
   },
   {
-    title: '專屬活動優先參與權',
-    description: '優先參加各類型 AWS 舉辦及協辦的活動、講座及研討會',
-    Icon: Target,
-  },
-  {
     title: '領導力與公眾影響力',
-    description: '獨立舉辦近百人活動，培養領導決策能力以及公開演說技巧',
+    description: '獨立舉辦近百人活動，培養領導能力以及公開演說技巧',
     Icon: Lightbulb,
   },
 ];
@@ -55,7 +50,6 @@ export function SkillsSection() {
           className={styles.header}
         >
           <h2 className={styles.heading}>在六個月的雲端之旅，你可以學到：</h2>
-          <p className={styles.subheading}>你將能學到的技能</p>
         </motion.div>
 
         <motion.div
@@ -65,8 +59,8 @@ export function SkillsSection() {
           viewport={{ once: true }}
           className={styles.grid}
         >
-          {skills.map((skill, index) => (
-            <motion.div key={index} variants={item} className={styles.card}>
+          {skills.map((skill) => (
+            <motion.div key={skill.title} variants={item} className={styles.card}>
               <div className={styles.iconBox}>
                 <skill.Icon size={16} className={styles.icon} />
               </div>
