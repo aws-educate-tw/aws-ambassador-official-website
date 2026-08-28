@@ -35,6 +35,8 @@
 }
 
 .logoIcon {
+  width: 42px;
+  height: 50px;
   object-fit: cover;
 }
 

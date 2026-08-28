@@ -19,10 +19,6 @@ export interface HeroSectionProps {
     label: string;
     href: string;
   };
-  secondaryCTA: {
-    label: string;
-    href: string;
-  };
   tertiaryCTA?: {
     label: string;
     href: string;
@@ -89,7 +85,6 @@ export function HeroSection(props: Readonly<HeroSectionProps>) {
     description,
     statistics,
     primaryCTA,
-    secondaryCTA,
     tertiaryCTA,
   } = props;
 
@@ -100,8 +95,7 @@ export function HeroSection(props: Readonly<HeroSectionProps>) {
 
   const ctas = [
     { ...primaryCTA, variant: 'primary' as const },
-    { ...secondaryCTA, variant: 'dark' as const },
-    ...(tertiaryCTA ? [{ ...tertiaryCTA, variant: 'primary' as const }] : []),
+    ...(tertiaryCTA ? [{ ...tertiaryCTA, variant: 'dark' as const }] : []),
   ];
 
   return (

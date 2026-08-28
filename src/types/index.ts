@@ -53,7 +53,6 @@ export interface FooterData {
 export interface Statistic {
   number: string;
   label: string;
-
 }
 
 export interface FeatureCard {
@@ -74,16 +73,34 @@ export interface Pillar {
   icon: string;
 }
 
+export interface Testimonial {
+  name: string;
+  role: string;
+  avatar?: string;
+  rating: number;
+  quote: string;
+}
+
+export interface CTASection {
+  title: string;
+  description: string;
+  primary_cta: {
+    label: string;
+    href: string;
+  };
+  secondary_cta?: {
+    label: string;
+    href: string;
+  };
+  deadline: string;
+}
+
 export interface HomePage {
   hero: {
     title: string;
     subtitle: string;
     description: string;
     primaryCTA: {
-      label: string;
-      href: string;
-    };
-    secondaryCTA: {
       label: string;
       href: string;
     };

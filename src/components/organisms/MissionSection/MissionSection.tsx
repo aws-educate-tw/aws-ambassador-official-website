@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import styles from './MissionSection.module.css';
 
 const missions = [
-  '與來自不同校系的團隊成員一同策畫、執行【 AWS Educate 第三屆證照陪跑計畫 】，舉辦各類實作工作坊、技術/職涯講座。',
-  '在校園內至少協助一場與 AWS 技術/證照/教育平台相關的推廣活動，協助接洽校內行政單位、教師、學生，推廣 AWS 學習資源。',
-  '在校園內推廣 2026 AWS 黑客松，分享雲端知識、報名資訊，提高黑客松知名度。',
+  '與跨團隊成員一同策劃執行第四屆證照陪跑計畫，舉辦各類實作工作坊、職涯講座。',
+  '與跨領域、跨專業的團隊成員一同打造校園 AI、雲端生態系。',
   '畢業前進行校園大使計畫的最終培訓績效總結與成果發表。',
+  '協助 AWS 進行各式活動的校園推廣、接洽校內行政單位。',
 ];
 
 const container = {
@@ -32,7 +32,6 @@ export function MissionSection() {
           className={styles.header}
         >
           <h2 className={styles.heading}>雲端校園大使任務</h2>
-          <p className={styles.subheading}>擔任大使期間需完成的任務</p>
         </motion.div>
 
         <motion.div
@@ -43,7 +42,7 @@ export function MissionSection() {
           viewport={{ once: true }}
         >
           {missions.map((mission, index) => (
-            <motion.div key={index} className={styles.card} variants={item}>
+            <motion.div key={index} className={styles.step} variants={item}>
               <div className={styles.number}>{index + 1}</div>
               <p className={styles.text}>{mission}</p>
             </motion.div>

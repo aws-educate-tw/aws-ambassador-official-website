@@ -1,11 +1,12 @@
 'use client';
 
-import { Carousel } from '@/components/molecules/Carousel/Carousel';
 import BenefitList from '@/components/molecules/BenefitList/BenefitList';
+import { Carousel } from '@/components/molecules/Carousel/Carousel';
 import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
 import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
 import { ProgramExploreSection } from '@/components/organisms/ProgramSection/ProgramSection';
+import { TestimonialsCarousel } from '@/components/organisms/TestimonialsCarousel/TestimonialsCarousel';
 import homeData from '@/content/home.json';
 import { CTA_CONTENT } from '@/data/cta';
 import { motion } from 'framer-motion';
@@ -14,8 +15,8 @@ import styles from './HomePage.module.css';
 const leadershipPrinciples = [
   {
     title: 'Are Right, A Lot',
-    subtitle: '決策正確',
-    description: '領導者應具備強大的商業判斷力與直覺，尋求多元觀點並推翻自己的信念。',
+    subtitle: '遠見卓識，決策精準',
+    description: '面對問題時有好的判斷力，願意聽不同意見，也會用實際結果不斷檢驗自己的決定。',
     icon: 'are-right-a-lot',
   },
   {
@@ -25,28 +26,28 @@ const leadershipPrinciples = [
     icon: 'customer-obsession',
   },
   {
-    title: 'Hire and Develop the Best',
-    subtitle: '選賢育能',
-    description: '領導者持續提高招聘和晉升標準，重視培養人才。',
-    icon: 'hire-and-develop-the-best',
+    title: 'Ownership',
+    subtitle: '主人翁精神',
+    description: '領導者是主人翁，不僅僅為自己團隊工作，會為了長遠利益而主動承擔責任。',
+    icon: 'ownership',
   },
   {
     title: 'Invent and Simplify',
     subtitle: '創新與簡化',
-    description: '領導者要求團隊創新，並持續尋找簡化流程的方法。',
+    description: '勇於創新，持續尋找更簡單、更有效的方法。',
     icon: 'invent-and-simplify',
   },
   {
     title: 'Learn and Be Curious',
     subtitle: '學習與好奇',
-    description: '領導者永不停止學習，並積極尋求提升自我。',
+    description: '持續學習，保持好奇，主動探索新知。',
     icon: 'learn-and-be-curious',
   },
   {
-    title: 'Ownership',
-    subtitle: '主人翁精神',
-    description: '領導者是主人翁，不僅僅為自己團隊工作，會為了長遠利益而主動承擔責任。',
-    icon: 'ownership',
+    title: 'Hire and Develop the Best',
+    subtitle: '用人唯才，培育菁英',
+    description: '不斷提升人才引進與晉升的標準，為團隊培育未來的領導者。',
+    icon: 'hire-and-develop-the-best',
   },
   {
     title: 'Insist on the Highest Standards',
@@ -96,18 +97,6 @@ const leadershipPrinciples = [
     description: '聚焦關鍵投入，即使困難重重也能克服並達成目標。',
     icon: 'deliver-results',
   },
-  {
-    title: "Strive to be Earth's Best Employer",
-    subtitle: '努力成為地球上最安全的工作場所',
-    description: '致力打造安全、高效、多元、公平的環境。',
-    icon: 'best-employer',
-  },
-  {
-    title: 'Success and Scale Bring Broad Responsibility',
-    subtitle: '成功與規模帶來更大的責任',
-    description: '對社區、地球和後代保持謙虛與責任感。',
-    icon: 'broad-responsibility',
-  },
 ] as const;
 /* 首頁 */
 
@@ -145,6 +134,7 @@ export default function HomePage() {
                 title={principle.title}
                 subtitle={principle.subtitle}
                 description={principle.description}
+                icon={principle.icon}
                 imageIndex={index}
               />
             )}
@@ -156,6 +146,9 @@ export default function HomePage() {
       <ProgramExploreSection features={homeData.features} />
 
       <BenefitList benefits={homeData.benefits} />
+
+      {/* 大使心得 */}
+      <TestimonialsCarousel testimonials={homeData.testimonials} />
 
       {/* CTA 區 */}
       <CTASection
