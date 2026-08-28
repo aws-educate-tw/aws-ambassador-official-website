@@ -108,7 +108,6 @@ export interface HomePage {
   statistics: Statistic[];
   features: FeatureCard[];
   pillars: Pillar[];
-  cta_section: CTASection;
 }
 
 export interface Ambassador {

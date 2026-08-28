@@ -8,6 +8,7 @@ import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
 import { ProgramExploreSection } from '@/components/organisms/ProgramSection/ProgramSection';
 import { TestimonialsCarousel } from '@/components/organisms/TestimonialsCarousel/TestimonialsCarousel';
 import homeData from '@/content/home.json';
+import { CTA_CONTENT } from '@/data/cta';
 import { motion } from 'framer-motion';
 import styles from './HomePage.module.css';
 
@@ -151,10 +152,9 @@ export default function HomePage() {
 
       {/* CTA 區 */}
       <CTASection
-        title={homeData.cta_section.title}
-        description={homeData.cta_section.description}
-        primaryCTA={homeData.cta_section.primary_cta}
-        deadline={homeData.cta_section.deadline}
+        title={CTA_CONTENT.home.title}
+        description={CTA_CONTENT.home.description}
+        primaryCTA={CTA_CONTENT.home.primaryCTA}
       />
     </div>
   );

@@ -3,6 +3,7 @@ import { AmbassadorDirectory } from '@/components/organisms/AmbassadorDirectory/
 import { CTASection } from '@/components/organisms/CTASection/CTASection';
 import { StorySection } from '@/components/organisms/StorySection/StorySection';
 import { SUCCESS_STORIES } from '@/data/alumni';
+import { CTA_CONTENT } from '@/data/cta';
 import styles from './alumni.module.css';
 
 export default function AlumniPage() {
@@ -17,9 +18,9 @@ export default function AlumniPage() {
       <AmbassadorDirectory />
 
       <CTASection
-        title="想加入這個優秀的校友網絡嗎？"
-        description="加入我們的社群，掌握最新活動資訊與獨家優惠"
-        primaryCTA={{ label: '追蹤粉專', href: 'https://www.instagram.com/awseducatestdambtw/' }}
+        title={CTA_CONTENT.alumni.title}
+        description={CTA_CONTENT.alumni.description}
+        primaryCTA={CTA_CONTENT.alumni.primaryCTA}
       />
     </div>
   );

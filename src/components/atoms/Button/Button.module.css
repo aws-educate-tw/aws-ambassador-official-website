@@ -34,6 +34,18 @@
   font-size: var(--font-size-lg);
 }
 
+.xl {
+  padding: var(--space-4) var(--space-10);
+  font-size: var(--font-size-xl);
+}
+
+@media (max-width: 767px) {
+  .xl {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-lg);
+  }
+}
+
 /* Variants */
 .primary {
   background-color: var(--color-primary-500);
@@ -79,6 +91,25 @@
 
 .ghost:hover:not(.disabled) {
   background-color: var(--color-primary-50);
+}
+
+.gradient {
+  background: linear-gradient(
+    180deg,
+    var(--benefit-icon-highlight-gradient-start) 0%,
+    var(--benefit-icon-highlight-gradient-end) 100%
+  );
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-full);
+}
+
+.gradient:hover:not(.disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gradient:active:not(.disabled) {
+  transform: translateY(0);
 }
 
 /* Modifiers */
