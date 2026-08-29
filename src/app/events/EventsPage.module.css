@@ -1,0 +1,399 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding-bottom: var(--space-16);
+  background-color: #fff;
+  background-image: url('/images/backgrounds/EventCenterBG.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: repeat-y;
+}
+
+/* ===== Header ===== */
+.headerSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-10);
+  background: transparent;
+  text-align: center;
+}
+
+.headerTitle {
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.2;
+  color: var(--color-surface-600);
+}
+
+.headerSubtitle {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+}
+
+/* ===== Program intro ===== */
+.introSection {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  padding: 0 var(--space-10);
+}
+
+.introContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.introTitle {
+  margin: 0;
+  color: var(--color-surface-600);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.35;
+}
+
+.introDescription {
+  margin: 0;
+  color: var(--color-text-primary);
+  line-height: 1.8;
+}
+
+.sectionDivider {
+  display: block;
+  width: min(100%, 940px);
+  height: 1px;
+  margin: 0 auto;
+  background: var(--color-surface-600);
+}
+
+/* ===== Photo placeholder ===== */
+.photoPlaceholder {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-inverse);
+  background: linear-gradient(140deg, var(--color-surface-600) 0%, var(--color-neutral-700) 100%);
+}
+
+/* ===== Event records ===== */
+.recordsSection {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  padding: 0 var(--space-10);
+}
+
+.recordsHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+}
+
+.recordsTitle {
+  margin: 0;
+  color: var(--color-surface-600);
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.recordsSubtitle {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--color-neutral-600);
+}
+
+.activityBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.activityIntro {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.activityIntroReversed {
+  grid-template-columns: 1fr 320px;
+}
+
+.activityIntroReversed .photoPlaceholder {
+  order: 2;
+}
+
+.activityIntroReversed .activityContent {
+  order: 1;
+}
+
+.activityContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.activityTitle {
+  margin: 0;
+  color: var(--color-surface-600);
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-weight: var(--font-weight-bold);
+}
+
+.activityDescription {
+  margin: 0;
+  color: var(--color-text-primary);
+  line-height: 1.8;
+}
+
+/* ===== Testimonials ===== */
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.testimonialCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.testimonialHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.testimonialAvatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-inverse);
+  background: var(--color-surface-600);
+}
+
+.testimonialRole {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-surface-600);
+}
+
+.testimonialRating {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.testimonialQuote {
+  margin: 0;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+  line-height: 1.65;
+}
+
+.pagination {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.pageButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--color-text-inverse);
+  background: var(--color-surface-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background var(--duration-normal) var(--easing-ease-out);
+}
+
+.pageButton:hover {
+  background: var(--color-neutral-700);
+}
+
+.moreInfoRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.divider {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border-subtle);
+}
+
+.moreInfoButton {
+  display: flex;
+  width: clamp(140px, 42vw, 160px);
+  height: clamp(36px, 6vw, 40px);
+  padding: clamp(4px, 1vw, 6px) clamp(18px, 7vw, 28px);
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 16777200px;
+  background: linear-gradient(180deg, #f90 0%, #ffb84d 100%);
+  color: var(--color-text-inverse);
+  box-sizing: border-box;
+  white-space: nowrap;
+  transition:
+    background var(--duration-normal) var(--easing-ease-out),
+    transform var(--duration-normal) var(--easing-ease-out),
+    box-shadow var(--duration-normal) var(--easing-ease-out);
+}
+
+.moreInfoButton:hover {
+  background: linear-gradient(180deg, #ffad1f 0%, #ffc56b 100%);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  color: var(--color-primary-600);
+}
+
+.moreInfoButton:active {
+  background: linear-gradient(180deg, #e68a00 0%, #f7a93d 100%);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-surface-600);
+}
+
+/* ===== Subscribe CTA ===== */
+.subscribeSection {
+  display: flex;
+  padding: 40px 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  flex: 1 0 0;
+  align-self: stretch;
+  width: min(100%, 960px);
+  margin: 0 auto;
+  border-radius: 24px;
+  border: 2px solid #f90;
+  text-align: center;
+  color: var(--color-surface-600);
+  background: linear-gradient(135deg, #fff7ed 0%, #fff 100%);
+}
+
+.subscribeTitle {
+  margin: 0;
+  color: #222f3e;
+  text-align: center;
+  font-family: var(--font-family-base);
+  font-size: clamp(2rem, 4.4vw, var(--font-size-5xl));
+  font-style: normal;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+.subscribeDescription {
+  margin: 0;
+  color: #4a5565;
+  text-align: center;
+  font-family: var(--font-family-base);
+  font-size: clamp(var(--font-size-base), 1.9vw, var(--font-size-lg));
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: 1.56;
+}
+
+.subscribeButton {
+  display: flex;
+  padding: 16px 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16777200px;
+  background: linear-gradient(180deg, #f90 0%, #ffb84d 100%);
+  color: var(--color-text-inverse);
+  transition:
+    background var(--duration-normal) var(--easing-ease-out),
+    transform var(--duration-normal) var(--easing-ease-out),
+    box-shadow var(--duration-normal) var(--easing-ease-out);
+}
+
+.subscribeButton:hover {
+  background: linear-gradient(180deg, #ffad1f 0%, #ffc56b 100%);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.subscribeButton:active {
+  background: linear-gradient(180deg, #e68a00 0%, #f7a93d 100%);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1023px) {
+  .introSection,
+  .activityIntro {
+    grid-template-columns: 1fr;
+  }
+
+  .activityIntroReversed .photoPlaceholder,
+  .activityIntroReversed .activityContent {
+    order: initial;
+  }
+
+  .testimonialGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .headerSection {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .introSection,
+  .recordsSection {
+    padding: 0 var(--space-5);
+  }
+
+  .testimonialGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .moreInfoRow {
+    flex-direction: column;
+  }
+
+  .divider {
+    width: 100%;
+  }
+}
+
