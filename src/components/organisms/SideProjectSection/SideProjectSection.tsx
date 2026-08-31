@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion';
 import { CheckCircle, ChevronsLeftRight, Rocket, Users } from 'lucide-react';
 import styles from './SideProjectSection.module.css';
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { DIRECTORY } from '@/data/alumni';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion';
 import {
   ArrowLeft,
   ArrowRight,
@@ -15,6 +15,16 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './AmbassadorDirectory.module.css';
 
 const ROLES = ['Marketing', 'Tech', 'Event'];
+
+const gridContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.07 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+};
 
 /** story === null 代表確定沒有心得（不顯示按鈕）；undefined 代表尚未提供（顯示灰色預設按鈕） */
 function StoryButton({ story }: Readonly<{ story?: string | null }>) {
@@ -213,20 +223,10 @@ export function AmbassadorDirectory() {
           className={styles.grid}
           initial="hidden"
           animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.07 } },
-          }}
+          variants={gridContainerVariants}
         >
           {paginated.map((person) => (
-            <motion.div
-              key={person.name}
-              className={styles.card}
-              variants={{
-                hidden: { opacity: 0, y: 16 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-              }}
-            >
+            <motion.div key={person.name} className={styles.card} variants={cardVariants}>
               <div className={styles.cardTop}>
                 {/* 1. 照片：若資料沒給照片，則顯示一個預設圖 */}
                 {person.image ? (

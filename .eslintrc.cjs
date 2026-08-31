@@ -17,11 +17,31 @@ module.exports = {
       },
     ],
     'react/no-unescaped-entities': 'off',
+
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: 'framer-motion',
+            importNames: ['motion'],
+            message:
+              "Import `motion` from '@/lib/motion' instead so prefers-reduced-motion is honored (see src/lib/motion.tsx).",
+          },
+        ],
+      },
+    ],
   },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
+    },
+    {
+      files: ['src/lib/motion.tsx'],
+      rules: {
+        'no-restricted-imports': 'off',
+      },
     },
   ],
 };

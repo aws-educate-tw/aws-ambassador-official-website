@@ -9,7 +9,7 @@ import { ProgramExploreSection } from '@/components/organisms/ProgramSection/Pro
 import { TestimonialsCarousel } from '@/components/organisms/TestimonialsCarousel/TestimonialsCarousel';
 import homeData from '@/content/home.json';
 import { CTA_CONTENT } from '@/data/cta';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion';
 import styles from './HomePage.module.css';
 
 const leadershipPrinciples = [

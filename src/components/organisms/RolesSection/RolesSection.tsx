@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion';
 import { Calendar, Lightbulb, ChevronsLeftRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import styles from './RolesSection.module.css';

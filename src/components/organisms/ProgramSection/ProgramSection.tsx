@@ -2,7 +2,7 @@
 
 import { FeatureCard } from '@/components/molecules/FeatureCard/FeatureCard';
 import type { FeatureCard as FeatureItem } from '@/types';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion';
 import styles from './ProgramSection.module.css';
 
 const fadeInUp = {

@@ -3,7 +3,7 @@
 import { Button } from '@/components/atoms/Button/Button';
 import { Carousel } from '@/components/molecules/Carousel/Carousel';
 import { TestimonialCardProps } from '@/components/molecules/TestimonialCard/TestimonialCard';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion';
 import { ArrowRight, Star } from 'lucide-react';
 import styles from './TestimonialsCarousel.module.css';
 

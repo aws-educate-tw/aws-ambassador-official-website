@@ -1,7 +1,7 @@
 'use client';
 
 import { StoryCategory } from '@/data/alumni';
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion';
 import { Quote, Star, Users } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 

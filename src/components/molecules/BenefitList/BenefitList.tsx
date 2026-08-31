@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion';
 import { Briefcase, Heart, Rocket, Sparkles, TrendingUp, Users } from 'lucide-react';
 import styles from './BenefitList.module.css';
 

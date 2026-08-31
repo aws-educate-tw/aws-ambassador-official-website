@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '@/lib/motion';
 import { useState } from 'react';
+import { useMotionPreferences } from '@/hooks';
 import styles from './AlumniHero.module.css';
 
 const journeySteps = [
@@ -31,6 +32,7 @@ const stepVariant = {
 
 export function AlumniHero() {
   const [dotPlaying, setDotPlaying] = useState(false);
+  const { shouldReduceMotion } = useMotionPreferences();
 
   return (
     <section className={styles.hero}>
@@ -68,7 +70,7 @@ export function AlumniHero() {
           ))}
 
           <div
-            className={`${styles.activeDot} ${dotPlaying ? styles.activeDotPlay : ''}`}
+            className={`${styles.activeDot} ${dotPlaying && !shouldReduceMotion ? styles.activeDotPlay : ''}`}
             aria-hidden="true"
           />
         </motion.div>
