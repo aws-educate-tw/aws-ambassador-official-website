@@ -297,12 +297,11 @@ export const DIRECTORY: DirectoryPerson[] = [
     },
   },
   {
-    name: 'Tony',
+    name: '王博揚 Tony Wang',
     school: '知名台商',
     dept: '',
     experience: [
       { cohort: '6th', subRole: 'Tech' },
-      { cohort: '7th', subRole: 'Tech Team Lead' },
       { cohort: '8th', subRole: 'Mentor' },
     ],
     sideProjects: [],
