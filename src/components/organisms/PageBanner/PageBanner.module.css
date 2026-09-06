@@ -96,6 +96,7 @@
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-relaxed);
   word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: 768px) {
