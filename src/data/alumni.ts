@@ -294,6 +294,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: [],
     links: {
       linkedin: 'https://www.linkedin.com/in/chih-han-chung',
+      story: null,
     },
   },
   {
@@ -308,6 +309,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: [],
     links: {
       linkedin: 'https://www.linkedin.com/in/tonywang1024/',
+      story: null,
     },
   },
   {
@@ -322,6 +324,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: [],
     links: {
       linkedin: 'https://www.linkedin.com/in/jun-an-jingle-liao-6b72b32a3/',
+      story: null,
     },
   },
   {
@@ -335,6 +338,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     ],
     sideProjects: [],
     certs: [],
+    links: {
+      story: null,
+    },
   },
   {
     name: '蔡昕呈 Allison Tsai',
@@ -345,7 +351,9 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['DGR Program', 'Dev Team Official Website', 'Alumni stories Hub'],
     certs: ['AIF-C01', 'CLF-C02'],
     links: {
-      linkedin: 'https://www.linkedin.com/in/allison-t-205702355',
+      linkedin: 'https://www.linkedin.com/in/allison-tsai-205702355/',
+      story:
+        'https://medium.com/@allison20041209/aws-%E5%A4%A7%E4%BD%BF%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB-%E5%BE%9E%E7%B6%93%E6%BF%9F%E7%B3%BB%E5%88%B0-aws-%E9%9B%B2%E7%AB%AF%E5%A4%A7%E4%BD%BF-%E6%8A%8A%E8%87%AA%E5%B7%B1%E6%94%BE%E9%80%B2%E9%99%8C%E7%94%9F%E9%A0%98%E5%9F%9F%E5%BE%8C-%E6%88%91%E5%BE%97%E5%88%B0%E7%9A%84%E9%81%A0%E6%AF%94%E6%83%B3%E5%83%8F%E6%9B%B4%E5%A4%9A-9b8b22a318b9?postPublishedType=initial',
     },
   },
   {
@@ -377,6 +385,7 @@ export const DIRECTORY: DirectoryPerson[] = [
   },
   {
     name: '陳珊汝 Olivia Chen',
+    image: '/images/Ambassador/Olivia Chen.png',
     school: '國立政治大學',
     dept: '企業管理研究所',
     experience: [{ cohort: '8th', subRole: 'Event' }],
@@ -384,6 +393,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: ['AIF-C01'],
     links: {
       linkedin: 'https://www.linkedin.com/in/olivia-chen-321337219/',
+      story: null,
     },
   },
   {
@@ -396,6 +406,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: [],
     links: {
       linkedin: 'https://www.linkedin.com/in/elma-syu',
+      story: null,
     },
   },
   {
@@ -408,6 +419,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: ['AIF-C01', 'CLF-C02'],
     links: {
       linkedin: 'https://www.linkedin.com/in/yenyul/',
+      story: null,
     },
   },
   {
@@ -419,6 +431,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: [],
     links: {
       linkedin: 'https://www.linkedin.com/in/ling-fang-mao',
+      story: null,
     },
   },
   {
@@ -430,6 +443,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     sideProjects: ['Alumni stories Hub'],
     certs: [],
     links: {
+      linkedin: 'https://www.linkedin.com/in/jessie-huang-4920712ba',
       story: null,
     },
   },
@@ -443,6 +457,8 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: ['AIF-C01'],
     links: {
       linkedin: 'https://www.linkedin.com/in/jessie-chang-886485397',
+      story:
+        'https://medium.com/@jess1ecy/aws-educate-taiwan-cloud-ambassador-8th-recap-4fec10d6c7a9',
     },
   },
   {
@@ -494,6 +510,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: [],
     links: {
       linkedin: 'https://www.linkedin.com/in/敬翰-陳-15b727233',
+      story: null,
     },
   },
   {
@@ -506,6 +523,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: ['AIF-C01'],
     links: {
       linkedin: 'https://www.linkedin.com/in/maggie-ymsu',
+      story: null,
     },
   },
   {
@@ -564,6 +582,7 @@ export const DIRECTORY: DirectoryPerson[] = [
     certs: ['AIF-C01', 'CLF-C02'],
     links: {
       linkedin: 'https://www.linkedin.com/in/ting-chi-wang/',
+      story: null,
     },
   },
 ];
