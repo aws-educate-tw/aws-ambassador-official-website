@@ -34,7 +34,13 @@ function StoryButton({ story }: Readonly<{ story?: string | null }>) {
 }
 
 function LinkedinButton({ linkedin }: Readonly<{ linkedin?: string }>) {
-  if (!linkedin) return null;
+  if (!linkedin) {
+    return (
+      <button type="button" className={styles.btn} disabled>
+        尚未提供連結
+      </button>
+    );
+  }
   return (
     <a href={linkedin} target="_blank" rel="noopener noreferrer" className={styles.btn}>
       LinkedIn 連結
@@ -349,20 +355,7 @@ export function AmbassadorDirectory() {
                 <StoryButton story={person.links?.story} />
 
                 {/* LinkedIn 連結 */}
-                {person.links?.linkedin ? (
-                  <a
-                    href={person.links.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.btn}
-                  >
-                    LinkedIn 連結
-                  </a>
-                ) : (
-                  <button type="button" className={styles.btn} disabled>
-                    尚未提供連結
-                  </button>
-                )}
+                <LinkedinButton linkedin={person.links?.linkedin} />
               </div>
             </motion.div>
           ))}
