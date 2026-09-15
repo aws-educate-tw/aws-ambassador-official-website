@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "AWS Educate Taiwan",
-    "subtitle": "Student Cloud Ambassador",
+    "subtitle": "Cloud Ambassador",
     "tagline": "賦能 · 創新 · 連結",
     "description": "加入台灣最活躍的雲端學生社群，與 180+ 位優秀大使一起學習 AWS 技術、舉辦創新活動、連結產業資源，開啟你的科技職涯之路！",
     "primaryCTA": {
@@ -119,67 +119,67 @@
   "testimonials": [
     {
       "name": "Allison Tsai",
-      "role": "AWS Campus Ambassador 第八屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第八屆",
       "rating": 5,
       "quote": "在這裡我可以盡情嘗試自己想做的事，參與跨領域專案，與不同專業的優秀大使交流。每一次專案合作，都讓我更了解自己的優勢與方向，而與正職的 1 on 1 也帶來許多啟發。是非常值得投資的經驗，收穫滿滿！"
     },
     {
       "name": "Selina Chen",
-      "role": "AWS Campus Ambassador 第八屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第八屆",
       "rating": 5,
       "quote": "擔任 AWS 校園大使有非常多的機會可以去嘗試沒做過的事情，讓自己從這些經驗中去學習! 除了在實務上成長，也認識了一群非常優秀的大使們，從大家身上學習，真的很幸運自己能夠加入 AWS 大使的大家庭!"
     },
     {
       "name": "Elma Syu",
-      "role": "AWS Campus Ambassador 第八屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第八屆",
       "rating": 5,
       "quote": "AWS 的大使們每個人都很優秀，在一次次的團隊合作中，都能從彼此身上學習成長，而 AWS 提供大使很多 1 on 1的資源，讓我們可以跟正職交流，DGR Training 和正職交流機會都讓我更確立畢業後的職涯方向。"
     },
     {
       "name": "Olivia Chen",
-      "role": "AWS Campus Ambassador 第八屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第八屆",
       "rating": 5,
       "quote": "進入科技業是很多人的夢想！但擔任校園大使的過程中，我感受到 AWS 的運作模式、成員的工作模式如何幫助他們達到目標。這裡的許多事對我來說都非常驚喜，我覺得擔任大使的歷程幫助我離夢想又更進一步！"
     },
     {
       "name": "Maggie Su",
-      "role": "AWS Campus Ambassador 第八屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第八屆",
       "rating": 5,
       "quote": "感謝 AWS 提供許多寶貴資源給校園大使，也很開心透過這個計劃認識不同背景、各有所長的夥伴們，和大家合作完成各個任務後覺得自己在各方面都成長許多，也更清楚知道自己還有哪些可以努力的方向！"
     },
     {
       "name": "Vincent Chen",
-      "role": "AWS Campus Ambassador 第八屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第八屆",
       "rating": 5,
       "quote": "可以認識很多厲害的人，也可以碰到很多 AWS 技術，是個適合學習的好地方"
     },
     {
       "name": "Jessie Chang",
-      "role": "AWS Campus Ambassador 第八屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第八屆",
       "rating": 5,
       "quote": "擔任大使後，遇見了各式各樣的人，最大的收穫應該是從大家身上看見了更多可能。"
     },
     {
       "name": "Aaron Chen",
-      "role": "AWS Campus Ambassador 第八屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第八屆",
       "rating": 5,
       "quote": "擔任大使是擴展視野還有累積技術能力的好機會，總是能在與大家交流的過程中不斷成長，非常期待新夥伴的加入！"
     },
     {
       "name": "Angela Li",
-      "role": "AWS Campus Ambassador 第八屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第八屆",
       "rating": 5,
       "quote": "在擔任大使的過程中認識很多也在這個領域努力的人，更認識 AWS 這個企業，也學習到各種軟硬實力，覺得收穫滿滿！"
     },
     {
       "name": "Seren Liao",
-      "role": "AWS Campus Ambassador 第八屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第八屆",
       "rating": 5,
       "quote": "擔任大使讓我接觸豐富的學習資源與多元的專案，在一次次的嘗試與挑戰中拓展視野、持續提升自己的軟硬實力。讓我更加認識雲端產業的生態系，也有機會和不同背景與專業的夥伴協作，獲得許多新的想法與收穫！"
     },
     {
       "name": "Shiun Chiu",
-      "role": "AWS Campus Ambassador 第五屆",
+      "role": "AWS Educate Taiwan Cloud Ambassador 第五屆",
       "rating": 5,
       "quote": "大使是一段非常充實且收穫滿滿的經歷。累積了實際的專案開發與上台演講經驗，接觸許多業界前輩，從他們身上學習職涯與技術經驗。即使到了現在，累積的知識、經驗與能力，仍持續在我工作中發揮很大的幫助。"
     }

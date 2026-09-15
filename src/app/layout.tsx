@@ -15,14 +15,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.aws-educate.tw'),
   title: 'AWS Educate Taiwan',
-  description: 'Student Cloud Ambassador',
+  description: 'Cloud Ambassador',
   robots: 'index, follow',
   icons: {
     icon: '/images/AWS_Educate_Logo.svg',
   },
   openGraph: {
     title: 'AWS Educate Taiwan',
-    description: 'Student Cloud Ambassador',
+    description: 'Cloud Ambassador',
     siteName: 'AWS Educate Taiwan',
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AWS Educate Taiwan',
-    description: 'Student Cloud Ambassador',
+    description: 'Cloud Ambassador',
   },
 };
 

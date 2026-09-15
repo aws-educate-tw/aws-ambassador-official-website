@@ -271,7 +271,7 @@ export function AmbassadorDirectory() {
                       </div>
 
                       <span className={styles.detailSub}>
-                        AWS Educate Taiwan Student Ambassador
+                        AWS Educate Taiwan Cloud Ambassador
                       </span>
                     </div>
                   </div>
