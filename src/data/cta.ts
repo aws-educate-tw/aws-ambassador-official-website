@@ -15,7 +15,7 @@ interface CTAContent {
 export const CTA_CONTENT: Record<'home' | 'program' | 'alumni', CTAContent> = {
   home: {
     title: '準備好開始了嗎？',
-    description: '加入 AWS Educate 第八屆雲端校園大使，與我們一起創造影響力！',
+    description: '加入 AWS Educate 第九屆雲端校園大使，與我們一起創造影響力！',
     primaryCTA: {
       label: '立即申請成為大使',
       href: 'https://awsedu.tw/2026-9th-ambassador',
