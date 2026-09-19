@@ -1,6 +1,6 @@
 'use client';
 
-import { DIRECTORY } from '@/data/alumni';
+import { DIRECTORY, type DirectoryPerson } from '@/data/alumni';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft,
@@ -31,6 +31,47 @@ function StoryButton({ story }: Readonly<{ story?: string | null }>) {
       大使旅程全心得
     </a>
   );
+}
+
+function LinkedinButton({ linkedin }: Readonly<{ linkedin?: string }>) {
+  if (!linkedin) {
+    return (
+      <button type="button" className={styles.btn} disabled>
+        尚未提供連結
+      </button>
+    );
+  }
+  return (
+    <a href={linkedin} target="_blank" rel="noopener noreferrer" className={styles.btn}>
+      LinkedIn 連結
+    </a>
+  );
+}
+
+function getLinkCount(person: DirectoryPerson) {
+  let count = 0;
+  if (person.links?.linkedin) count += 1;
+  if (person.links?.story) count += 1;
+  return count;
+}
+
+function getEnglishNameParts(name: string) {
+  const parts = name.split(' ');
+  const lastName = parts[parts.length - 1] ?? '';
+  const firstName = parts.length > 2 ? parts.slice(1, -1).join(' ') : '';
+  return { firstName, lastName };
+}
+
+function sortByLinks(people: DirectoryPerson[]) {
+  return [...people].sort((a, b) => {
+    const linkDiff = getLinkCount(b) - getLinkCount(a);
+    if (linkDiff !== 0) return linkDiff;
+    const nameA = getEnglishNameParts(a.name);
+    const nameB = getEnglishNameParts(b.name);
+    const lastNameDiff = nameA.lastName.localeCompare(nameB.lastName, 'en');
+    if (lastNameDiff !== 0) return lastNameDiff;
+    return nameA.firstName.localeCompare(nameB.firstName, 'en');
+  });
 }
 
 function usePageSize() {
@@ -141,11 +182,12 @@ export function AmbassadorDirectory() {
   }, []);
 
   const filtered = useMemo(() => {
-    return DIRECTORY.filter((p) => {
+    const matched = DIRECTORY.filter((p) => {
       const matchCohort = cohort === '' || p.experience.some((e) => e.cohort === cohort);
       const matchRole = role === '' || p.experience.some((e) => e.subRole.includes(role));
       return matchCohort && matchRole;
     });
+    return sortByLinks(matched);
   }, [cohort, role]);
 
   useEffect(() => {
@@ -313,20 +355,7 @@ export function AmbassadorDirectory() {
                 <StoryButton story={person.links?.story} />
 
                 {/* LinkedIn 連結 */}
-                {person.links?.linkedin ? (
-                  <a
-                    href={person.links.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.btn}
-                  >
-                    LinkedIn 連結
-                  </a>
-                ) : (
-                  <button type="button" className={styles.btn} disabled>
-                    尚未提供連結
-                  </button>
-                )}
+                <LinkedinButton linkedin={person.links?.linkedin} />
               </div>
             </motion.div>
           ))}
