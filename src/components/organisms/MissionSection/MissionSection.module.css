@@ -48,9 +48,10 @@
 /* ===== 任務清單 ===== */
 .list {
   display: flex;
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   gap: var(--space-5);
 }
 
@@ -94,7 +95,6 @@
 /* ===== 文字 ===== */
 .text {
   margin: 0;
-  flex: 1 1 0;
   font-size: var(--font-size-base);
   color: var(--color-surface-600);
   line-height: var(--line-height-relaxed);
