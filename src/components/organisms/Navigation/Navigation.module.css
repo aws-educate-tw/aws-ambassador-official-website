@@ -35,7 +35,9 @@
 }
 
 .logoIcon {
-  object-fit: cover;
+  width: auto;
+  height: 32px;
+  object-fit: contain;
 }
 
 .logoText {
@@ -82,7 +84,7 @@
   outline-offset: 2px;
 }
 
-@media (min-width: 820px) {
+@media (min-width: 992px) {
   .menu {
     display: flex;
   }
@@ -291,7 +293,12 @@
   background: linear-gradient(180deg, #ff9900 0%, #ffb84d 100%);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
+  .logoIcon {
+    width: auto;
+    height: 24px;
+  }
+
   .logoText {
     font-size: 32px;
   }
@@ -302,7 +309,7 @@
   }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 992px) {
   .container .ctaButton {
     display: none;
   }
@@ -314,6 +321,11 @@
 
   .logo {
     gap: var(--space-2);
+  }
+
+  .logoIcon {
+    width: auto;
+    height: 20px;
   }
 
   .logoText {
@@ -330,7 +342,7 @@
   }
 }
 
-@media (min-width: 820px) {
+@media (min-width: 992px) {
   .mobileMenuOverlay,
   .mobileMenuPanel {
     display: none;

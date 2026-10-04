@@ -17,6 +17,9 @@
   --color-primary-800: #b36b00;
   --color-primary-900: #995c00;
 
+  /* CTA button gradient */
+  --gradient-cta: linear-gradient(180deg, var(--color-primary-500) 0%, #ffb84d 100%);
+
   /* Surface - Dark Blue */
   --color-surface-50: #f8fafb;
   --color-surface-100: #f0f4f8;
@@ -59,6 +62,16 @@
   --color-bg-secondary: #f8fafb;
   --color-bg-tertiary: #f0f4f8;
   --color-bg-elevated: #ffffff;
+
+  /* Benefit Section */
+  --benefit-bg-highlight: #fff7ed;
+  --benefit-bg-neutral: #f9fafb;
+  --benefit-border-highlight: rgba(255, 153, 0, 0.3);
+  --benefit-border-neutral: rgba(96, 165, 250, 0.5);
+  --benefit-icon-highlight-gradient-start: #ff9900;
+  --benefit-icon-highlight-gradient-end: #ffb84d;
+  --benefit-icon-neutral-bg: #222f3e;
+  --benefit-text-color: #364153;
 
   /* ===== Spacing ===== */
   --space-0: 0;
@@ -136,12 +149,55 @@
   --z-popover: 1500;
   --z-tooltip: 1600;
 
+  /* ===== Layout ===== */
+  /* 頁面水平 padding（各 section 統一使用） */
+  --page-padding-x: var(--space-4); /* mobile  ≤ 639px  → 16px */
+  --page-padding-x-sm: var(--space-6); /* sm      640-767  → 24px */
+  --page-padding-x-md: var(--space-10); /* md      768-1023 → 40px */
+  --page-padding-x-lg: var(--space-16); /* lg      ≥ 1024   → 64px */
+  /* 頁面垂直 padding（各 section 統一使用） */
+  --section-padding-y: var(--space-20); /* 80px */
+  --section-padding-y-sm: var(--space-12); /* 48px（小螢幕） */
+  /* 內容最大寬度 */
+  --content-max-width: 1280px;
+  /* Navigation 列高度 */
+  --nav-height: 85px;
+
   /* ===== Breakpoints (for reference in JS) ===== */
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
+
+  /* ===== Principles Section ===== */
+  --principle-card-width: 20rem; /* 320px */
+  --principle-card-min-height: 19.5rem; /* 312px */
+  --principle-card-hover-bg: #fffaf0;
+  --principle-icon-shell-size: 8rem; /* 128px */
+  --principle-icon-size: 6.25rem; /* 100px */
+  --principle-icon-bg-blue: #dbeafe;
+  --principle-icon-bg-sand: #fef3c7;
+  --principle-icon-bg-rose: #ffe4e6;
+  --principle-icon-bg-mint: #d1fae5;
+
+  /* ===== Program Section ===== */
+  --program-section-padding: 40px;
+  --program-section-padding-mobile: 32px 16px;
+  --program-section-header-gap: 12px;
+  --program-section-section-gap: 20px;
+  --program-section-grid-gap: 12px;
+  --program-section-title-size: 36px;
+  --program-section-title-size-mobile: 30px;
+  --program-section-title-line-height: 36px;
+  --program-section-title-line-height-mobile: 32px;
+  --program-section-title-color: var(--color-surface-600);
+  --program-section-subtitle-size: 14px;
+  --program-section-subtitle-line-height: 20px;
+  --program-section-subtitle-color: var(--color-neutral-600);
+  --program-section-grid-max-width: 850px;
+  --program-section-grid-columns: repeat(2, minmax(0, 1fr));
+  --program-section-grid-columns-mobile: 1fr;
 }
 
 /* Reduced Motion Support */
@@ -151,5 +207,12 @@
     --duration-normal: 0ms;
     --duration-slow: 0ms;
     --duration-slower: 0ms;
+  }
+}
+
+/* 對齊 Navigation.module.css 的手機斷點（.container min-height 72px + 1px border） */
+@media (max-width: 819.5px) {
+  :root {
+    --nav-height: 73px;
   }
 }

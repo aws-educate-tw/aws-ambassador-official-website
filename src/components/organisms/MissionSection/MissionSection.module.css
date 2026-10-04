@@ -1,0 +1,107 @@
+.section {
+  padding: var(--section-padding-y-sm) var(--page-padding-x);
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-inline: var(--page-padding-x-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--section-padding-y) var(--page-padding-x-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-inline: var(--page-padding-x-lg);
+  }
+}
+
+.container {
+  max-width: 896px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.heading {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-surface-600);
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+}
+
+/* ===== 任務清單 ===== */
+.list {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-5);
+}
+
+/* ===== 單一任務列 ===== */
+.step {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  gap: var(--space-5);
+}
+
+@media (max-width: 640px) {
+  .step {
+    gap: var(--space-4);
+  }
+}
+
+/* ===== 橘色圓形編號 ===== */
+.number {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-500);
+  flex-shrink: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+}
+
+@media (max-width: 640px) {
+  .number {
+    width: 32px;
+    height: 32px;
+    font-size: var(--font-size-base);
+  }
+}
+
+/* ===== 文字 ===== */
+.text {
+  margin: 0;
+  font-size: var(--font-size-base);
+  color: var(--color-surface-600);
+  line-height: var(--line-height-relaxed);
+}
+
+@media (max-width: 640px) {
+  .text {
+    font-size: var(--font-size-sm);
+  }
+}

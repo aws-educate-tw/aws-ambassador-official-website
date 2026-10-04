@@ -4,20 +4,12 @@ import styles from './TestimonialCard.module.css';
 export interface TestimonialCardProps {
   name: string;
   role: string;
-  company?: string;
   quote: string;
   avatar?: string;
   rating?: number;
 }
 
-export function TestimonialCard({
-  name,
-  role,
-  company,
-  quote,
-  avatar,
-  rating = 5,
-}: TestimonialCardProps) {
+export function TestimonialCard({ name, role, quote, avatar, rating = 5 }: TestimonialCardProps) {
   return (
     <article className={styles.card}>
       <div className={styles.header}>
@@ -36,10 +28,7 @@ export function TestimonialCard({
         </div>
         <div className={styles.info}>
           <div className={styles.name}>{name}</div>
-          <div className={styles.role}>
-            {role}
-            {company && ` • ${company}`}
-          </div>
+          <div className={styles.role}>{role}</div>
         </div>
       </div>
 

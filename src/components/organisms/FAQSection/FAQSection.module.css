@@ -1,0 +1,94 @@
+.section {
+  padding: 80px 32px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 80px 80px;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222f3e;
+  text-align: center;
+  margin: 0 0 48px 0;
+  line-height: 1.3;
+}
+
+/* ===== FAQ list ===== */
+.list {
+  display: flex;
+  width: 100%;
+  max-width: 768px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* ===== 每個 FAQ item ===== */
+.item {
+  align-self: stretch;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* ===== 問題列（預設 68px 高） ===== */
+.question {
+  display: flex;
+  height: 68px;
+  padding: 0 24px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222f3e;
+  gap: 16px;
+  transition: background-color 200ms ease;
+}
+
+.question:hover {
+  background-color: #f9fafb;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: #6b7280;
+  transition: transform 300ms ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+/* ===== 展開內容 ===== */
+.answer {
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.answer p {
+  padding: 4px 24px 20px;
+  font-size: 14px;
+  color: #4a5565;
+  line-height: 1.75;
+  margin: 0;
+}

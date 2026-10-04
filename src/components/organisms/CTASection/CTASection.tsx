@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/atoms/Button/Button';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import styles from './CTASection.module.css';
 
 export interface CTASectionProps {
@@ -15,7 +16,6 @@ export interface CTASectionProps {
     label: string;
     href: string;
   };
-  deadline?: string;
 }
 
 export function CTASection({
@@ -23,8 +23,10 @@ export function CTASection({
   description,
   primaryCTA,
   secondaryCTA,
-  deadline,
-}: CTASectionProps) {
+}: Readonly<CTASectionProps>) {
+  const primaryIsExternal = /^https?:\/\//.test(primaryCTA.href);
+  const secondaryIsExternal = secondaryCTA ? /^https?:\/\//.test(secondaryCTA.href) : false;
+
   return (
     <section className={styles.section}>
       <motion.div
@@ -37,17 +39,28 @@ export function CTASection({
         <p className={styles.description}>{description}</p>
 
         <div className={styles.actions}>
-          <Button href={primaryCTA.href} variant="secondary" size="lg">
+          <Button
+            href={primaryCTA.href}
+            variant="gradient"
+            size="xl"
+            target={primaryIsExternal ? '_blank' : undefined}
+            rel={primaryIsExternal ? 'noopener noreferrer' : undefined}
+          >
             {primaryCTA.label}
+            <ArrowRight size={16} aria-hidden="true" />
           </Button>
           {secondaryCTA && (
-            <Button href={secondaryCTA.href} variant="outline" size="lg">
+            <Button
+              href={secondaryCTA.href}
+              variant="outline"
+              size="lg"
+              target={secondaryIsExternal ? '_blank' : undefined}
+              rel={secondaryIsExternal ? 'noopener noreferrer' : undefined}
+            >
               {secondaryCTA.label}
             </Button>
           )}
         </div>
-
-        {deadline && <p className={styles.deadline}>{deadline}</p>}
       </motion.div>
     </section>
   );

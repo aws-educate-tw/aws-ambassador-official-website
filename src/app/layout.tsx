@@ -1,3 +1,6 @@
+import { Footer } from '@/components/organisms/Footer/Footer';
+import { Navigation } from '@/components/organisms/Navigation/Navigation';
+import layoutData from '@/content/layout.json';
 import '@/styles/animations.css';
 import '@/styles/globals.css';
 import type { Metadata, Viewport } from 'next';
@@ -10,21 +13,20 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'AWS Educate Campus Ambassador Program',
-  description:
-    'Empower the next generation of cloud leaders through AWS Educate Campus Ambassador Program',
+  metadataBase: new URL('https://www.aws-educate.tw'),
+  title: 'AWS Educate Taiwan',
+  description: 'Cloud Ambassador',
   robots: 'index, follow',
   icons: {
-    icon: '/AWS_Educate_Logo.svg',
+    icon: '/images/AWS_Educate_Logo.svg',
   },
   openGraph: {
-    title: 'AWS Educate Campus Ambassador',
-    description: 'Join the global community of AWS Campus Ambassadors',
-    url: 'https://aws-ambassador-tw.example.com',
-    siteName: 'AWS Educate TW',
+    title: 'AWS Educate Taiwan',
+    description: 'Cloud Ambassador',
+    siteName: 'AWS Educate Taiwan',
     images: [
       {
-        url: 'https://aws-ambassador-tw.example.com/og-image.png',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
       },
@@ -34,21 +36,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AWS Educate Campus Ambassador',
-    description: 'Join the global community of AWS Campus Ambassadors',
+    title: 'AWS Educate Taiwan',
+    description: 'Cloud Ambassador',
   },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="zh-TW" suppressHydrationWarning>
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="theme-color" content="#FF9900" />
-      </head>
       <body className="bg-white text-neutral-900">
         <div className="flex min-h-screen flex-col">
+          <Navigation {...layoutData.navigation} />
           <main className="flex-1">{children}</main>
+          <Footer {...layoutData.footer} />
         </div>
       </body>
     </html>

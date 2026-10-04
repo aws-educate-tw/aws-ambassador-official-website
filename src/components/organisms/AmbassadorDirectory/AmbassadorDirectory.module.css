@@ -1,0 +1,478 @@
+.section {
+  padding: var(--section-padding-y) var(--page-padding-x);
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-inline: var(--page-padding-x-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-inline: var(--page-padding-x-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-inline: var(--page-padding-x-lg);
+  }
+}
+
+.container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-surface-600);
+  margin: 0 0 var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+}
+
+/* 篩選列 */
+.filters {
+  background-color: var(--color-bg-primary);
+  padding: var(--space-5);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-subtle);
+  margin-bottom: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .filters {
+    flex-direction: row;
+  }
+}
+
+/* 名錄網格 */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 個人卡片 */
+.card {
+  width: 100%;
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  outline: 2px solid var(--color-border-subtle);
+  padding: var(--space-6) var(--space-4);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  box-sizing: border-box;
+  min-height: 512px;
+}
+
+/* 上半部：頭像 + 資訊 */
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.avatar {
+  width: 84px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.avatarPlaceholder {
+  width: 84px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 姓名 + 學校 + 角色 + Side Project */
+.cardInfo {
+  width: 259px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.nameRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.personName {
+  width: 255px;
+  text-align: center;
+  color: var(--color-surface-600);
+  font-size: var(--font-size-xl);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  line-height: 28px;
+  word-wrap: break-word;
+}
+
+/* 每一列：圖示 + 文字 */
+.detailRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.rowIcon {
+  color: var(--color-primary-500);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.detailTexts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--space-1);
+}
+
+.detailMain {
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.detailSub {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 16px;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+/* 操作按鈕 — 兩個都是橘色漸層 */
+.actions {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px var(--space-3);
+  background: linear-gradient(180deg, var(--color-primary-500) 0%, var(--color-primary-400) 100%);
+  border-radius: var(--radius-full);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  transition:
+    opacity var(--duration-normal) ease,
+    filter var(--duration-normal) ease;
+}
+
+.btn:disabled {
+  background: var(--color-neutral-200);
+  color: var(--color-neutral-400);
+  cursor: not-allowed;
+  filter: none;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* 分頁 */
+.pagination {
+  margin-top: var(--space-12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.pageBtn {
+  width: 155px;
+  padding: var(--space-2) var(--space-5);
+  background: var(--color-surface-600);
+  border: none;
+  border-radius: var(--radius-full);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+  cursor: pointer;
+  transition: opacity var(--duration-normal) var(--easing-ease-out);
+}
+
+.pageBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pageBtn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.pageBtnLabel {
+  width: 48px;
+  text-align: center;
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.pageBtnArrow {
+  width: 26px;
+  height: 21px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pageInfo {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  min-width: 60px;
+  text-align: center;
+}
+
+.certContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  width: 100%;
+}
+
+.certBadge {
+  background: var(--color-primary-50);
+  border-radius: var(--radius-md);
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-primary-500);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.projectItem {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-normal);
+}
+
+/* Custom Select */
+.customSelectContainer {
+  position: relative;
+  width: 100%;
+}
+
+.customSelectButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-subtle);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-900);
+  outline: none;
+  cursor: pointer;
+  transition: all var(--duration-normal) ease;
+}
+
+.customSelectButton:hover {
+  border-color: var(--color-border-default);
+  background-color: var(--color-bg-secondary);
+}
+
+.customSelectButton:focus {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
+}
+
+.customSelectPlaceholder {
+  color: var(--color-neutral-900);
+}
+
+.customSelectValue {
+  color: var(--color-neutral-900);
+}
+
+.customSelectIcon {
+  color: var(--color-neutral-600);
+  transition: transform var(--duration-normal) ease;
+}
+
+.customSelectIconOpen {
+  transform: rotate(180deg);
+}
+
+.customSelectDropdown {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-dropdown);
+  overflow: hidden;
+  animation: slideDown var(--duration-normal) ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.customSelectList {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-2);
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar for Dropdown */
+.customSelectList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.customSelectList::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px 0;
+}
+
+.customSelectList::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-300);
+  border-radius: var(--radius-xs);
+}
+
+.customSelectList::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-400);
+}
+
+.customSelectOption {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px var(--space-3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-800);
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+.customSelectOption:hover {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-neutral-900);
+}
+
+.customSelectOptionSelected {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-500);
+  font-weight: var(--font-weight-semibold);
+}
+
+.customSelectOptionSelected:hover {
+  background-color: var(--color-primary-100);
+}
+
+.customSelectOptionText {
+  flex: 1;
+}
+
+.customSelectCheck {
+  color: var(--color-primary-500);
+  flex-shrink: 0;
+}

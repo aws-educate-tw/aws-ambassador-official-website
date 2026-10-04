@@ -1,110 +1,160 @@
 'use client';
 
-import { Button } from '@/components/atoms/Button/Button';
-import { Footer } from '@/components/organisms/Footer/Footer';
-import { Navigation } from '@/components/organisms/Navigation/Navigation';
+import BenefitList from '@/components/molecules/BenefitList/BenefitList';
+import { Carousel } from '@/components/molecules/Carousel/Carousel';
+import { PillarCard } from '@/components/molecules/PillarCard/PillarCard';
+import { CTASection } from '@/components/organisms/CTASection/CTASection';
+import { HeroSection } from '@/components/organisms/HeroSection/HeroSection';
+import { ProgramExploreSection } from '@/components/organisms/ProgramSection/ProgramSection';
+import { TestimonialsCarousel } from '@/components/organisms/TestimonialsCarousel/TestimonialsCarousel';
+import homeData from '@/content/home.json';
+import { CTA_CONTENT } from '@/data/cta';
 import { motion } from 'framer-motion';
-import { Bell } from 'lucide-react';
-import styles from './coming-soon/ComingSoonPage.module.css';
+import styles from './HomePage.module.css';
 
-const navigationData = {
-  logo: { text: 'AWS', subtitle: 'Educate Taiwan' },
-  items: [
-    { label: '首頁', href: '/' },
-    { label: '大使計畫總覽', href: '/program' },
-    { label: '活動中心', href: '/events' },
-    { label: '校友專區', href: '/alumni' },
-  ],
-  ctaLabel: '追蹤粉專',
-  ctaHref: 'https://www.instagram.com/awseducatestdambtw/',
-};
+const leadershipPrinciples = [
+  {
+    title: 'Are Right, A Lot',
+    subtitle: '遠見卓識，決策精準',
+    description: '面對問題時有好的判斷力，願意聽不同意見，也會用實際結果不斷檢驗自己的決定。',
+    icon: 'are-right-a-lot',
+  },
+  {
+    title: 'Customer Obsession',
+    subtitle: '客戶至上',
+    description: '領導者應從客戶出發，逆向工作，努力贏得並保持客戶信任。',
+    icon: 'customer-obsession',
+  },
+  {
+    title: 'Ownership',
+    subtitle: '主人翁精神',
+    description: '領導者是主人翁，不僅僅為自己團隊工作，會為了長遠利益而主動承擔責任。',
+    icon: 'ownership',
+  },
+  {
+    title: 'Invent and Simplify',
+    subtitle: '創新與簡化',
+    description: '勇於創新，持續尋找更簡單、更有效的方法。',
+    icon: 'invent-and-simplify',
+  },
+  {
+    title: 'Learn and Be Curious',
+    subtitle: '學習與好奇',
+    description: '持續學習，保持好奇，主動探索新知。',
+    icon: 'learn-and-be-curious',
+  },
+  {
+    title: 'Hire and Develop the Best',
+    subtitle: '用人唯才，培育菁英',
+    description: '不斷提升人才引進與晉升的標準，為團隊培育未來的領導者。',
+    icon: 'hire-and-develop-the-best',
+  },
+  {
+    title: 'Insist on the Highest Standards',
+    subtitle: '堅持最高標準',
+    description: '追求幾近嚴苛的高標準，持續推動團隊優質產品與服務。',
+    icon: 'highest-standards',
+  },
+  {
+    title: 'Think Big',
+    subtitle: '胸懷大志',
+    description: '勇於提出大局策略，激勵出突破性的成果。',
+    icon: 'think-big',
+  },
+  {
+    title: 'Bias for Action',
+    subtitle: '崇尚行動',
+    description: '速度對商務至關重要，許多決策可逆，不必進行過大規模的討論。',
+    icon: 'bias-for-action',
+  },
+  {
+    title: 'Frugality',
+    subtitle: '勤儉節約',
+    description: '力求以更少的投入獲得更多的產出，勤儉能帶來自主與創新。',
+    icon: 'frugality',
+  },
+  {
+    title: 'Earn Trust',
+    subtitle: '贏得信任',
+    description: '聆聽、坦誠溝通、尊重他人，並勇於自我批評。',
+    icon: 'earn-trust',
+  },
+  {
+    title: 'Dive Deep',
+    subtitle: '深入洞察',
+    description: '隨時深入各環節，掌握細節，審計數據與傳聞。',
+    icon: 'dive-deep',
+  },
+  {
+    title: 'Have Backbone; Disagree and Commit',
+    subtitle: '堅定信念，分歧與承諾',
+    description: '不為了融洽而妥協，但一旦決策定案，就要全力實現。',
+    icon: 'backbone',
+  },
+  {
+    title: 'Deliver Results',
+    subtitle: '實現目標',
+    description: '聚焦關鍵投入，即使困難重重也能克服並達成目標。',
+    icon: 'deliver-results',
+  },
+] as const;
+/* 首頁 */
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-export default function ComingSoonPage() {
+export default function HomePage() {
   return (
     <div className={styles.page}>
-      <Navigation {...navigationData} />
+      {/* HeroSection */}
+      <HeroSection {...homeData.hero} statistics={homeData.statistics} />
 
-      {/* Title Section */}
-      <motion.section
-        className={styles.titleSection}
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.15 } },
-        }}
-      >
-        <motion.h1 className={styles.titleMain} variants={fadeInUp}>
-          AWS Educate Taiwan
-        </motion.h1>
-        <motion.h2 className={styles.titleSub} variants={fadeInUp}>
-          Student Cloud Ambassador
-        </motion.h2>
-      </motion.section>
+      {/* 四大支柱 */}
+      <section className={styles.pillarsSection} aria-labelledby="pillars-heading">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className={styles.principlesHeader}
+        >
+          <p className={styles.principlesEyebrow}>At Amazon, it is still Day 1</p>
+          <h2 id="pillars-heading" className={styles.principlesTitle}>
+            Amazon Leadership Principles
+          </h2>
+          <p className={styles.principlesSubtitle}>以亞馬遜領導力準則為核心，培養未來雲端領導者</p>
+        </motion.div>
 
-      {/* Photo Section */}
-      <motion.section
-        className={styles.photoSection}
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-      >
-        {/* Decorative blobs */}
-        <div className={`${styles.blob} ${styles.blobTeal}`} aria-hidden="true" />
-        <div className={`${styles.blob} ${styles.blobPink}`} aria-hidden="true" />
-        <div className={`${styles.blob} ${styles.blobGreen}`} aria-hidden="true" />
-        <div className={`${styles.blob} ${styles.blobLavender}`} aria-hidden="true" />
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+          <Carousel
+            className={styles.pillarsMarquee}
+            items={leadershipPrinciples}
+            duration={80}
+            gap={24}
+            ariaLabel="Amazon Leadership Principles 輪播"
+            keyExtractor={(principle, index) => `pillar-${principle.title}-${index}`}
+            renderItem={(principle, index) => (
+              <PillarCard
+                title={principle.title}
+                subtitle={principle.subtitle}
+                description={principle.description}
+                icon={principle.icon}
+                imageIndex={index}
+              />
+            )}
+          />
+        </motion.div>
+      </section>
 
-        <div className={styles.comingSoonBanner}>
-          <span className={styles.comingSoonText}>
-            精彩官網正在醞釀中 ... Coming Soon ...
-          </span>
-        </div>
+      {/* 功能區 - 探索大使計畫 */}
+      <ProgramExploreSection features={homeData.features} />
 
-        <div
-          className={styles.photoWrapper}
-          role="img"
-          aria-label="AWS Educate Taiwan 大使團隊合照"
-        />
+      <BenefitList benefits={homeData.benefits} />
 
-        <p className={styles.photoCaption}>大使們在社群上等你們喔！</p>
-      </motion.section>
+      {/* 大使心得 */}
+      <TestimonialsCarousel testimonials={homeData.testimonials} />
 
-      {/* CTA Section */}
-      <motion.section
-        className={styles.ctaSection}
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className={styles.ctaContent}>
-          <h2 className={styles.ctaTitle}>想要第一時間收到活動通知？</h2>
-          <p className={styles.ctaDescription}>
-            加入我們的社群，掌握最新活動資訊與獨家優惠
-          </p>
-          <Button
-            href="https://www.instagram.com/awseducatestdambtw/"
-            variant="primary"
-            size="lg"
-            className={styles.ctaButton}
-          >
-            <span className={styles.ctaButtonContent}>
-              加入我們的社群
-              <Bell size={18} />
-            </span>
-          </Button>
-        </div>
-      </motion.section>
-
-      <Footer
-        brandTitle="AWS Educate Taiwan"
-        brandSubtexts={['賦能創新 · 連結未來', 'AWS Educate', 'Taiwan Cloud Ambassador']}
+      {/* CTA 區 */}
+      <CTASection
+        title={CTA_CONTENT.home.title}
+        description={CTA_CONTENT.home.description}
+        primaryCTA={CTA_CONTENT.home.primaryCTA}
       />
     </div>
   );

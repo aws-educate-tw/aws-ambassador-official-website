@@ -33,7 +33,12 @@ export function Navigation({
 }: Readonly<NavigationProps>) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const highlightedHref = activeItemHref ?? pathname;
+  const [clientPath, setClientPath] = useState<string | null>(null);
+  useEffect(() => {
+    setClientPath(pathname ?? null);
+  }, [pathname]);
+
+  const highlightedHref = activeItemHref ?? clientPath;
   const isExternalCta = /^https?:\/\//.test(ctaHref);
 
   useEffect(() => {
@@ -52,15 +57,15 @@ export function Navigation({
       <div className={styles.container}>
         <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
           <Image
-            src="/AWS_Educate_Logo.svg"
+            src="/images/logo_nav.svg"
             alt="AWS Educate logo"
-            width={42}
-            height={50}
+            width={200}
+            height={60}
             className={styles.logoIcon}
             priority
           />
           <span className={styles.logoText}>
-            {logo?.subtitle ? `${logo.text} ${logo.subtitle}` : logo?.text || 'AWS Educate TW'}
+            {logo?.subtitle ? `${logo.text} ${logo.subtitle}` : logo?.text || 'AWS Educate Taiwan'}
           </span>
         </Link>
 

@@ -1,54 +1,57 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 import styles from './PillarCard.module.css';
 
 export interface PillarCardProps {
   title: string;
+  subtitle: string;
   description: string;
-  icon?: string;
+  icon: string;
+  imageIndex: number;
 }
 
-const PILLAR_IMAGES: Record<string, string> = {
-  學習: '/images/Learning.png',
-  Learn: '/images/Learning.png',
-  實作: '/images/Implementation.png',
-  Build: '/images/Implementation.png',
-  分享: '/images/Sharing.png',
-  Share: '/images/Sharing.png',
-  領導: '/images/Lead.png',
-  Lead: '/images/Lead.png',
-};
+const ICON_VARIANTS = [
+  styles['principle-card__icon-shell--blue'],
+  styles['principle-card__icon-shell--sand'],
+  styles['principle-card__icon-shell--rose'],
+  styles['principle-card__icon-shell--mint'],
+] as const;
 
-function getWrapperVariant(title: string) {
-  if (title === '學習' || title === 'Learn') return styles.learn;
-  if (title === '實作' || title === 'Build') return styles.build;
-  if (title === '分享' || title === 'Share') return styles.share;
-  if (title === '領導' || title === 'Lead') return styles.lead;
-  return styles.defaultVariant;
-}
-
-export function PillarCard({ title, description, icon }: PillarCardProps) {
-  const imageSrc = PILLAR_IMAGES[title];
-  const variantClass = getWrapperVariant(title);
+export function PillarCard({
+  title,
+  subtitle,
+  description,
+  icon,
+  imageIndex,
+}: Readonly<PillarCardProps>) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const iconVariantClass = ICON_VARIANTS[imageIndex % ICON_VARIANTS.length];
 
   return (
-    <article className={styles.card}>
-      <div className={`${styles.iconWrapper} ${variantClass}`} aria-hidden="true">
-        {imageSrc ? (
+    <article className={styles['principle-card']}>
+      <div
+        className={`${styles['principle-card__icon-shell']} ${iconVariantClass}`}
+        aria-hidden="true"
+      >
+        {!imageFailed && (
           <Image
-            src={imageSrc}
+            src={`/images/LP/${icon}.png`}
             alt=""
-            width={160}
-            height={160}
-            className={styles.pillarImage}
-            priority
+            width={80}
+            height={80}
+            className={styles['principle-card__character-image']}
+            onError={() => setImageFailed(true)}
           />
-        ) : (
-          <span className={styles.fallbackIcon}>{icon ?? '✨'}</span>
         )}
       </div>
 
-      <h3 className={styles.title}>{title}</h3>
-      <p className={styles.description}>{description}</p>
+      <h3 className={styles['principle-card__heading-group']}>
+        <span className={styles['principle-card__title']}>{title}</span>
+        <span className={styles['principle-card__subtitle']}>{subtitle}</span>
+      </h3>
+      <p className={styles['principle-card__description']}>{description}</p>
     </article>
   );
 }

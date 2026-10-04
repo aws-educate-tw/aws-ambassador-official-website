@@ -1,30 +1,30 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import styles from './HeroSection.module.css';
 
 export interface HeroSectionProps {
   title: string;
   subtitle: string;
+  tagline?: string;
   description: string;
+  statistics: Array<{
+    number: string;
+    label: string;
+  }>;
   primaryCTA: {
     label: string;
     href: string;
   };
-  secondaryCTA: {
+  tertiaryCTA?: {
     label: string;
     href: string;
   };
-  backgroundImage?: string;
 }
 
-/**
- * 數字跳動動畫組件
- * @param {number} end - 目標數字
- * @param {number} duration - 動畫持續時間 (ms)
- */
 const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
   const countRef = useRef<HTMLSpanElement>(null);
@@ -48,15 +48,19 @@ const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) =
   }, []);
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible) {
+      return;
+    }
 
     let startTime: number | null = null;
+
     const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
+      if (!startTime) {
+        startTime = timestamp;
+      }
+
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
-
-      // 使用 easeOutQuad 效果讓數字增加更自然
       const easeOutQuad = (t: number) => t * (2 - t);
       const currentCount = Math.floor(easeOutQuad(percentage) * end);
 
@@ -73,63 +77,58 @@ const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) =
   return <span ref={countRef}>{count}</span>;
 };
 
-export function HeroSection({
-  title,
-  subtitle,
-  description,
-  primaryCTA,
-  secondaryCTA,
-}: HeroSectionProps) {
+export function HeroSection(props: Readonly<HeroSectionProps>) {
+  const {
+    title,
+    subtitle,
+    tagline,
+    description,
+    statistics,
+    primaryCTA,
+    tertiaryCTA,
+  } = props;
+
+  const stats = statistics.slice(0, 3).map((stat) => ({
+    value: Number.parseInt(stat.number, 10) || 0,
+    label: stat.label,
+  }));
+
+  const ctas = [
+    { ...primaryCTA, variant: 'primary' as const },
+    ...(tertiaryCTA ? [{ ...tertiaryCTA, variant: 'dark' as const }] : []),
+  ];
+
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
-        {/* 左側內容區 */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className={styles.contentLeft}
-        >
-          {/* 招募中徽章 */}
-          <div className={styles.badge}>
-            <span>🪄</span>
-            <span>第八屆大使招募中</span>
-          </div>
-
-          {/* 主標題 */}
+        <div className={styles.content}>
           <h1 className={styles.title}>{title}</h1>
 
-          {/* 副標題 */}
-          <h2 className={styles.tagline}>{subtitle}</h2>
+          <h2 className={styles.subtitle}>{subtitle}</h2>
 
-          {/* 描述 */}
+          <p className={styles.tagline}>{tagline ?? '賦能 · 創新 · 連結'}</p>
           <p className={styles.description}>{description}</p>
 
-          {/* 按鈕組 */}
           <div className={styles.actions}>
-            <button className={styles.primaryBtn}>
-              {primaryCTA.label}
-              <ArrowRight size={20} />
-            </button>
-            <button className={styles.secondaryBtn}>{secondaryCTA.label}</button>
+            {ctas.map((cta) => {
+              const isExternal = /^https?:\/\//.test(cta.href);
+              return (
+                <Link
+                  key={`${cta.label}-${cta.href}`}
+                  href={cta.href}
+                  className={`${styles.ctaButton} ${cta.variant === 'dark' ? styles.ctaDark : styles.ctaPrimary}`}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                >
+                  <span>{cta.label}</span>
+                  {cta.variant === 'primary' && <ArrowRight size={12} aria-hidden="true" />}
+                </Link>
+              );
+            })}
           </div>
-        </motion.div>
-
-        {/* 右側視覺區 */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className={styles.contentRight}
-        >
-          <div className={styles.heroImage}>
-            <div className={styles.imageGradient} />
-            <Users size={120} className={styles.imageIcon} />
-          </div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* 統計區 - 帶數字跳動 */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -138,30 +137,14 @@ export function HeroSection({
         className={styles.statsSection}
       >
         <div className={styles.statsGrid}>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={168} />
+          {stats.map((stat) => (
+            <div key={stat.label} className={styles.statCard}>
+              <div className={styles.statNumber} aria-label={`統計數字: ${stat.value}+`}>
+                <CountUp end={stat.value} />+
+              </div>
+              <div className={styles.statLabel}>{stat.label}</div>
             </div>
-            <div className={styles.statLabel}>累積大使</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={350} />
-            </div>
-            <div className={styles.statLabel}>年度活動</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={450} />
-            </div>
-            <div className={styles.statLabel}>AWS 認證</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>
-              <CountUp end={95} />%
-            </div>
-            <div className={styles.statLabel}>就業率</div>
-          </div>
+          ))}
         </div>
       </motion.div>
     </section>

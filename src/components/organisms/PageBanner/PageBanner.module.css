@@ -1,0 +1,136 @@
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 26rem;
+  padding: var(--section-padding-y-sm) var(--page-padding-x);
+  background-color: var(--color-surface-600);
+  overflow: hidden;
+}
+
+.slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--duration-slower) var(--easing-ease-in-out);
+}
+
+.slideActive {
+  opacity: 1;
+}
+
+.slideImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 640px) {
+  .banner {
+    padding-inline: var(--page-padding-x-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .banner {
+    min-height: 32rem;
+    padding-inline: var(--page-padding-x-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    min-height: 38rem;
+    padding-inline: var(--page-padding-x-lg);
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  max-width: 44rem;
+}
+
+.title {
+  width: 100%;
+  margin: 0;
+  color: var(--color-text-inverse);
+  font-size: clamp(1.75rem, 1.1rem + 3vw, 3rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+  word-break: keep-all;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.descriptions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--space-5);
+}
+
+.description {
+  margin: 0;
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-relaxed);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: var(--font-size-lg);
+  }
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-10);
+  border-radius: var(--radius-full);
+  background: var(--gradient-cta);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  transition:
+    opacity var(--duration-normal) var(--easing-ease-out),
+    transform var(--duration-normal) var(--easing-ease-out);
+}
+
+.ctaButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.ctaIcon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
