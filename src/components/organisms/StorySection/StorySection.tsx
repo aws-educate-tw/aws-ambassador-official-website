@@ -30,7 +30,7 @@ function AlumniCardContent({ data }: Readonly<{ data: StoryCategory['alumni'][st
           <div className={styles.highlights}>
             {data.highlights.map((h) => (
               <div key={h} className={styles.highlightItem}>
-                <Star size={20} color="#FF9900" />
+                <Star size={20} color="#FF9900" className={styles.highlightIcon} />
                 <p className={styles.highlightText}>{h}</p>
               </div>
             ))}
