@@ -85,9 +85,9 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
         title: 'AWS Educate Taiwan 校園大使校友',
         image: '/images/Stories/Shiun.png',
         highlights: [
-          '深耕 Networking 與 Linux Kernel 等底層技術的外商雲端工程師',
-          '擅長把艱澀的架構轉譯為小白也能吸收的知識',
-          '穩扎穩打的「農兵派」實踐者，主張扎根基礎技術並善用 AI 工具極大化學習效率',
+          '輔大資管系出身，大二踏入軟體職場，學生時期帶領團隊榮獲多項獎項',
+          '具備大流量電商平台維運實戰經驗，近期投入 Enterprise AI Agent Infra 與 AI Governance 領域',
+          '每日撰寫技術筆記，累積 14+ 場技術研討會與社群演講經驗，曾獲 iThome 鐵人賽冠軍，曾於 KubeSummit Keynote 分享實戰經驗',
         ],
         quote:
           '大使計畫是我技術職涯的加速器，它讓我學會將艱澀的雲端技術轉譯為影響力，了解不必等準備好才出發，唯有在實戰與社群的市場溫度中，才能真正煉成帶不走的技術實力。',
@@ -98,11 +98,11 @@ export const SUCCESS_STORIES: Record<string, StoryCategory> = {
           },
           {
             id: '02',
-            text: '外商實戰應對高併發倒站壓力，由 API 後端開發轉型基礎設施架構專家',
+            text: '延續大使社群影響力成為 AWS Community Builder',
           },
           {
             id: '03',
-            text: '長期經營 Notion 技術輸出與個人品牌，獲邀至 K8s Summit 大型技術年會分享',
+            text: '現任外商 Cloud Engineer，專注大流量電商平台的 Kubernetes、Networking 與 Cloud Infra 維運及優化',
           },
         ],
         interviewer: 'Vincent, Angela, Selina',
