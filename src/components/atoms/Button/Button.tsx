@@ -46,7 +46,14 @@ export function Button({
 
   if (href && !disabled) {
     return (
-      <Link href={href} className={classes} aria-label={ariaLabel} target={target} rel={rel}>
+      <Link
+        href={href}
+        className={classes}
+        onClick={onClick}
+        aria-label={ariaLabel}
+        target={target}
+        rel={rel}
+      >
         {children}
       </Link>
     );

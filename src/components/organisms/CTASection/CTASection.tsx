@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/atoms/Button/Button';
+import { trackInteraction } from '@/lib/analytics';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import styles from './CTASection.module.css';
@@ -45,6 +46,9 @@ export function CTASection({
             size="xl"
             target={primaryIsExternal ? '_blank' : undefined}
             rel={primaryIsExternal ? 'noopener noreferrer' : undefined}
+            onClick={
+              primaryIsExternal ? () => trackInteraction('join_us_click', 'page_cta') : undefined
+            }
           >
             {primaryCTA.label}
             <ArrowRight size={16} aria-hidden="true" />
