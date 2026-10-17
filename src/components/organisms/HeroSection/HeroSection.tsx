@@ -1,5 +1,6 @@
 'use client';
 
+import { trackInteraction } from '@/lib/analytics';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -78,15 +79,7 @@ const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) =
 };
 
 export function HeroSection(props: Readonly<HeroSectionProps>) {
-  const {
-    title,
-    subtitle,
-    tagline,
-    description,
-    statistics,
-    primaryCTA,
-    tertiaryCTA,
-  } = props;
+  const { title, subtitle, tagline, description, statistics, primaryCTA, tertiaryCTA } = props;
 
   const stats = statistics.slice(0, 3).map((stat) => ({
     value: Number.parseInt(stat.number, 10) || 0,
@@ -119,6 +112,11 @@ export function HeroSection(props: Readonly<HeroSectionProps>) {
                   className={`${styles.ctaButton} ${cta.variant === 'dark' ? styles.ctaDark : styles.ctaPrimary}`}
                   target={isExternal ? '_blank' : undefined}
                   rel={isExternal ? 'noopener noreferrer' : undefined}
+                  onClick={
+                    cta.variant === 'dark' && isExternal
+                      ? () => trackInteraction('join_us_click', 'home_hero')
+                      : undefined
+                  }
                 >
                   <span>{cta.label}</span>
                   {cta.variant === 'primary' && <ArrowRight size={12} aria-hidden="true" />}

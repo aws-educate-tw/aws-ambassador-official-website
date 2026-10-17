@@ -10,7 +10,8 @@
     "lint": "next lint && tsc --noEmit",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,css}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,json,css}\"",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "test:analytics": "node --test tests/analytics.test.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.3",
