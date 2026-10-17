@@ -1,5 +1,6 @@
 'use client';
 
+import { GoogleAnalytics } from '@/components/organisms/GoogleAnalytics/GoogleAnalytics';
 import { ArrowUp, Facebook, Instagram, Mail } from 'lucide-react';
 import Link from 'next/link';
 import styles from './Footer.module.css';
@@ -73,7 +74,9 @@ export function Footer({ copyright, brandTitle, brandSubtexts, brandDesc }: Read
             <a href="mailto:awseducate.cloudambassador@gmail.com" className={styles.contactLink}>
               <Mail size={20} className={styles.contactIcon} />
               <span className={styles.contactLabel}>
-                awseducate.cloudambassador<wbr />@gmail.com
+                awseducate.cloudambassador
+                <wbr />
+                @gmail.com
               </span>
             </a>
 
@@ -111,6 +114,7 @@ export function Footer({ copyright, brandTitle, brandSubtexts, brandDesc }: Read
             {copyright ||
               'AWS Educate Taiwan Cloud Ambassador. Operated by 學生組織、大使團隊，自主營運'}
           </p>
+          <GoogleAnalytics />
         </div>
 
         <div className={styles.backToTopWrapper}>

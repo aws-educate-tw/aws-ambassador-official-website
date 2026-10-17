@@ -1,5 +1,6 @@
 'use client';
 
+import { trackInteraction } from '@/lib/analytics';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -89,6 +90,11 @@ export function PageBanner({
               className={styles.ctaButton}
               target={isExternal ? '_blank' : undefined}
               rel={isExternal ? 'noopener noreferrer' : undefined}
+              onClick={
+                isExternal
+                  ? () => trackInteraction('registration_click', 'program_banner')
+                  : undefined
+              }
             >
               {ctaButton.label}
               <svg
