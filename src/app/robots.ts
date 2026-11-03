@@ -5,7 +5,7 @@ export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
   if (!ALLOW_INDEXING) {
-    return { rules: { userAgent: '*', disallow: '/' } };
+    return { rules: { userAgent: '*', allow: '/' } };
   }
 
   return {
