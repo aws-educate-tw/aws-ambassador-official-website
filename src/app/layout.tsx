@@ -1,6 +1,7 @@
 import { Footer } from '@/components/organisms/Footer/Footer';
 import { Navigation } from '@/components/organisms/Navigation/Navigation';
 import layoutData from '@/content/layout.json';
+import { ALLOW_INDEXING, SITE_URL } from '@/lib/site';
 import '@/styles/animations.css';
 import '@/styles/globals.css';
 import type { Metadata, Viewport } from 'next';
@@ -13,10 +14,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.aws-educate.tw'),
+  metadataBase: new URL(SITE_URL),
   title: 'AWS Educate Taiwan',
   description: 'Cloud Ambassador',
-  robots: 'index, follow',
+  robots: ALLOW_INDEXING ? 'index, follow' : 'noindex, nofollow',
   icons: {
     icon: '/images/AWS_Educate_Logo.svg',
   },
